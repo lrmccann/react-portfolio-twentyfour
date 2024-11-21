@@ -6,7 +6,8 @@
 /* Global */
 /* just added this */
 html{
-  height: 100%;
+  /* height: 100%; */
+  overflow: hidden;
 }
 
 /* trying 100% height here now */
@@ -14,15 +15,17 @@ body {
     /* height: 100vh; */
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    position: fixed;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+    -webkit-overflow-scrolling: touch;
   }
   /* adding this with pos fixed and height 100vh - moving overflow options from body here to test - move back if fails */
 .App{
   height: 100vh;
-  position: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* position: fixed; */
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 
   div::-webkit-scrollbar {
