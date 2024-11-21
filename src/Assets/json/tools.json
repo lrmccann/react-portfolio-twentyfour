@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Github",
+    "img": "/Assets/Icons/github-logo.png"
+  },
+  {
+    "Name": "Git",
+    "img": "/Assets/Icons/git-logo.png"
+  },
+  {
+    "Name": "Bitbucket",
+    "img": "/Assets/Icons/bitbucket-icon.png"
+  },
+  {
+    "Name": "Figma",
+    "img": "/Assets/Icons/figma-icon.png"
+  },
+  {
+    "Name": "Google Analytics",
+    "img": "/Assets/Icons/google-analytics-logo.png"
+  },
+  {
+    "Name": "Adobe Analytics",
+    "img": "/Assets/Icons/adobe-analytics-icon.png"
+  },
+  {
+    "Name": "Jira",
+    "img": "/Assets/Icons/jira-icon.png"
+  },
+  {
+    "Name": "Klayvio",
+    "img": "/Assets/Icons/klayvio-icon.png"
+  },
+  {
+    "Name": "Mail Chimp",
+    "img": "/Assets/Icons/mailchimp-icon.png"
+  },
+  {
+    "Name": "Octane",
+    "img": "/Assets/Icons/octaine-icon.png"
+  },
+  {
+    "Name": "Asana",
+    "img": "/Assets/Icons/asana-icon.png"
+  },
+  {
+    "Name": "Adobe Creative Suite",
+    "img": "/Assets/Icons/adobe-creative-suite-icon.png"
+  },
+  {
+    "Name": "SemRush",
+    "img": "/Assets/Icons/semrush-icon.png"
+  },
+  {
+    "Name": "Pixels (Meta/TikTok)",
+    "img": "/Assets/Icons/meta-pixel-icon.png"
+  },
+  {
+    "Name": "HubSpot",
+    "img": "/Assets/Icons/hubspot-icon.png"
+  }
+]

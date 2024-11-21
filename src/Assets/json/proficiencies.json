@@ -1,0 +1,46 @@
+[
+    {
+        "Name": "Search Engine Optimization",
+        "Proficiency": "Advanced",
+        "Sub-Proficiencies": [
+            "Keyword Research",
+            "Keyword Campaigns",
+            "Link Building (Internal/External)",
+            "Site Architecture",
+            "Performance Optimization",
+            "User Experience",
+            "Cross-Device Optimization"
+        ],
+        "YoE": "4+"
+    },
+    {
+        "Name": "Project Management",
+        "Proficiency": "Intermediate",
+        "Sub-Proficiencies": [
+            "Stakeholder Management",
+            "Planning & Execution",
+            "Effective Communication",
+            "Budget Allocation",
+            "Documentation"
+        ],
+        "YoE": "3"
+    },
+    {
+        "Name": "Digital Marketing",
+        "Proficiency": "Advanced",
+        "Sub-Proficiencies": [],
+        "YoE": "6"
+    },
+    {
+        "Name": "Stakeholder Management",
+        "Proficiency": "Advanced",
+        "Sub-Proficiencies": [],
+        "YoE": "4"
+    },
+    {
+        "Name": "Data Analytics",
+        "Proficiency": "Advanced",
+        "Sub-Proficiencies": [],
+        "YoE": "6"
+    }
+]

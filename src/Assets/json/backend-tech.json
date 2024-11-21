@@ -1,0 +1,66 @@
+[
+  {
+    "Name": "Node.js",
+    "img": "/Assets/Icons/nodejs-icon.png"
+  },
+  {
+    "Name": "Nest.js",
+    "img": "/Assets/Icons/nestjs-icon.png"
+  },
+  {
+    "Name": "Python",
+    "img": "/Assets/Icons/python-icon.png"
+  },
+  {
+    "Name": "Flask",
+    "img": "/Assets/Icons/python-flask-icon.png"
+  },
+  {
+    "Name": "MySQL",
+    "img": "/Assets/Icons/mysql-icon.png"
+  },
+  {
+    "Name": "PostgreSQL",
+    "img": "/Assets/Icons/postgresql-icon.png"
+  },
+  {
+    "Name": "MongoDB",
+    "img": "/Assets/Icons/mongo-icon.png"
+  },
+  {
+    "Name": "Firebase",
+    "img": "/Assets/Icons/firebase-icon.png"
+  },
+  {
+    "Name": "GraphQL",
+    "img": "/Assets/Icons/graphql-icon.png"
+  },
+  {
+    "Name": "Apollo",
+    "img": "/Assets/Icons/apollo-graphql-icon.png"
+  },
+  {
+    "Name": "Prisma",
+    "img": "/Assets/Icons/prisma-icon.png"
+  },
+  {
+    "Name": "AWS",
+    "img": "/Assets/Icons/aws-icon-2.png"
+  },
+  {
+    "Name": "Axios",
+    "img": "/Assets/Icons/axios-logo.png"
+  },
+  {
+    "Name": "Express.js",
+    "img": "/Assets/Icons/expressjs-icon.png"
+  },
+  {
+    "Name": "Mongoose",
+    "img": "/Assets/Icons/mongoose-icon.png"
+  },
+  {
+    "Name": "Mocha",
+    "img": "/Assets/Icons/mocha-testing-icon.png"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "HTML5",
+    "img": "/Assets/Icons/html5-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": "CSS3",
+    "img": "/Assets/Icons/css3-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": "Javascript",
+    "img": "/Assets/Icons/javascript-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": "TypeScript",
+    "img": "/Assets/Icons/typescript-icon.png",
+    "progress": 80
+  },
+  {
+    "Name": "PHP",
+    "img": "/Assets/Icons/php.png",
+    "progress": 90
+  },
+  {
+    "Name": "React",
+    "img": "/Assets/Icons/react-icon.png",
+    "progress": 100
+  },
+  {
+    "Name": "Vue",
+    "img": "/Assets/Icons/vue-icon.png",
+    "progress": 80
+  },
+  {
+    "Name": "Svelte",
+    "img": "/Assets/Icons/svelte-icon.png",
+    "progress": 50
+  },
+  {
+    "Name": "Tailwind CSS",
+    "img": "/Assets/Icons/tailwind-css-icon.png",
+    "progress": 60
+  },
+  {
+    "Name": "SCSS",
+    "img": "/Assets/Icons/sass-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": " Nuxt.js",
+    "img": "/Assets/Icons/nuxtjs-icon.png",
+    "progress": 40
+  },
+  {
+    "Name": "Next.js",
+    "img": "/Assets/Icons/nextjs-icon.png",
+    "progress": 70
+  },
+  {
+    "Name": "Shopify",
+    "img": "/Assets/Icons/shopify-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": "WordPress",
+    "img": "/Assets/Icons/wordpress-logo.png",
+    "progress": 100
+  },
+  {
+    "Name": "Webpack",
+    "img": "/Assets/Icons/webpack-icon.png",
+    "progress": 100
+  },
+  {
+    "Name": "Selenium",
+    "img": "/Assets/Icons/selenium-icon.png",
+    "progress": 60
+  }
+]
