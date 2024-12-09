@@ -12,13 +12,37 @@ export default function App() {
   const [tabLocation, setTabLocation] = useState(0);
   const [currentThemeMode, setCurrentThemeMode] = useState(themeMode);
 
+let bodyTag = document.getElementsByTagName('body')[0];
+let screen = window.screen;
+//---------------------------------------------
+function hideAddressBar(bPad) {
+	// Big screen. Fixed chrome likely.
+	if(screen.width > 980 || screen.height > 980) return;
 
-  if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
-    let screen = window.screen
-    let bodyTag = document.getElementsByTagName('body')[0];
-    bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
-    console.log(bodyTag, "body tag?")
-  }
+	// Standalone (full screen webapp) mode
+	if(window.navigator.standalone === true) return;
+
+	// Page zoom or vertical scrollbars
+	if(window.innerWidth !== document.documentElement.clientWidth) {
+		// Sometimes one pixel too much. Compensate.
+		if((window.innerWidth - 1) !== document.documentElement.clientWidth) return;
+
+	}
+
+	setTimeout(function() {
+		// Already scrolled?
+		if(window.pageYOffset !== 0) return;
+
+		// Perform autoscroll
+		window.scrollTo(0, 1);
+
+		// Reset body height and scroll
+		if(bodyTag !== undefined) bodyTag.style.height = window.innerHeight + 'px';
+		window.scrollTo(0, 0);
+
+	}, 1000);
+
+}
 
 useEffect(() => {
   window.addEventListener("resize", watchScreenSize);
