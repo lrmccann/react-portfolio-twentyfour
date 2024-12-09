@@ -28,6 +28,7 @@ function hideAddressBar(bPad) {
 		if((window.innerWidth - 1) !== document.documentElement.clientWidth) return;
 
 	}
+  hideAddressBar();
 
 	setTimeout(function() {
 		// Already scrolled?
