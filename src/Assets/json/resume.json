@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Senior Front-End Developer",
+        "organization": "Webex by Cisco",
+        "responsibilities": [
+            "Lead team of developers across 3+ websites in creating new pages and features using tools like React, Hydrogen, Vue, and Laravel",
+            "Partner with cross-functional teams and stakeholders to collect design requirements/relevant data, present milestones, and ensure project completion",
+            "Enhanced organic traffic by 25% through data-driven SEO strategies, link equity preservation, and responsive design",
+            "Designed and integrated internal and 3rd party promotional material, resulting in an 18% increase in conversions"
+        ]
+    },
+    {
+        "title": "Front-End Developer",
+        "organization": "Adorama",
+        "responsibilities": [
+            "Developed custom themes and apps tailored to brand identity and key product offerings",
+            "Integrated third-party APIs to expand core functionality and streamline operations",
+            "Reduced annual cost of plugins and hosting services by 36% through database optimization and custom-coded solutions for costly plugins",
+            "Routinely integrated new and existing technologies to enhance platform performance"
+        ]
+    },
+    {
+        "title": "Front-End Shopify Developer",
+        "organization": "Almond Cow",
+        "responsibilities": [
+            "Led research and development of headless CMS using Shopify, React, and Node.js",
+            "Implemented reactive features, supported by CSS animations, to enhance UI/UX while adhering to Web Content Accessibility Guidelines (WCAG)",
+            "Built custom HTML email templates for Kayvio campaigns, leading to a 13% increase in engagement with campaign-related resources",
+            "Developed a cost-effective alternative to the Octane intake form, reducing monthly spending"
+        ]
+    }
+]

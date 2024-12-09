@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Github",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/github-logo.png"
+  },
+  {
+    "Name": "Git",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/git-logo.png"
+  },
+  {
+    "Name": "Bitbucket",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/bitbucket-icon.png"
+  },
+  {
+    "Name": "Figma",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/figma-icon.png"
+  },
+  {
+    "Name": "Google Analytics",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/google-analytics-logo.png"
+  },
+  {
+    "Name": "Adobe Analytics",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-analytics-icon.png"
+  },
+  {
+    "Name": "Jira",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/jira-icon.png"
+  },
+  {
+    "Name": "Klayvio",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/klayvio-icon.png"
+  },
+  {
+    "Name": "Mail Chimp",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mailchimp-icon.png"
+  },
+  {
+    "Name": "Octane",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/octaine-icon.png"
+  },
+  {
+    "Name": "Asana",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/asana-icon.png"
+  },
+  {
+    "Name": "Adobe Creative Suite",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-creative-suite-icon.png"
+  },
+  {
+    "Name": "SemRush",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/semrush-icon.png"
+  },
+  {
+    "Name": "Pixels (Meta/TikTok)",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/meta-pixel-icon.png"
+  },
+  {
+    "Name": "HubSpot",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/hubspot-icon.png"
+  }
+]

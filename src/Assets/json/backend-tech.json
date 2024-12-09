@@ -1,0 +1,66 @@
+[
+  {
+    "Name": "Node.js",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nodejs-icon.png"
+  },
+  {
+    "Name": "Nest.js",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nestjs-icon.png"
+  },
+  {
+    "Name": "Python",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/python-icon.png"
+  },
+  {
+    "Name": "Flask",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/python-flask-icon.png"
+  },
+  {
+    "Name": "MySQL",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mysql-icon.png"
+  },
+  {
+    "Name": "PostgreSQL",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/postgresql-icon.png"
+  },
+  {
+    "Name": "MongoDB",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mongo-icon.png"
+  },
+  {
+    "Name": "Firebase",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/firebase-icon.png"
+  },
+  {
+    "Name": "GraphQL",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/graphql-icon.png"
+  },
+  {
+    "Name": "Apollo",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/apollo-graphql-icon.png"
+  },
+  {
+    "Name": "Prisma",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/prisma-icon.png"
+  },
+  {
+    "Name": "AWS",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/aws-icon-2.png"
+  },
+  {
+    "Name": "Axios",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/axios-logo.png"
+  },
+  {
+    "Name": "Express.js",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/expressjs-icon.png"
+  },
+  {
+    "Name": "Mongoose",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mongoose-icon.png"
+  },
+  {
+    "Name": "Mocha",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mocha-testing-icon.png"
+  }
+]
