@@ -4,9 +4,13 @@ import { animateProjectRows } from "../Assets/utilities";
 
 
 const AnimatedRow = (props) => {
+    const [reset, setReset] = useState(true);
 
     useEffect(() => {
-        animateProjectRows();
+            animateProjectRows();
+            // setTimeout(() => {
+
+            // }, )
         // console.log(props.eachArr, "props heeere")
         // props.eachArr.map((icon, i) => {
         //     console.log(icon, "icon")

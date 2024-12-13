@@ -5,5 +5,9 @@
     "loganIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon.png",
     "lrmResumePdf": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/Logan-McCann-2024-Resume.pdf",
     "lrmLogoLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/lrm-logo-large.png",
-    "lrmLogoMobile": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/lrm-logo-mobile.png"
+    "lrmLogoMobile": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/lrm-logo-mobile.png",
+    "githubIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/github-icon.png",
+    "blueskyIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/bluesky-icon.png",
+    "linkedinIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/linked-in-icon.png",
+    "checkMarkIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/check-mark-confirmation-icon.png"
 }

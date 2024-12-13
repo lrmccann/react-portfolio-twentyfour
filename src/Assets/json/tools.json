@@ -1,62 +1,77 @@
 [
   {
     "Name": "Github",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/github-logo.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/github-logo.png",
+    "progress": 100
   },
   {
     "Name": "Git",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/git-logo.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/git-logo.png",
+    "progress": 90
   },
   {
     "Name": "Bitbucket",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/bitbucket-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/bitbucket-icon.png",
+    "progress": 80
   },
   {
     "Name": "Figma",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/figma-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/figma-icon.png",
+    "progress": 80
   },
   {
     "Name": "Google Analytics",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/google-analytics-logo.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/google-analytics-logo.png",
+    "progress": 100
   },
   {
     "Name": "Adobe Analytics",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-analytics-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-analytics-logo.png",
+    "progress": 70
   },
   {
     "Name": "Jira",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/jira-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/jira-icon.png",
+    "progress": 100
   },
   {
     "Name": "Klayvio",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/klayvio-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/klayvio-logo.png",
+    "progress": 100
   },
   {
     "Name": "Mail Chimp",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mailchimp-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mailchimp-icon.png",
+    "progress": 80
   },
   {
     "Name": "Octane",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/octaine-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/octane-icon.png",
+    "progress": 70
   },
   {
     "Name": "Asana",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/asana-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/asana-icon.png",
+    "progress": 100
   },
   {
     "Name": "Adobe Creative Suite",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-creative-suite-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-creative-suite-icon.png",
+    "progress": 70
   },
   {
     "Name": "SemRush",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/semrush-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/semrush-icon.png",
+    "progress": 100
   },
   {
     "Name": "Pixels (Meta/TikTok)",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/meta-pixel-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/facebook-pixel-icon.png",
+    "progress": 100
   },
   {
     "Name": "HubSpot",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/hubspot-icon.png"
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/hubspot-logo.png",
+    "progress": 80
   }
 ]

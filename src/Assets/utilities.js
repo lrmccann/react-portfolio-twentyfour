@@ -2,6 +2,7 @@
 import observer from "./Utilities/init/observer";
 import {GlobalContext} from "./Utilities/ThemeContext";
 import animateProjectRows from './Utilities/init/animateProjectRows';
+import sendFormData from './Utilities/sendFormData';
 // Images & Json
 import globalIcons from './json/global-icons.json';
 import frontEndTechArr from './json/frontend-tech.json';
@@ -23,5 +24,6 @@ export {
     toolsArr,
     resumeText,
     projectArr,
-    myResumePDF
+    myResumePDF,
+    sendFormData
 }

@@ -49,17 +49,19 @@ const Header = (props) => {
   };
 
   return (
-    <main className="header flx-rw flx-spc-arnd">
+    <main className="header flx-rw flx-spc-btwn">
       <img
         className={`${headerOptions.logoClass}`}
         src={`${headerOptions.headerLogo}`}
         alt="Custom Icon With Logan R McCann Curved At The Top, The Initials LRM In The Center, And Developer Centered At The Bottom"
       />
       {userDevice !== 'desktop' ? (
-        <div className="mobile-nav-container flx-rw flx-end">
+        <div className={`mobile-nav-container flx-rw 
+        ${tabLocation === 0 ? "flx-end" : "flx-btwn"}`}
+        >
           {tabLocation !== 0 && (
             <div className="mobile-chat-bar">
-              <button className="flx-row flx-center flx-align-center">
+              <button className="flx-col flx-center flx-align-center">
                 <img src={`${globalIcons.chatbotIcon}`} alt="" />
               </button>
             </div>

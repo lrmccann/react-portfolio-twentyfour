@@ -10,72 +10,71 @@ import ProgressBar, {
 const Modal = (props) => {
   const { activeHeader, arr, projObj, modalType, modalStatus } = props;
 
-  return modalType === "project" ? (
-    <div className="project-modal">
-      <div className="project-close-bar flx-rw flx-spc-btwn flx-align-center">
-        <h1>
-          {projObj.siteName} | {projObj.company}
-        </h1>
+  return (
+    <div className="modal-container">
+      <div className="modal-top flx-rw flx-spc-btwn flx-align-center">
+          {modalType === "project" ? (
+            <h1>
+              {projObj.siteName} | {projObj.company}
+            </h1>
+          ) : (
+            <h1 className="flx-rw flx-start flx-start">{activeHeader}</h1>
+          )}
         <button
           id="close-modal"
           onClick={() => {
-            props.modalStatus(null);
+            modalStatus(null);
           }}
         >
-          X
+          <h1>X</h1>
         </button>
       </div>
-      <div className="project-modal-body flx-col flx-spc-btwn">
-        <img src={projObj.siteLarge} alt="idk" />
-        <div className="project-modal-text-container">
-          <label>Contributions</label>
-          <ul className="contribution-list">
-            {projObj.contributions.map((contribution, i) => {
-              return <li key={i}>{contribution}</li>;
-            })}
-          </ul>
-          <br></br>
-          <label>Tech Used</label>
-          <ul className="proj-tech-section flx-rw flx-wrp">
-            {projObj.techStack.map((tech, i) => {
-              return <li key={i}> {tech} </li>;
-            })}
-          </ul>
-        </div>
-        <button
-          onClick={() => {
-            window.open(projObj.siteUrl, "_blank");
-          }}
-        >
-          Visit Now &#8250;
-        </button>
-      </div>
-    </div>
-  ) : (
-    <div className="skill-modal flx-col">
-      <div className="modal-top flx-rw">
-        <h1 className="flx-rw flx-start flx-start">{activeHeader}</h1>
-        <button
-          id="close-modal"
-          className="flx-rw flx-end"
-          onClick={() => {
-            props.modalStatus(null);
-          }}
-        >
-          X
-        </button>
-      </div>
-      <div className="modal-body flx-rw flx flx-center">
-        <ul className="flx-col">
-          {arr.map((arrItem, i) => {
-            return (
-              <div key={i}>
-                <p>{arrItem.Name}</p>
-                <ProgressBar className="modal-bar" score={arrItem.progress} />
-              </div>
-            );
-          })}
-        </ul>
+      <div className={`${modalType}-modal-body`}>
+        {modalType === "project" ? (
+          <>
+            <img src={projObj.siteLarge} alt="idk" />
+            <div className="project-modal-text-container">
+              <label>Contributions</label>
+              <ul className="contribution-list">
+                {projObj.contributions.map((contribution, i) => {
+                  return <li key={i}>{contribution}</li>;
+                })}
+              </ul>
+              <br></br>
+              <label>Tech Used</label>
+              <ul className="proj-tech-section flx-rw flx-wrp">
+                {projObj.techStack.map((tech, i) => {
+                  return <li key={i}> {tech} </li>;
+                })}
+              </ul>
+            </div>
+            <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
+              <button
+                type="submit"
+                id="contact-chat-button"
+                className="contact-button"
+              >
+                <p>Visit Site</p>
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <ul className="flx-col">
+              {arr.map((arrItem, i) => {
+                return (
+                  <div key={i} className="skill-progress-container">
+                    <p>{arrItem.Name}</p>
+                    <ProgressBar
+                      className="modal-bar"
+                      score={arrItem.progress}
+                    />
+                  </div>
+                );
+              })}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );

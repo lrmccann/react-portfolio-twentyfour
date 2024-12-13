@@ -11,8 +11,8 @@ import {
 } from "../Assets/utilities";
 import Modal from "./Modal";
 import ProjectCard from "./ProjectCard";
-import { DropDownMenu } from "./DropDownMenu";
 import { GlobalContext } from "../Assets/utilities";
+import ContactForm from './ContactForm';
 // import ProgressBar from "./ProgressBar";
 
 export default function Section(props) {
@@ -22,13 +22,18 @@ export default function Section(props) {
     { "Additional Tech": toolsArr },
   ];
 
-  const selectOptions = [
-    { optionValue: "", textValue: "" },
-    { optionValue: "job", textValue: "Job Inquiry" },
-    { optionValue: "project", textValue: "Project Inquiry" },
-    { optionValue: "chat", textValue: "Chat" },
-    { optionValue: "other", textValue: "Other" },
-  ];
+  const roleOptions = [
+    "Front-End Developer",
+    "UI Designer",
+    "SEO Specialist",
+    "Team Lead",
+    "Back-End Engineer",
+    "CMS Expert",
+    "Web Master",
+    "Dog Dad"
+  ]
+
+
 
   const { sectionName, handleContactNav } = props;
   const {userDevice} = useContext(GlobalContext);
@@ -39,40 +44,39 @@ export default function Section(props) {
   const [activeHeader, setActiveHeader] = useState();
   const [activeProject, setActiveProject] = useState({});
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [reason, setReason] = useState();
-  const [message, setMessage] = useState();
+
+
+  const mainContainerEl = document.getElementById('main-page');
 
   const openSkillModal = (arr, header) => {
     if (arr && arr.length !== 0 && header) {
       setActiveArr(arr);
       setActiveHeader(header);
       setSkillModalOpen(true);
+      mainContainerEl.classList.add("modal-open"); 
     } else {
       setSkillModalOpen(false);
+      mainContainerEl.classList.remove("modal-open"); 
     }
   };
 
   const openProjectModal = (projectObj) => {
     if (projectObj === null) {
       setProjectModalOpen(false);
+      mainContainerEl.classList.remove("modal-open"); 
     } else {
       if (Object.keys(projectObj)) {
         setActiveProject(projectObj);
         setProjectModalOpen(true);
+        mainContainerEl.classList.add("modal-open"); 
       }
     }
   };
-  const handleContactData = () => {
-    const formData = {
-      Name: name,
-      Email: email,
-      Reason: reason,
-      Message: message,
-    };
-    console.log(formData);
-  };
+
+
+  const socialNav = (socialUrl) => {
+
+  }
 
   if (sectionName === "home") {
     return (
@@ -80,16 +84,19 @@ export default function Section(props) {
         id={props.sectionName}
         className="section-block flx-col flx-align-center"
       >
+        <h3>Hi, I'm</h3>
+        <h1>Logan McCann</h1>
         <LiveTypeHero
-          text="Hi, I'm Logan McCann. A Front-End Developer With 6+ Years of Experience Building Scalable, User-Friendly Applications. Learn More About My Experience And Proficiencies By Exploring My Portfolio Or Speaking With My ChatBot"
-          speed={100}
+        text={roleOptions}
+          // text="Hi, I'm Logan McCann. A Front-End Developer With 6+ Years of Experience Building Scalable, User-Friendly Applications. Learn More About My Experience And Proficiencies By Exploring My Portfolio Or Speaking With My ChatBot"
+          speed={200}
         />
         {userDevice === "mobile" ? (
           <div className="hero-btn-cont flx-col flx-align-center flx-spc-evenly">
             <button id="hero-chat-button" className="hero-button">
               <p>AI Chatbot</p>
             </button>
-            <button onClick={(e) => {
+            <button onClick={() => {
               const target = document.getElementById("contact");
               handleContactNav(5);
               target.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -111,6 +118,23 @@ export default function Section(props) {
         className="section-block flx-col flx-align-center flx-spc-evenly"
       >
         <img src={globalIcons.loganIcon} alt="" />
+        <div className="social-container">
+        <button
+          onClick={() => {socialNav("https://www.linkedin.com/in/logan-mccann/")}}
+        >
+          <img src={globalIcons.linkedinIcon} alt="Blue LinkedIn Icon Pointing To Logan McCann's LinkedIn Account" />
+        </button>
+        <button
+            onClick={() => {socialNav("https://github.com/lrmccann")}}
+        >
+          <img src={globalIcons.githubIcon} alt="Blue Github Icon Pointing To Logan McCann's Github Account" />
+        </button>
+        <button
+          onClick={() => {socialNav("https://github.com/lrmccann")}}
+        >
+          <img src={globalIcons.blueskyIcon} alt="Blue BlueSky Icon Pointing To Logan McCann's BlueSky Account" />
+        </button>
+      </div>
         <p>
           Highly adaptable and detail-oriented web developer with extensive
           background in various coding languages, building responsive websites
@@ -118,11 +142,6 @@ export default function Section(props) {
           JSX and CSS. Poised to contribute creative problem solving techniques,
           excellent interpersonal skills, and time management.
       </p>
-      <div>
-        <button>Github</button>
-        <button>LinkedIn</button>
-        <button>BlueSky</button>
-      </div>
       </div>
     );
   } else if (sectionName === "skills") {
@@ -146,6 +165,7 @@ export default function Section(props) {
                 }}
               >
                 {heading} &#8250;
+                {/* <div className="line"></div> */}
               </h1>
               <div className="mobile-icon-row scroller" id={`scroller-${i}`}>
                 <AnimatedRow key={i} eachArr={obj[heading]} />
@@ -187,14 +207,17 @@ export default function Section(props) {
             </div>
           );
         })}
-        <button>
-          <a
-            href={myResumePDF}
-            download={myResumePDF}
-          >
-            Download Full Resume
-          </a>
-        </button>
+          <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
+            <button
+              id="contact-chat-button"
+              className="contact-button"
+            >
+                <a 
+                  href={myResumePDF}
+                  download={myResumePDF}
+                >Download Full Resume</a>
+            </button>
+          </div>
       </div>
     );
   } else if (sectionName === "projects") {
@@ -230,49 +253,7 @@ export default function Section(props) {
   } else if (sectionName === "contact") {
     return (
       <div id={sectionName} className="section-block">
-        <form className="contact-form flx-col flx-spc-evenly">
-          <label className="flx-col">
-            <input
-              name="name"
-              placeholder={"Name..."}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></input>
-          </label>
-          <label className="flx-col">
-            <input
-              name="email"
-              placeholder={"Email..."}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></input>
-          </label>
-          <DropDownMenu
-            items={selectOptions}
-            buttonLabel={"Interested in..."}
-            returnSelection={(optionText) => {
-              setReason(optionText);
-            }}
-          />
-          <label className="flx-col">
-            <textarea
-              name="message"
-              placeholder="Message..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </label>
-        </form>
-        <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
-          <button
-            onClick={handleContactData}
-            type="submit"
-            id="contact-chat-button"
-            className="contact-button"
-          >
-            <p>Submit</p>
-          </button>
-        </div>
+        <ContactForm  />
       </div>
     );
   }

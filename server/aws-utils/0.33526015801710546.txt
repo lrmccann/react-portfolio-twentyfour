@@ -1,0 +1,1 @@
+{"Name":"Logan McCann","Email":"loganrmccann@gmail.com","Reason":"Project Inquiry","Message":"I wanted to reach out about a front-end project I've been working on related to a new Facebook alternative. Is this something you'd be interested in?"}

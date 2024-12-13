@@ -25,25 +25,38 @@ export const DropDownMenu = (props) => {
     }
   };
 
+  const handleMouseOver = (e) => {
+    document.getElementById(e.target.id).classList.add("active-option");
+  }
+  const handleMouseExit = (e) => {
+    document.getElementById(e.target.id).classList.remove("active-option");
+  }
+
   return (
-    <div className="contact-select">
-      <button type="button" className="flx-rw flx-start" onClick={handleToggle}>
+    <div className={`contact-select ${open ? "contact-select-open" : "contact-select-closed"}`}>
+      <button type="button" className="flx-rw flx-align-center flx-spc-btwn" onClick={handleToggle}>
         {buttonLabel}
         <span>{open ? <h1>&#9650;</h1> : <h1>&#9660;</h1>}</span>
       </button>
       {open && (
         <div
-        // className=""
+        className={`${open ? "contact-select-div" : ""}`}
         >
           <ul
-          //   className=""
           >
             {items.map((item, index) => {
               return (
                 <li
                   key={index}
-                  id={index}
-                  // className=""
+                  id={`select-option-${index}`}
+                  onMouseOver={((e) => {
+                    e.preventDefault();
+                    handleMouseOver(e);
+                  })}
+                  onMouseLeave={((e) => {
+                    e.preventDefault();
+                    handleMouseExit(e)
+                  })}
                   onClick={(e) => handleSelect(e)}
                 >
                   {item.textValue}

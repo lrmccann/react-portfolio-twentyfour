@@ -28,7 +28,6 @@ function hideAddressBar(bPad) {
 		if((window.innerWidth - 1) !== document.documentElement.clientWidth) return;
 
 	}
-  hideAddressBar();
 
 	setTimeout(function() {
 		// Already scrolled?
@@ -44,6 +43,7 @@ function hideAddressBar(bPad) {
 	}, 1000);
 
 }
+hideAddressBar();
 
 useEffect(() => {
   window.addEventListener("resize", watchScreenSize);
