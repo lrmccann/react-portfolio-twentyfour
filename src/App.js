@@ -45,7 +45,12 @@ function hideAddressBar(bPad) {
 }
 hideAddressBar();
 
+const themeChanged = () => {
+  currentThemeMode === "light" ? setCurrentThemeMode("dark") : setCurrentThemeMode("light");
+}
+
 useEffect(() => {
+  console.log(currentThemeMode, "theme mode in app js")
   window.addEventListener("resize", watchScreenSize);
   emitter.on("screen-width-data", (data) => {
         if(screenWidth !== data.width){
@@ -65,7 +70,7 @@ useEffect(() => {
     return () => {
       window.removeEventListener("resize", watchScreenSize);
     }
-}, [lowerCaseSectionsArr, screenWidth, setScreenWidth, tabLocation])
+}, [lowerCaseSectionsArr, screenWidth, setScreenWidth, tabLocation, currentThemeMode])
 
 function updateURL(newURL) {
   if (window.history && window.history.pushState) {
@@ -99,10 +104,13 @@ function updateURL(newURL) {
       <div className="App">
         <Header
         tabLocation={tabLocation}
+        currentThemeMode={currentThemeMode}
+        themeChanged={themeChanged}
         handleMenuNavigation={(activeTab) => {setTabLocation(activeTab)}}
         />
         <Page
           tabLocation={tabLocation}
+          currentThemeMode={currentThemeMode}
           handleContactNav={(activeTab) => {setTabLocation(activeTab)}}
         />
       </div>

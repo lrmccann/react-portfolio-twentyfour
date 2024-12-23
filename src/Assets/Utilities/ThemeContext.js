@@ -30,7 +30,7 @@ export const GlobalContextProvider = ({children}) => {
     const lowerCaseSectionsArr = ["home", "about", "skills", "experience", "projects", "contact"];
 
     return (
-        <GlobalContext.Provider value={{screenWidth, setScreenWidth, userDevice, currentUrl, upperCaseSectionsArr, lowerCaseSectionsArr}}>
+        <GlobalContext.Provider value={{screenWidth, setScreenWidth, userDevice, currentUrl, upperCaseSectionsArr, lowerCaseSectionsArr, themeMode}}>
             {children}
         </GlobalContext.Provider>
     )

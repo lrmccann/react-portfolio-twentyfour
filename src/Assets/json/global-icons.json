@@ -9,5 +9,7 @@
     "githubIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/github-icon.png",
     "blueskyIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/bluesky-icon.png",
     "linkedinIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/linked-in-icon.png",
-    "checkMarkIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/check-mark-confirmation-icon.png"
+    "checkMarkIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/check-mark-confirmation-icon.png",
+    "lightModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png",
+    "darkModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-dark-icon.png"
 }

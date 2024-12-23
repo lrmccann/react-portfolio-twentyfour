@@ -2,27 +2,35 @@ import { useContext, useEffect, useState } from "react";
 import { globalIcons } from "../Assets/utilities";
 import { GlobalContext } from "../Assets/Utilities/ThemeContext";
 
-
 const Header = (props) => {
-  const {userDevice, screenWidth, upperCaseSectionsArr, lowerCaseSectionsArr} = useContext(GlobalContext);
+  const {
+    userDevice,
+    screenWidth,
+    upperCaseSectionsArr,
+    lowerCaseSectionsArr,
+    themeMode
+  } = useContext(GlobalContext);
 
-  const { tabLocation, handleMenuNavigation } = props;
+  const { tabLocation, handleMenuNavigation, currentThemeMode, themeChanged } = props;
 
   const [navIcon, setNavIcon] = useState(globalIcons.hamburgerIconBlack);
   const [lastLocation, setLastLocation] = useState(tabLocation);
   const [navOpen, setNavOpen] = useState(false);
+  // const [themeIcon, setThemeIcon] = useState();
 
   const headerOptions = {
     logoClass: userDevice === "mobile" ? "icon-mobile" : "icon-full",
-    headerLogo: userDevice === "mobile" ? globalIcons.lrmLogoMobile : globalIcons.lrmLogoLarge
-  }
+    headerLogo:
+      userDevice === "mobile"
+        ? globalIcons.lrmLogoMobile
+        : globalIcons.lrmLogoLarge,
+  };
 
   useEffect(() => {
-    if(tabLocation !== lastLocation){
+    if (tabLocation !== lastLocation) {
       setLastLocation(tabLocation);
     }
-  }, [tabLocation])
-
+  }, [lastLocation, tabLocation]);
 
   const openNav = (e) => {
     e.preventDefault();
@@ -55,17 +63,25 @@ const Header = (props) => {
         src={`${headerOptions.headerLogo}`}
         alt="Custom Icon With Logan R McCann Curved At The Top, The Initials LRM In The Center, And Developer Centered At The Bottom"
       />
-      {userDevice !== 'desktop' ? (
-        <div className={`mobile-nav-container flx-rw 
+      {userDevice !== "desktop" ? (
+        <div
+          className={`mobile-nav-container flx-rw 
         ${tabLocation === 0 ? "flx-end" : "flx-btwn"}`}
         >
-          {tabLocation !== 0 && (
+          <div className="mobile-chat-bar">
+            <button 
+            onClick={() => {themeChanged()}}
+            className="flx-col flx-center flx-align-center">
+              <img src={`${currentThemeMode === "light" ? globalIcons.lightModeMoonIcon : globalIcons.darkModeMoonIcon }`} alt="" />
+            </button>
+          </div>
+          {/* {tabLocation !== 0 && (
             <div className="mobile-chat-bar">
               <button className="flx-col flx-center flx-align-center">
                 <img src={`${globalIcons.chatbotIcon}`} alt="" />
               </button>
             </div>
-          )}
+          )} */}
           <button
             onClick={(e) => {
               openNav(e);

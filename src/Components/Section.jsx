@@ -118,6 +118,13 @@ export default function Section(props) {
         className="section-block flx-col flx-align-center flx-spc-evenly"
       >
         <img src={globalIcons.loganIcon} alt="" />
+        <p>
+          Highly adaptable and detail-oriented web developer with extensive
+          background in various coding languages, building responsive websites
+          from front to back, and developing mobile applications. Specializes in
+          JSX and CSS. Poised to contribute creative problem solving techniques,
+          excellent interpersonal skills, and time management.
+      </p>
         <div className="social-container">
         <button
           onClick={() => {socialNav("https://www.linkedin.com/in/logan-mccann/")}}
@@ -135,13 +142,6 @@ export default function Section(props) {
           <img src={globalIcons.blueskyIcon} alt="Blue BlueSky Icon Pointing To Logan McCann's BlueSky Account" />
         </button>
       </div>
-        <p>
-          Highly adaptable and detail-oriented web developer with extensive
-          background in various coding languages, building responsive websites
-          from front to back, and developing mobile applications. Specializes in
-          JSX and CSS. Poised to contribute creative problem solving techniques,
-          excellent interpersonal skills, and time management.
-      </p>
       </div>
     );
   } else if (sectionName === "skills") {
