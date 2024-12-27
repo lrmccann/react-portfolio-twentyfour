@@ -1,19 +1,20 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Section from "../Components/Section";
 import { GlobalContext } from "../Assets/utilities";
-// import chatBotIcon from '../Assets/Images/chatbot-icon.png';
+import {animateProjectRows} from '../Assets/utilities';
 
 
 const Page = (props) => {
 
-    const {tabLocation, handleContactNav} = props;
-      const {lowerCaseSectionsArr} = useContext(GlobalContext);
-      
-    useEffect(() => {
+    const {tabLocation, handleContactNav, currentThemeMode} = props;
+    const {lowerCaseSectionsArr} = useContext(GlobalContext);
 
-    }, [])
+    useEffect(() => {
+            animateProjectRows("start");
+    }, []); 
+    
     return(
-        <div className="main-container" id="main-page">
+        <div className={`main-container ${currentThemeMode === "light" ? "light-page" : "dark-page"}`} id="main-page">
             {lowerCaseSectionsArr.map((section, i) => {
                 return (
                 <Section 
@@ -21,7 +22,6 @@ const Page = (props) => {
                 key={i} 
                 sectionName={section} 
                 handleContactNav={handleContactNav}
-                // currentI={i} 
                 />
                 )
              })}

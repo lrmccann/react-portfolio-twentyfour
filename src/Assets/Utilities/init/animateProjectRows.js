@@ -1,8 +1,8 @@
-const animateProjectRows = () => {
+const animateProjectRows = (cond) => {
+  // if(cond === "start"){
     const scrollers = document.querySelectorAll('.scroller');
     scrollers.forEach((scroller) => {
       // add data-animated="true" to every `.scroller` on the page
-      // console.log(scroller.id, 'scroller id')
       if (scroller.id === 'scroller-1') {
         scroller.setAttribute('data-direction', 'left');
       } else {
@@ -19,10 +19,15 @@ const animateProjectRows = () => {
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
         duplicatedItem.setAttribute('aria-hidden', true);
-        // console.log(duplicatedItem, 'dup item')
         scrollerInner.appendChild(duplicatedItem);
       })
     })
+  // } else if(cond === "reset"){
+  //   const scrollers = document.querySelectorAll('.scroller');
+  //   scrollers.forEach((scroller) => {
+  //     scroller.setAttribute('data-animated', false);
+  //   });
+  // }
   }
   
   export default animateProjectRows;

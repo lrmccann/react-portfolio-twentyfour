@@ -140,15 +140,26 @@ body{
   }
 
   /* App.js/Header */
+  #header-light{
+    background-color: #51593e;
+  }
+  #header-dark{
+    background-color: #7F886A;
+  }
   .header {
     height: 8%;
     width: 100%;
     position: fixed;
     z-index: 100;
-    background-color: #7F886A;
     margin: 0 auto;
   }
 
+  .light-page{
+    background-color: white;
+  }
+  .dark-page{
+    background-color: gray;
+  }
   #main-page{
     height: 100%;
     width: 100%;
@@ -156,7 +167,7 @@ body{
     overflow-y: auto;
     overscroll-behavior-y: contain;
     scroll-snap-type: y mandatory;
-    background-color: #f1f0f1;
+    /* background-color: #f1f0f1; */
   }
 
   @media only screen and (max-width: 780px) {
@@ -427,7 +438,7 @@ body{
   /* increase negative value to increase speed icons move */
   @keyframes scroll {
     to {
-      transform: translate(calc(-30%));
+      transform: translate(calc(-90%));
     }
   }
 
@@ -435,7 +446,7 @@ body{
     width: max-content;
     flex-wrap: nowrap;
     /* how long it lasts and more seconds moves icons slower */
-    animation: scroll var(--_animation-duration, 150s) var(--_animation-direction, forwards) linear
+    animation: scroll var(--_animation-duration, 80s) var(--_animation-direction, forwards) linear
       infinite;
   }
 

@@ -13,7 +13,6 @@ import Modal from "./Modal";
 import ProjectCard from "./ProjectCard";
 import { GlobalContext } from "../Assets/utilities";
 import ContactForm from './ContactForm';
-// import ProgressBar from "./ProgressBar";
 
 export default function Section(props) {
   const iconSections = [
@@ -31,9 +30,7 @@ export default function Section(props) {
     "CMS Expert",
     "Web Master",
     "Dog Dad"
-  ]
-
-
+  ];
 
   const { sectionName, handleContactNav } = props;
   const {userDevice} = useContext(GlobalContext);

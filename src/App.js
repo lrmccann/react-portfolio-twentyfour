@@ -12,39 +12,6 @@ export default function App() {
   const [tabLocation, setTabLocation] = useState(0);
   const [currentThemeMode, setCurrentThemeMode] = useState(themeMode);
 
-let bodyTag = document.getElementsByTagName('body')[0];
-let screen = window.screen;
-//---------------------------------------------
-function hideAddressBar(bPad) {
-	// Big screen. Fixed chrome likely.
-	if(screen.width > 980 || screen.height > 980) return;
-
-	// Standalone (full screen webapp) mode
-	if(window.navigator.standalone === true) return;
-
-	// Page zoom or vertical scrollbars
-	if(window.innerWidth !== document.documentElement.clientWidth) {
-		// Sometimes one pixel too much. Compensate.
-		if((window.innerWidth - 1) !== document.documentElement.clientWidth) return;
-
-	}
-
-	setTimeout(function() {
-		// Already scrolled?
-		if(window.pageYOffset !== 0) return;
-
-		// Perform autoscroll
-		window.scrollTo(0, 1);
-
-		// Reset body height and scroll
-		if(bodyTag !== undefined) bodyTag.style.height = window.innerHeight + 'px';
-		window.scrollTo(0, 0);
-
-	}, 1000);
-
-}
-hideAddressBar();
-
 const themeChanged = () => {
   currentThemeMode === "light" ? setCurrentThemeMode("dark") : setCurrentThemeMode("light");
 }
@@ -81,25 +48,6 @@ function updateURL(newURL) {
     }
   }
 }
-
-// const getMetaData = async (fetchURL) => {
-//   console.log(fetchURL, "endpoint to fetch");
-//   let endpoint = fetchURL;
-//   if(fetchURL === "/home"){
-//     endpoint = "/";
-//   }else{
-//     endpoint = fetchURL
-//   }
-//     try{
-//       const response = await axios.get(`http://192.168.1.115:3000${endpoint}`);
-//       // const idk = response.data;
-//       console.log(response.data, "response from test route");
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-// getMetaData();
-
   return (
       <div className="App">
         <Header

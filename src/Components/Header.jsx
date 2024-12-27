@@ -57,7 +57,7 @@ const Header = (props) => {
   };
 
   return (
-    <main className="header flx-rw flx-spc-btwn">
+    <main id={`${currentThemeMode === "light" ? "header-light" : "header-dark"}`} className='header flx-rw flx-spc-btwn'>
       <img
         className={`${headerOptions.logoClass}`}
         src={`${headerOptions.headerLogo}`}

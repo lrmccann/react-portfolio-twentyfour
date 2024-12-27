@@ -9,10 +9,9 @@
         "alt": "Webex by Cisco Homepage With Various User Interface Elements",
         "company": "Webex by Cisco",
         "contributions": [
-            "Assisted Jr. developers with finding solutions to complex frontend tasks like running email campaigns.",
-            "Assisted Jr. developers with finding solutions to complex frontend tasks like running email campaigns.",
-            "Assisted Jr. developers with finding solutions to complex frontend tasks like running email campaigns.",
-            "Assisted Jr. developers with finding solutions to complex frontend tasks like running email campaigns."
+            "Worked directly with stakeholders to establish project scope, design principles, realistic milestones, and completion date",
+            "Designed and integrated internal and 3rd party promotional material, resulting in an 18% increase in conversions, for brands like Apple, Google, NASA, and Microsoft",
+            "Leveraged site engagement metrics, customer insights, and sales data to identify trends and elevate content based on KPIs and campaign ROI"
         ],
         "techStack": [
             "Akamai",
@@ -39,7 +38,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/webex-blog-lg.png",
         "alt": "Webex by Cisco Blog Homepage With Various User Interface Elements And SEO Metadata",
         "company": "Webex by Cisco",
-        "contributions": [],
+        "contributions": [
+            "Drove absorption of several partner sites and a complete redesign of the current site, including architecture, taxonomy, content types, etc",
+            "Lead team of developers across 5+ websites in creating new pages and features using technologies like Javascript, Typescript, Tailwind, and React",
+            "Partner with cross-functional teams and stakeholders to collect design requirements/relevant data, present milestones, and ensure project completion"
+        ],
         "techStack": [
             "WordPress",
             "PHP",
@@ -65,7 +68,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/socio-events-lg.png",
         "alt": "Socio Events Platform Homepage Displaying Features of the Socio Application",
         "company": "Webex by Cisco",
-        "contributions": [],
+        "contributions": [
+            "Participated in daily scrum to track sprint progress, align on deliverables, and discuss potential blockers.",
+            "Refactored existing code base to improve the performance, accessibility, and interface of 5+ websites.",
+            "Created developer onboarding documentation, reducing the time needed to begin development."
+        ],
         "techStack": [
             "WordPress",
             "PHP",
@@ -91,7 +98,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/adorama-lg.png",
         "alt": "Adorama Homepage With Camera Equipment, AR/VR Headsets, and Other High-End Technology",
         "company": "Adorama",
-        "contributions": [],
+        "contributions": [
+            "Enhanced organic traffic by 25% through data-driven SEO strategies, link equity preservation, and responsive design",
+            "Optimized code to reduce page load time by 40%, implemented lazy loading, and automated dead code elimination",
+            "Lowered annual plugin and hosting costs by 15% with database optimization and custom-coded solutions for expensive plugins"
+        ],
         "techStack": [
             "Angular",
             "Javascript",
@@ -115,7 +126,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/scuba-lg.png",
         "alt": "Scuba Homepage With Scuba Equipment For Sale And Various E-Commerce UX Elements",
         "company": "Adorama",
-        "contributions": [],
+        "contributions": [
+            "Updated high-performing content and implemented a robust linking strategy to enhance user engagement",
+            "Collaborated with senior developers to implement accessibility standards, resulting in a 20% increase in website accessibility score.",
+            "Utilized BrowserStack and Selenium for automated cross-browser testing, ensuring consistent performance and boosting developer productivity"
+        ],
         "techStack": [
             "Angular",
             "Javascript",
@@ -139,7 +154,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/sunnysports-lg.png",
         "alt": "Sunny Sports Homepage Displaying High-End Camping Equipment, Featuring WordPress Commerce",
         "company": "Adorama",
-        "contributions": [],
+        "contributions": [
+            "Created basic wireframe/UI mockup clearly illustrating the look and feel of the site",
+            "Conducted regular maintenance on Shopify Theme, resolving network errors and troubleshooting widgets",
+            "Established multi-tabled MySQL database to store posts, members, listings, etc"
+        ],
         "techStack": [
             "Angular",
             "Javascript",
@@ -163,7 +182,11 @@
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/almond-cow-lg.png",
         "alt": "Almond Cow Homepage Displaying The Plant-Based Milk Maker On Shopify Plus",
         "company": "Almond Cow",
-        "contributions": [],
+        "contributions": [
+            "Collaborated with CTO and design lead to migrate from Shopify to a headless CMS using Contentful, React, and Node.js",
+            "Designed custom email templates for Klayvio campaigns, boosting user engagement by 13%",
+            "Developed a cost-effective alternative to the Octane intake form, reducing monthly spending"
+        ],
         "techStack": [
             "Shopify",
             "Shopify Plus",
@@ -188,7 +211,11 @@
         "siteMedium": "Webex CPaaS Homepage, Displaying A Centralized Cloud Communications Platform For Smarter Interactions With Customer",
         "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/cpaas-solutions-lg.png",
         "company": "Webex",
-        "contributions": [],
+        "contributions": [
+            "Supported APJC & EMEAR team members with maintaining localized versions of each site, ensuring uniformity across global sites.",
+            "Maintain project repositories, review developer code, promote coding standards, and support continuous integration.",
+            "Fixed bugs from existing website and implemented enhancements that significantly improved web speed and functionality"
+        ],
         "techStack": [
             "Leadoo",
             "GTM",
