@@ -1,4 +1,4 @@
-const animateProjectRows = (cond) => {
+const animateProjectRows = () => {
   // if(cond === "start"){
     const scrollers = document.querySelectorAll('.scroller');
     scrollers.forEach((scroller) => {
@@ -22,12 +22,6 @@ const animateProjectRows = (cond) => {
         scrollerInner.appendChild(duplicatedItem);
       })
     })
-  // } else if(cond === "reset"){
-  //   const scrollers = document.querySelectorAll('.scroller');
-  //   scrollers.forEach((scroller) => {
-  //     scroller.setAttribute('data-animated', false);
-  //   });
-  // }
   }
   
   export default animateProjectRows;

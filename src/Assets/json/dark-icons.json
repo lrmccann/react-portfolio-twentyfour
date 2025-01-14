@@ -1,0 +1,19 @@
+[
+
+
+    {
+        "Name": "Adobe Creative Suite",
+        "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-creative-suite-dark-icon.png",
+        "progress": 100
+    },
+    {
+        "Name": "Next.js",
+        "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nextjs-dark-icon.png",
+        "progress": 100
+    },
+    {
+        "Name": "Apollo.js",
+        "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/apollojs-dark-icon.png",
+        "progress": 100
+    }
+]

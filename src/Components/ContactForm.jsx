@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { DropDownMenu } from "./DropDownMenu";
-import {sendFormData, globalIcons} from '../Assets/utilities';
+import { sendFormData, globalIcons } from "../Assets/utilities";
 
-const ContactForm = () => {
+const ContactForm = (props) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [reason, setReason] = useState();
   const [message, setMessage] = useState();
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const { currentThemeMode } = props;
 
   const selectOptions = [
     { optionValue: "", textValue: "" },
@@ -18,40 +20,43 @@ const ContactForm = () => {
   ];
 
   const handleContactData = async () => {
-    // let date = new Date();
     const formData = {
       Name: name,
       Email: email,
       Reason: reason,
       Message: message,
-    //   Data: date.toISOString()
     };
     formSubmitted ? setFormSubmitted(false) : setFormSubmitted(true);
-    if(formSubmitted){
-        setName(''); setEmail(''); setReason(''); setReason(''); setMessage('');
-    }else{
-        await sendFormData(formData);
-        console.log("after sen form data")
+    if (formSubmitted) {
+      setName("");
+      setEmail("");
+      setReason("");
+      setReason("");
+      setMessage("");
+    } else {
+      await sendFormData(formData);
+      // console.log("after send form data");
     }
   };
-
   return (
     <>
       {!formSubmitted ? (
         <>
-          <form className="contact-form flx-col flx-spc-evenly">
-            <label className="flx-col">
+          <form className="contact-form flex flex-col justify-evenly">
+            <label className="flex flex-col">
               <input
                 name="name"
                 placeholder={"Name..."}
+                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
             </label>
-            <label className="flx-col">
+            <label className="flex flex-col">
               <input
                 name="email"
                 placeholder={"Email..."}
+                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
@@ -63,44 +68,45 @@ const ContactForm = () => {
                 setReason(optionText);
               }}
             />
-            <label className="flx-col">
+            <label className="flex flex-col">
               <textarea
                 name="message"
                 placeholder="Message..."
+                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
             </label>
           </form>
-          <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
+          <div className="contact-btn-cont flex flex-col items-center justify-evenly">
             <button
               onClick={handleContactData}
               type="submit"
               id="contact-chat-button"
-              className="contact-button"
+              className="contact-button bg-custom-button-bg-primary"
             >
-              <p>Submit</p>
+              <p className="text-custom-text">Submit</p>
             </button>
           </div>
         </>
-      ): (
-        <div className="contact-confirmation-container flx-col flx-align-center flx-center">
-            {/* <span> */}
-            <p>Message Received</p>
-            <img src={`${globalIcons.checkMarkIcon}`} alt="Green Checkmark Confirmation Icon"/>
-            {/* </span> */}
-            <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
+      ) : (
+        <div className="contact-confirmation-container flex flex-col items-center justify-center">
+          <p>Message Received</p>
+          <img
+            src={`${globalIcons.checkMarkIcon}`}
+            alt="Green Checkmark Confirmation Icon"
+          />
+          <div className="contact-btn-cont flex flex-col items-center justify-evenly">
             <button
               id="contact-chat-button"
               className="contact-button"
               onClick={handleContactData}
             >
-                <p>Send Another?</p>
+              <p>Send Another?</p>
             </button>
           </div>
         </div>
-      )
-    }
+      )}
     </>
   );
 };

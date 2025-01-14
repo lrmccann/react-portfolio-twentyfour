@@ -10,6 +10,8 @@ import backEndTechArr from './json/backend-tech.json';
 import toolsArr from './json/tools.json';
 import resumeText from './json/resume.json';
 import projectArr from './json/projects.json';
+import darkIconArr from './json/dark-icons.json';
+import navigationIcons from './json/navigation-icons.json';
 // pdfs
 import myResumePDF from './PDFs/Logan-McCann-2024-Resume.pdf';
 
@@ -22,8 +24,10 @@ export {
     frontEndTechArr,
     backEndTechArr,
     toolsArr,
+    darkIconArr,
     resumeText,
     projectArr,
     myResumePDF,
-    sendFormData
+    sendFormData,
+    navigationIcons
 }

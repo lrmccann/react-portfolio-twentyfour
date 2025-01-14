@@ -1,15 +1,22 @@
 {
     "chatbotIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/chatbot-icon.png",
     "closeIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/close-icon.png",
+    "darkModeCloseIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/dark-mode-close-icon.png",
     "hamburgerIconBlack": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/hamburger-icon-black.webp",
+    "darkHamburgerIconBlack": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/dark-mode-hamburger-icon-final.png",
     "loganIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon.png",
+    "loganIconTwo": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/me-matrix-port-image.png",
     "lrmResumePdf": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/Logan-McCann-2024-Resume.pdf",
     "lrmLogoLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/lrm-logo-large.png",
     "lrmLogoMobile": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/lrm-logo-mobile.png",
+    "lrmLogoMobileDark": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/new-mobile-logo-try.png",
     "githubIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/github-icon.png",
+    "githubIconDark": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/icon-github-gray.png",
     "blueskyIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/bluesky-icon.png",
+    "blueSkyIconDark": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/blue-sky-dark-icon.png",
     "linkedinIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/linked-in-icon.png",
+    "linkedinIconDark": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/linkedin-darker-gray.png",
     "checkMarkIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/check-mark-confirmation-icon.png",
-    "lightModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png",
-    "darkModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-dark-icon.png"
+    "lightModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sun-theme-icon.png",
+    "darkModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-theme-icon.png"
 }

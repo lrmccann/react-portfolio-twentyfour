@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import ProgressBar, {
   Blue,
   Green,
@@ -10,61 +11,80 @@ import ProgressBar, {
 const Modal = (props) => {
   const { activeHeader, arr, projObj, modalType, modalStatus } = props;
 
+  const [finalProjContArr, setFinalProjContArr] = useState([]);
+
+  useEffect(() => {
+    const tempProjContArr = [];
+    if (modalType === "project") {
+      projObj.techStack.map((tech, i) => {
+        if (i <= 9) {
+          return tempProjContArr.push(tech + " •");
+        } else {
+          return tempProjContArr.push(tech);
+        }
+      });
+      setFinalProjContArr(tempProjContArr);
+    }
+  }, [modalType, projObj]);
+
   return (
-    <div className="modal-container">
-      <div className="modal-top flx-rw flx-spc-btwn flx-align-center">
-          {modalType === "project" ? (
-            <h1>
-              {projObj.siteName} | {projObj.company}
-            </h1>
-          ) : (
-            <h1 className="flx-rw flx-start flx-start">{activeHeader}</h1>
-          )}
+    <div className="modal-container bg-custom-primary-background">
+      <div className="modal-top flex flex-row justify-between items-center">
+        {modalType === "project" ? (
+          <h1 className="text-custom-text">
+            {projObj.siteName} | {projObj.company}
+          </h1>
+        ) : (
+          <h1 className="flex flex-row justify-start text-custom-text">
+            {activeHeader}
+          </h1>
+        )}
         <button
           id="close-modal"
           onClick={() => {
             modalStatus(null);
           }}
         >
-          <h1>X</h1>
+          <h1 className="text-custom-text">X</h1>
         </button>
       </div>
       <div className={`${modalType}-modal-body`}>
         {modalType === "project" ? (
           <>
             <img src={projObj.siteLarge} alt="idk" />
-            <div className="project-modal-text-container">
-              <label>Contributions</label>
-              <ul className="contribution-list">
+            <span>
+              <label className="text-custom-text">Contributions</label>
+              <ul className="contribution-list text-custom-text">
                 {projObj.contributions.map((contribution, i) => {
                   return <li key={i}>{contribution}</li>;
                 })}
               </ul>
-              <br></br>
-              <label>Tech Used</label>
-              <ul className="proj-tech-section flx-rw flx-wrp">
-                {projObj.techStack.map((tech, i) => {
+            </span>
+            <span>
+              <label className="text-custom-text">Tech Used</label>
+              <ul className="proj-tech-section flex flex-row flex-wrap text-custom-text">
+                {finalProjContArr.map((tech, i) => {
                   return <li key={i}> {tech} </li>;
                 })}
               </ul>
-            </div>
-            <div className="contact-btn-cont flx-col flx-align-center flx-spc-evenly">
+            </span>
+            <div className="contact-btn-cont flex flex-col items-center justify-evenly">
               <button
                 type="submit"
                 id="contact-chat-button"
-                className="contact-button"
+                className="contact-button bg-custom-button-bg-primary"
               >
-                <p>Visit Site</p>
+                <p className="text-custom-text">Visit Site</p>
               </button>
             </div>
           </>
         ) : (
           <>
-            <ul className="flx-col">
+            <ul className="flex flex-col text-custom-text">
               {arr.map((arrItem, i) => {
                 return (
                   <div key={i} className="skill-progress-container">
-                    <p>{arrItem.Name}</p>
+                    <p className="text-custom-text">{arrItem.Name}</p>
                     <ProgressBar
                       className="modal-bar"
                       score={arrItem.progress}

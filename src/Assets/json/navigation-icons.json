@@ -1,0 +1,14 @@
+{
+    "homeIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/home-light-theme-icon.png",
+    "homeIconDarkTheme": "",
+    "aboutIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/about-light-theme-icon.png",
+    "aboutIconDarkTheme": "",
+    "skillIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/skills-light-theme-icon.png",
+    "skillIconDarkTheme": "",
+    "experienceIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/experience-light-theme-icon.png",
+    "experienceIconDarkTheme": "",
+    "projectIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/project-light-theme-icon.png",
+    "projectIconDarkTheme": "",
+    "contactIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/contact-light-theme-icon.png",
+    "contactIconDarkTheme": ""
+}
