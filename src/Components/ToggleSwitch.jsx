@@ -1,6 +1,7 @@
+
 import { globalIcons } from "../Assets/utilities";
 
-const ToggleSwitch = ({ isOn, handleToggle, onColor, currentThemeMode }) => {
+const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
     return (
       <>
         <input
@@ -16,8 +17,8 @@ const ToggleSwitch = ({ isOn, handleToggle, onColor, currentThemeMode }) => {
           htmlFor={`react-switch-new`}
         >
           <span className={`react-switch-button`} >
-            <img src={`${currentThemeMode === "light" ? globalIcons.lightModeMoonIcon : globalIcons.darkModeMoonIcon }`} alt="" />
-          </span>
+            <img src={`${themeMode === "light" ? globalIcons.lightModeMoonIcon : globalIcons.darkModeMoonIcon }`} alt="" />
+          </span> 
         </label>
       </>
     );

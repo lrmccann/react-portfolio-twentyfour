@@ -4,46 +4,22 @@ import {animateProjectRows} from '../Assets/utilities';
 
 
 const MainContainer = (props) => {
-    // const {tabLocation, handleContactNav, currentThemeMode} = props;
-    // const {lowerCaseSectionsArr} = useContext(GlobalContext);
-    const [animationStarted, setAnimationStarted] = useState(false);
+    // const [animationStarted, setAnimationStarted] = useState(false);
+    const {themeMode} = useContext(GlobalContext);
 
-    useEffect(() => {
-        if(!animationStarted){
-            animateProjectRows("start");
-            setAnimationStarted(true);
-        }
-        // return () => setAnimationStarted(false)
-    }, [animationStarted]); 
+    // useEffect(() => {
+    //     if(!animationStarted){
+    //         animateProjectRows("start");
+    //         setAnimationStarted(true);
+    //     }
+    // }, [animationStarted]); 
 
 
     return(
-               <div className={`main-container bg-custom-primary-background`} id="main-page">
+               <div className={`main-container bg-custom-primary-background ${themeMode === "light" ? "light-page" : "dark-page"}`} id="main-page">
                 {props.children}
-                {/* {allPortfolioSections.map((section, index) => {
-                    return(
-                        <section
-                        tabLocation={tabLocation}
-                        currentThemeMode={currentThemeMode}
-                        key={index} 
-                        sectionName={section} 
-                        handleContactNav={handleContactNav}
-                        />
-                    )
-                })} */}
-            {/* {lowerCaseSectionsArr.map((section, i) => {
-                return (
-                <Section 
-                tabLocation={tabLocation}
-                currentThemeMode={currentThemeMode}
-                key={i} 
-                sectionName={section} 
-                handleContactNav={handleContactNav}
-                />
-                )
-             })} */}
         </div>
-    )
+    );
 }
 
 export default MainContainer;

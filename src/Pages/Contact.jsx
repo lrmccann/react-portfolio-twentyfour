@@ -2,9 +2,9 @@ import ContactForm from "../Components/ContactForm";
 
 
 const Contact = (props) => {
-    const {sectionName, currentThemeMode} = props;
+    const {currentThemeMode} = props;
     return(
-        <div id={sectionName} className="section-block">
+        <div id="contact" className="section-block flex flex-col justify-top">
         <ContactForm currentThemeMode={currentThemeMode} />
       </div>
     )

@@ -1,19 +1,34 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { globalIcons, navigationIcons } from "../Assets/utilities";
 import { GlobalContext } from "../Assets/Utilities/ThemeContext";
 import ToggleSwitch from "./ToggleSwitch";
 
-const Header = (props) => {
-  const { userDevice, upperCaseSectionsArr, lowerCaseSectionsArr } =
-    useContext(GlobalContext);
+function usePrevious(value) {
+  const ref = useRef();
 
-  const { tabLocation, handleMenuNavigation, currentThemeMode, themeChanged } =
-    props;
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+
+  return ref.current;
+}
+
+const Header = (props) => {
+  const {
+    userDevice,
+    upperCaseSectionsArr,
+    lowerCaseSectionsArr,
+    // currentTab,
+    themeMode,
+    setThemeMode,
+  } = useContext(GlobalContext);
+
+  const { handleMenuNavigation, activeTab } = props;
 
   const [navIcon, setNavIcon] = useState();
-  const [lastLocation, setLastLocation] = useState(tabLocation);
+  const prevTab = usePrevious(activeTab);
   const [navOpen, setNavOpen] = useState(false);
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState();
 
   const headerOptions = {
     logoClass: userDevice === "mobile" ? "icon-mobile" : "icon-full",
@@ -23,37 +38,35 @@ const Header = (props) => {
         : globalIcons.lrmLogoLarge,
   };
 
-  const navItemsFinalArr = [];
-
-  upperCaseSectionsArr.forEach(() => {
-    
-    // console.log("for each")
-  })
-
   useEffect(() => {
-    if (currentThemeMode === "dark" && !navOpen) {
+    if (themeMode === "dark" && !navOpen) {
       setNavIcon(globalIcons.darkHamburgerIconBlack);
-    } else if (currentThemeMode === "light" && !navOpen) {
+    } else if (themeMode === "light" && !navOpen) {
       setNavIcon(globalIcons.hamburgerIconBlack);
     }
-    if (tabLocation !== lastLocation) {
-      setLastLocation(tabLocation);
+  }, [themeMode, navOpen]);
+
+  useEffect(() => {
+    if(themeMode === "dark"){
+      setValue(true);
+    }else{
+      setValue(false);
     }
-  }, [lastLocation, tabLocation, currentThemeMode, navOpen]);
+  }, [themeMode])
 
   const openNav = (e) => {
     e.preventDefault();
     if (!navOpen) {
-      if (currentThemeMode === "dark") {
+      if (themeMode === "dark") {
         setNavIcon(globalIcons.darkModeCloseIcon);
-      } else if (currentThemeMode === "light") {
+      } else if (themeMode === "light") {
         setNavIcon(globalIcons.closeIcon);
       }
       setNavOpen(true);
     } else if (navOpen) {
-      if (currentThemeMode === "dark") {
+      if (themeMode === "dark") {
         setNavIcon(globalIcons.darkHamburgerIconBlack);
-      } else if (currentThemeMode === "light") {
+      } else if (themeMode === "light") {
         setNavIcon(globalIcons.hamburgerIconBlack);
       }
       setNavOpen(false);
@@ -65,7 +78,7 @@ const Header = (props) => {
     const target = document.getElementById(lowerCaseSectionsArr[e.target.id]);
     if (target) {
       handleMenuNavigation(target);
-      if (lastLocation > tabLocation) {
+      if (prevTab > activeTab) {
         target.scrollIntoView({ behavior: "smooth", block: "nearest" });
       } else {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -80,52 +93,36 @@ const Header = (props) => {
       <img
         className={`${headerOptions.logoClass}`}
         src={
-          currentThemeMode === "dark"
+          themeMode === "dark"
             ? `${globalIcons.lrmLogoMobileDark}`
             : `${headerOptions.headerLogo}`
         }
         alt="Custom Icon With Logan R McCann Curved At The Top, The Initials LRM In The Center, And Developer Centered At The Bottom"
       />
       {userDevice !== "desktop" ? (
-        <div
-          className={`mobile-nav-container flex flex-row`}
-          // ${tabLocation === 0 ? "flex-justify-end" : "justify-between"}`}
-        >
+        <div className={`mobile-nav-container flex flex-row`}>
           <div className="mobile-button-container flex flex-row justify-between">
             <ToggleSwitch
               isOn={value}
               onColor="black"
-              currentThemeMode={currentThemeMode}
+              themeMode={themeMode}
               handleToggle={() => {
-                themeChanged();
+                setThemeMode(themeMode === "light" ? "dark" : "light");
                 if (!navOpen) {
-                  if (currentThemeMode === "dark") {
+                  if (themeMode === "dark") {
                     setNavIcon(globalIcons.darkHamburgerIconBlack);
-                  } else if (currentThemeMode === "light") {
+                  } else if (themeMode === "light") {
                     setNavIcon(globalIcons.hamburgerIconBlack);
                   }
                 }
                 setValue(!value);
               }}
             />
-            {/* <button 
-            onClick={() => {themeChanged()}}
-            className="flex flex-col justify-center items-center">
-              <img src={`${currentThemeMode === "light" ? globalIcons.lightModeMoonIcon : globalIcons.darkModeMoonIcon }`} alt="" />
-            </button> */}
-            {/* </div> */}
-            {/* {tabLocation !== 0 && (
-            <div className="mobile-chat-bar">
-              <button className="flex-col flx-center flx-align-center">
-                <img src={`${globalIcons.chatbotIcon}`} alt="" />
-              </button>
-            </div>
-          )} */}
             <button
               onClick={(e) => {
                 openNav(e);
               }}
-              className={`mobile-menu-button menu-btn-${currentThemeMode} flex flex-row items-center justify-center`}
+              className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
             >
               <img src={navIcon} alt="Hamburger Icon To Open Page Navigation" />
             </button>
@@ -136,67 +133,65 @@ const Header = (props) => {
                 {upperCaseSectionsArr.map((portfolioSection, index) => {
                   return (
                     <>
-                    {/* <img src={} */}
-                    <li
-                      id={index}
-                      onClick={(e) => {
-                        navAction(e);
-                      }}
-                      className={`${tabLocation === index ? "active" : ""} `}
-                      key={index}
-                    >
-                      {portfolioSection}
-                    </li>
+                      <li
+                        id={index}
+                        onClick={(e) => {
+                          navAction(e);
+                        }}
+                        className={`${activeTab === index ? "active" : ""} `}
+                        key={index}
+                      >
+                        {portfolioSection}
+                      </li>
                     </>
                   );
                 })}
               </ul>
               <div className="social-container">
-                {/* <p>Follow Me On Socials:</p> */}
-          <button
-            onClick={() => {
-              socialNav("https://www.linkedin.com/in/logan-mccann/");
-            }}
-          >
-            <img
-              src={
-                currentThemeMode === "dark"
-                  ? `${globalIcons.linkedinIconDark}`
-                  : `${globalIcons.linkedinIcon}`
-              }
-              alt="Blue LinkedIn Icon Pointing To Logan McCann's LinkedIn Account"
-            />
-          </button>
-          <button
-            onClick={() => {
-              socialNav("https://github.com/lrmccann");
-            }}
-          >
-            <img
-              src={
-                currentThemeMode === "dark"
-                  ? `${globalIcons.githubIconDark}`
-                  : `${globalIcons.githubIcon}`
-              }
-              alt="Blue Github Icon Pointing To Logan McCann's Github Account"
-            />
-          </button>
-          <button
-            onClick={() => {
-              socialNav("https://github.com/lrmccann");
-            }}
-          >
-            <img
-              src={
-                currentThemeMode === "dark"
-                  ? `${globalIcons.blueSkyIconDark}`
-                  : `${globalIcons.blueskyIcon}`
-              }
-              className={currentThemeMode === "dark" ? "bluesky-active" : " "}
-              alt="Blue BlueSky Icon Pointing To Logan McCann's BlueSky Account"
-            />
-          </button>
-        </div>
+                <button
+                  onClick={() => {
+                    socialNav("https://www.linkedin.com/in/logan-mccann/");
+                  }}
+                >
+                  <img
+                    src={
+                      themeMode === "dark"
+                        ? `${globalIcons.linkedinIconDark}`
+                        : `${globalIcons.linkedinIcon}`
+                    }
+                    alt="Blue LinkedIn Icon Pointing To Logan McCann's LinkedIn Account"
+                  />
+                </button>
+                <button
+                  onClick={() => {
+                    socialNav("https://github.com/lrmccann");
+                  }}
+                >
+                  <img
+                    src={
+                      themeMode === "dark"
+                        ? `${globalIcons.githubIconDark}`
+                        : `${globalIcons.githubIcon}`
+                    }
+                    alt="Blue Github Icon Pointing To Logan McCann's Github Account"
+                  />
+                </button>
+                <button
+                  onClick={() => {
+                    socialNav("https://github.com/lrmccann");
+                  }}
+                >
+                  <img
+                    src={
+                      themeMode === "dark"
+                        ? `${globalIcons.blueSkyIconDark}`
+                        : `${globalIcons.blueskyIcon}`
+                    }
+                    className={themeMode === "dark" ? "bluesky-active" : " "}
+                    alt="Blue BlueSky Icon Pointing To Logan McCann's BlueSky Account"
+                  />
+                </button>
+              </div>
             </div>
           )}
         </div>
@@ -211,7 +206,7 @@ const Header = (props) => {
                   }}
                   key={index}
                   id={index}
-                  className={tabLocation === index ? "active" : ""}
+                  className={activeTab === index ? "active" : ""}
                 >
                   {portfolioSection}
                 </li>

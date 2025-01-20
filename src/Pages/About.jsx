@@ -3,7 +3,7 @@ import { globalIcons } from "../Assets/utilities"
 const About = (props) => {
     return(
         <div
-        id={props.sectionName}
+        id="about"
         className="section-block flex flex-col items-center justify-evenly"
       >
         {/* <img src={globalIcons.loganIcon} alt="" /> */}

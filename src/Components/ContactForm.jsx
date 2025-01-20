@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DropDownMenu } from "./DropDownMenu";
 import { sendFormData, globalIcons } from "../Assets/utilities";
+import Button from "./Atoms/Button";
+import Input from "./Atoms/Input";
+import TextArea from "./Atoms/TextArea";
 
 const ContactForm = (props) => {
   const [name, setName] = useState();
@@ -26,6 +29,7 @@ const ContactForm = (props) => {
       Reason: reason,
       Message: message,
     };
+    console.log(formData, "form data??");
     formSubmitted ? setFormSubmitted(false) : setFormSubmitted(true);
     if (formSubmitted) {
       setName("");
@@ -35,32 +39,43 @@ const ContactForm = (props) => {
       setMessage("");
     } else {
       await sendFormData(formData);
-      // console.log("after send form data");
     }
   };
+
+  useEffect(() => {
+    console.log(
+      name,
+      "name in partnet comp, hopefully updates on blur of input component"
+    );
+  }, [name]);
+
+  // const handleFormInput = (e) => {
+
+  // }
+
   return (
     <>
       {!formSubmitted ? (
         <>
           <form className="contact-form flex flex-col justify-evenly">
-            <label className="flex flex-col">
-              <input
-                name="name"
-                placeholder={"Name..."}
-                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-            </label>
-            <label className="flex flex-col">
-              <input
-                name="email"
-                placeholder={"Email..."}
-                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-            </label>
+            <Input
+              id={"name-input"}
+              className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
+              name="name"
+              placeholder={"Name..."}
+              value={name}
+              type="text"
+              stateUpdater={setName}
+            />
+            <Input
+              id={"email-input"}
+              className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
+              name="email"
+              placeholder={"Email..."}
+              value={email}
+              type="email"
+              stateUpdater={setEmail}
+            />
             <DropDownMenu
               items={selectOptions}
               buttonLabel={"Interested in..."}
@@ -68,26 +83,25 @@ const ContactForm = (props) => {
                 setReason(optionText);
               }}
             />
-            <label className="flex flex-col">
-              <textarea
-                name="message"
-                placeholder="Message..."
-                className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-            </label>
+            <TextArea
+              id="message-text-area"
+              className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
+              name="message"
+              placeholder="Message..."
+              value={message}
+              type="text"
+              stateUpdater={setMessage}
+            />
           </form>
-          <div className="contact-btn-cont flex flex-col items-center justify-evenly">
-            <button
-              onClick={handleContactData}
-              type="submit"
-              id="contact-chat-button"
-              className="contact-button bg-custom-button-bg-primary"
-            >
-              <p className="text-custom-text">Submit</p>
-            </button>
-          </div>
+          <Button
+            height={27.5}
+            width={85}
+            alignment={"flex-end"}
+            type={"submit"}
+            action={handleContactData}
+            id="contact-chat-button"
+            textContent="Send Message"
+          />
         </>
       ) : (
         <div className="contact-confirmation-container flex flex-col items-center justify-center">

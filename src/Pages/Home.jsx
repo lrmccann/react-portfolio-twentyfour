@@ -1,13 +1,19 @@
 import LiveTypeHero from "../Components/LiveTypeHero";
 import { GlobalContext } from "../Assets/utilities";
 import { useContext } from "react";
+import Button from "../Components/Atoms/Button";
 
 
-const Home = (props) => {
-
-    const {handleContactNav} = props;
-
+const Home = ({handleContactNav}) => {
     const { userDevice } = useContext(GlobalContext);
+
+    console.log(handleContactNav);
+
+    const navToContact = () => {
+        const target = document.getElementById("contact");
+        handleContactNav(5);
+        target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
 
     const roleOptions = [
         "Front-End Developer",
@@ -29,28 +35,31 @@ const Home = (props) => {
         <h1 className="text-custom-text">Logan McCann</h1>
         <LiveTypeHero
           text={roleOptions}
-          // text="Hi, I'm Logan McCann. A Front-End Developer With 6+ Years of Experience Building Scalable, User-Friendly Applications. Learn More About My Experience And Proficiencies By Exploring My Portfolio Or Speaking With My ChatBot"
           speed={200}
         />
         {userDevice === "mobile" ? (
-          <div className="hero-btn-cont flex flex-col items-center justify-evenly">
-            <button
-              id="hero-chat-button"
-              className="hero-button bg-custom-button-bg-primary"
-            >
-              <p className="text-custom-text">AI Chatbot</p>
-            </button>
-            <button
-              onClick={() => {
-                const target = document.getElementById("contact");
-                handleContactNav(5);
-                target.scrollIntoView({ behavior: "smooth", block: "nearest" });
-              }}
-              className="hero-button bg-custom-button-bg-primary"
-            >
-              <p className="text-custom-text">Contact Now</p>
-            </button>
-          </div>
+            <>
+            <Button height={27.5} width={85} alignment={"flex-end"} action={navToContact} id="idk" textContent="Contact Now" />
+            {/* <Button height={27.5} width={85} id="idk" textContent="Follow Me" /> */}
+            </>
+        //   <div className="hero-btn-cont flex flex-col items-center justify-evenly">
+        //     <button
+        //       id="hero-chat-button"
+        //       className="hero-button bg-custom-button-bg-primary"
+        //     >
+        //       <p className="text-custom-text">AI Chatbot</p>
+        //     </button>
+        //     <button
+        //       onClick={() => {
+        //         const target = document.getElementById("contact");
+        //         handleContactNav(5);
+        //         target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        //       }}
+        //       className="hero-button bg-custom-button-bg-primary"
+        //     >
+        //       <p className="text-custom-text">Contact Now</p>
+        //     </button>
+        //   </div>
         ) : (
           <div>
             <h1 className="text-custom-text">

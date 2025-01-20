@@ -2,6 +2,7 @@ const animateProjectRows = () => {
   // if(cond === "start"){
     const scrollers = document.querySelectorAll('.scroller');
     scrollers.forEach((scroller) => {
+      console.log(scroller, "each scroller?")
       // add data-animated="true" to every `.scroller` on the page
       if (scroller.id === 'scroller-1') {
         scroller.setAttribute('data-direction', 'left');

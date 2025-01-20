@@ -8,7 +8,7 @@ const Project = (props) => {
 
     const {sectionName} = props;
     const { userDevice } = useContext(GlobalContext);
-    const [activeArr, setActiveArr] = useState([]);
+    // const [activeArr, setActiveArr] = useState([]);
     const [projectModalOpen, setProjectModalOpen] = useState(false);
     const [activeHeader, setActiveHeader] = useState();
     const [activeProject, setActiveProject] = useState({});
@@ -18,7 +18,7 @@ const Project = (props) => {
 
     const openSkillModal = (arr, header) => {
         if (arr && arr.length !== 0 && header) {
-          setActiveArr(arr);
+        //   setActiveArr(arr);
           setActiveHeader(header);
           setSkillModalOpen(true);
           mainContainerEl.classList.add("modal-open");
@@ -44,7 +44,7 @@ const Project = (props) => {
 
     return(
         <div
-        id={sectionName}
+        id="projects"
         className="section-block flex flex-row flex-wrap justify-around"
       >
         {projectArr.map((project, i) => {

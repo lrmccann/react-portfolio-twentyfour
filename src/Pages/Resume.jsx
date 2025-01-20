@@ -1,16 +1,29 @@
+import {useContext} from 'react';
 import { resumeText } from "../Assets/utilities";
-import { globalIcons, myResumePDF } from "../Assets/utilities";
+import { myResumePDF } from "../Assets/utilities";
+import { GlobalContext } from "../Assets/utilities";
+import Button from '../Components/Atoms/Button';
 
 
 
-const Resume = (props) => {
+const Resume = () => {
 
-const {sectionName, userDevice} = props;    
+// const {userDevice} = props;    
+    const {userDevice} = useContext(GlobalContext);  
+// pass to button comp to download resume without HTML attr
+    function download(url) {
+        const a = document.createElement('a')
+        a.href = url
+        a.download = url.split('/').pop()
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+      }
     
     return(
         <div
-        id={sectionName}
-        className="section-block flex flex-col justify-evenly"
+        id="experience"
+        className="section-block"
       >
         {resumeText.map((resumeSection, i) => {
           return (
@@ -20,10 +33,11 @@ const {sectionName, userDevice} = props;
                   ? "resume-container"
                   : "mobile-resume-container"
               }
+              className='flex flex-col justify-middle'
               key={i}
             >
               <h1 className="text-custom-text">{resumeSection.title}</h1>
-              <h2 className="text-custom-text">{resumeSection.organization}</h2>
+              <h2 className="text-custom-text"><i>{resumeSection.organization}</i></h2>
               <ul className="text-custom-text">
                 <li>{resumeSection.responsibilities[0]}</li>
                 <li>{resumeSection.responsibilities[1]}</li>
@@ -37,20 +51,7 @@ const {sectionName, userDevice} = props;
             </div>
           );
         })}
-        <div className="contact-btn-cont flex flex-col items-center justify-evenly">
-          <button
-            id="contact-chat-button"
-            className="contact-button bg-custom-button-bg-primary"
-          >
-            <a
-              href={myResumePDF}
-              download={myResumePDF}
-              className="text-custom-text"
-            >
-              Download Full Resume
-            </a>
-          </button>
-        </div>
+            <Button height={27.5} width={85} alignment={"flex-end"} type="--download" action={download} id="resume-download" textContent="Download Full Resume" />
       </div>
     )
 }
