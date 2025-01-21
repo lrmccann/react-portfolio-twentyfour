@@ -4,7 +4,7 @@ import { GlobalContext } from "../../Assets/utilities";
 const Button = (props) => {
 
     const {userDevice} = useContext(GlobalContext);
-    const {height, width, id, type, textColor, textContent, outline, action, alignment} = props;
+    const {height, width, id, type, containerSize, containerPadding, textColor, bottom, textContent, outline, action, alignment} = props;
     // state for testing
     const [hovered, setHovered] = useState(false);
     const [clicked, setClicked] = useState(false);
@@ -30,7 +30,7 @@ const Button = (props) => {
         <div 
         className={`${userDevice === "mobile" ? "small-button-container flex flex-col items-center" : "large-button-container"}`} 
         id={`${id}`}
-        style={{justifyContent: `${alignment}`}}
+        style={{justifyContent: `${alignment}`, bottom: `${bottom}%`, height: `${containerSize}%`, padding: containerPadding}}
         >
             <button 
             className="bg-custom-button-bg-primary"

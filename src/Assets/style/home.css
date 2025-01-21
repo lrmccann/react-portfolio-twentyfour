@@ -1,0 +1,33 @@
+/* PATH: src/Assets/style/home.css */
+
+/* App.js/Page/Section/Home */
+#home {
+  height: 100%;
+  padding: 10vh 2.5% 0 2.5%;
+}
+
+#home > h3 {
+  font-size: 2.5em;
+  align-self: flex-start;
+}
+
+#home > h1 {
+  font-size: 3em;
+  align-self: flex-start;
+}
+
+/* LiveTypeHero */
+.live-text-cont {
+  align-self: flex-start;
+  font-size: 2.5em;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

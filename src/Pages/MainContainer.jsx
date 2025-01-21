@@ -1,22 +1,20 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { GlobalContext } from "../Assets/utilities";
-import {animateProjectRows} from '../Assets/utilities';
-
+import { useEffect, useState } from "react";
 
 const MainContainer = (props) => {
-    // const [animationStarted, setAnimationStarted] = useState(false);
-    const {themeMode} = useContext(GlobalContext);
 
-    // useEffect(() => {
-    //     if(!animationStarted){
-    //         animateProjectRows("start");
-    //         setAnimationStarted(true);
-    //     }
-    // }, [animationStarted]); 
 
+    const [mobileClassActive, setMobileClassActive] = useState();
+
+    useEffect(() => {
+        if(props.currentScreenWidth <= 1025){
+            setMobileClassActive("mobile-page");
+        }else{
+            setMobileClassActive("");
+        }   
+    }, [props.currentScreenWidth])
 
     return(
-               <div className={`main-container bg-custom-primary-background ${themeMode === "light" ? "light-page" : "dark-page"}`} id="main-page">
+               <div className={`${mobileClassActive} bg-custom-primary-background`} id="main-page">
                 {props.children}
         </div>
     );

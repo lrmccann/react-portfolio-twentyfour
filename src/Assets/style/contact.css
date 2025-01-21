@@ -1,0 +1,99 @@
+/* PATH: src/Assets/style/contact.css */
+
+/* App.js/Page/Section/Contact */
+#contact {
+  height: 92dvh;
+}
+
+#contact > h1 {
+  padding-top: 2.5%;
+  padding-left: 3%;
+  font-size: xx-large;
+}
+
+.contact-form {
+  /* height: 85%; */
+  /* height: 75%; */
+  height: 70%;
+  width: 100%;
+  padding: 0% 4% 0% 4%;
+}
+
+.contact-form > label,
+.contact-form > div > p,
+h1,
+h2,
+.contact-select {
+  font-size: larger;
+}
+
+.contact-form > label:not(:last-child) {
+  font-weight: bolder;
+}
+
+.contact-form > label > input {
+  /* height: 70%; */
+  padding: 2% 2.25% 2% 2.25%;
+  border-radius: 1.1rem;
+}
+
+.input-dark::placeholder {
+  color: oldlace;
+}
+
+.contact-select {
+  width: 100%;
+  font-weight: bolder;
+  position: relative;
+  padding: 2% 2.25% 2% 2.25%;
+}
+
+.contact-select-closed {
+  border-radius: 1.1em;
+}
+
+.contact-select-open {
+  border-top-left-radius: 1.1em;
+  border-top-right-radius: 1.1em;
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
+}
+
+.contact-select > button {
+  width: 100%;
+}
+
+.contact-select-div {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
+}
+
+.active-option {
+  background-color: lightgray;
+}
+
+.contact-form > label:last-child > textarea {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.1rem;
+  font-weight: bolder;
+  margin: 0 auto;
+  position: relative;
+  padding: 2% 2.25% 2% 2.25%;
+}
+
+.contact-confirmation-container {
+  height: 100%;
+  width: 100%;
+}
+
+.contact-confirmation-container > p {
+  font-size: 1.75em;
+}
+
+.contact-confirmation-container > img {
+  aspect-ratio: 1/1;
+  width: 30%;
+}

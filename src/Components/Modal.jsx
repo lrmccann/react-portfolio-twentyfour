@@ -6,26 +6,37 @@ import ProgressBar, {
   Red,
   Custom,
   Basic,
-} from "./ProgressBar/BarColors";
+} from "./Atoms/BarColors";
+import Image from '../Components/Atoms/Image';
+import Button from '../Components/Atoms/Button';
 
 const Modal = (props) => {
-  const { activeHeader, arr, projObj, modalType, modalStatus } = props;
+  const { activeHeader, arr, projObj, modalType, modalStatus, currentScreenWidth } = props;
 
   const [finalProjContArr, setFinalProjContArr] = useState([]);
+  const [activeProjectImage, setActiveProjectImage] = useState();
 
   useEffect(() => {
     const tempProjContArr = [];
     if (modalType === "project") {
       projObj.techStack.map((tech, i) => {
-        if (i <= 9) {
+        if (i < projObj.techStack.length) {
           return tempProjContArr.push(tech + " •");
-        } else {
+        } else if(i === projObj.techStack.length) {
           return tempProjContArr.push(tech);
         }
       });
       setFinalProjContArr(tempProjContArr);
     }
   }, [modalType, projObj]);
+
+  useEffect(() => {
+    if(currentScreenWidth <= 1025 && modalType === "project"){
+      setActiveProjectImage(projObj.siteThumbnail);
+    }else if(currentScreenWidth >= 1025 && modalType === "project") {
+      setActiveProjectImage(projObj.siteLarge);
+    }
+  }, [currentScreenWidth, projObj, modalType])
 
   return (
     <div className="modal-container bg-custom-primary-background">
@@ -50,8 +61,8 @@ const Modal = (props) => {
       </div>
       <div className={`${modalType}-modal-body`}>
         {modalType === "project" ? (
-          <>
-            <img src={projObj.siteLarge} alt="idk" />
+          <div>
+            <Image className="project-modal-image" aspectRatio={1.5/.9} borderRadius={'1em'} imageSrc={activeProjectImage} altText="idk" />
             <span>
               <label className="text-custom-text">Contributions</label>
               <ul className="contribution-list text-custom-text">
@@ -68,16 +79,8 @@ const Modal = (props) => {
                 })}
               </ul>
             </span>
-            <div className="contact-btn-cont flex flex-col items-center justify-evenly">
-              <button
-                type="submit"
-                id="contact-chat-button"
-                className="contact-button bg-custom-button-bg-primary"
-              >
-                <p className="text-custom-text">Visit Site</p>
-              </button>
-            </div>
-          </>
+            <Button id="proj-modal-button" width={100} height={100} bottom={2} containerPadding={"0 2.5% 0 2.5%"} containerSize={10} type="url"  className="bg-custom-button-bg-primary" textContent="Visit Site"   />
+          </div>
         ) : (
           <>
             <ul className="flex flex-col text-custom-text">

@@ -1,15 +1,27 @@
 import "./BarColors";
-import "./bar.css";
-import { useEffect, useState } from "react";
+import "../../output.css";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../../Assets/utilities";
 
 const ProgressBar = (props) => {
   const [progressAnimation, setProgressAnimation] = useState(false);
+  const [currentColor, setCurrentColor] = useState();
+  const {themeMode} = useContext(GlobalContext);
+
   // props.score
   // props.progressWidth
   // props.className
   // props.primaryColor
   // props.secondaryColor
-  // props.proogressColor
+  // props.progressColor
+
+  useEffect(() => {
+    if(themeMode === "dark"){
+      setCurrentColor("purple");
+    }else{
+      setCurrentColor("red");
+    }
+  }, [themeMode])
 
   const {
     score,
@@ -17,7 +29,7 @@ const ProgressBar = (props) => {
     className,
     primaryColor,
     secondaryColor,
-    progressColor = primaryColor || secondaryColor ? "" : "red",
+    progressColor = primaryColor || secondaryColor ? "" : `${currentColor}`,
     label,
     hideText,
     darkTheme,

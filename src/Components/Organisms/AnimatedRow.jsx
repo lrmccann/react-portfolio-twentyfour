@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Icon from "./Atoms/Icon";
+import Icon from "../Atoms/Icon";
 
 const AnimatedRow = ({ iconArr, heading, uniqueKey, callback }) => {
 
@@ -59,7 +59,6 @@ const AnimatedRow = ({ iconArr, heading, uniqueKey, callback }) => {
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 

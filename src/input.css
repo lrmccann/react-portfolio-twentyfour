@@ -1,7 +1,6 @@
 /* PATH: src/Assets/style/about.css */
 
 /* App.js/Page/Section/About */
-
 #about {
   height: 92dvh;
   padding: 0 2.5%;
@@ -45,9 +44,7 @@
   border: solid gray 2px;
   padding: 10%;
   border-radius: 1.5em;
-}
-
-/* 
+}/* 
 PATH: src/Assets/style/components.css
 DESCRIPTION: None-Specific Components Style
 TOC (Search terms)
@@ -60,13 +57,11 @@ TOC (Search terms)
 */
 
 /* 1. Main Container Style */
-
 #main-page {
   height: 100%;
   width: 100%;
   position: relative;
 }
-
 .mobile-page{
   overflow-y: auto;
   overscroll-behavior-y: contain;
@@ -79,137 +74,132 @@ TOC (Search terms)
   width: 100%;
   position: relative;
 }
-
 .mobile-section{
   scroll-snap-align: center;
   scroll-margin-top: 8dvh;
 }
 
 /* 2. Header Style */
-
 .header {
-  height: 8%;
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  margin: 0 auto;
-}
+    height: 8%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    margin: 0 auto;
+  }
 
-.active {
-  text-decoration: underline;
-}
+  .active {
+    text-decoration: underline;
+  }
+  
+  .mobile-full-nav {
+    height: 92dvh;
+    width: 100%;
+    position: absolute;
+    top: 8dvh;
+    left: 0;
+    padding: 1.25% 2%;
+  }
+  
+  .mobile-full-nav>ul>li {
+    font-size: x-large;
+  }
+  
+  
+  .mobile-button-container {
+    height: 100%;
+    width: 45dvw;
+  }
+  
+  .mobile-button-container>button {
+    width: 60%;
+    height: 100%;
+    border-radius: .5em;
+  }
 
-.mobile-full-nav {
-  height: 92dvh;
-  width: 100%;
-  position: absolute;
-  top: 8dvh;
-  left: 0;
-  padding: 1.25% 2%;
-}
+  .mobile-button-container>button>img {
+    height: 90%;
+    width: 90%;
+  }
 
-.mobile-full-nav>ul>li {
-  font-size: x-large;
-}
+  .mobile-menu-button {
+    border-radius: .5em;
+  }
 
-.mobile-button-container {
-  height: 100%;
-  width: 45dvw;
-}
+  /* Small Desktop & Laptop: 1025 - 1280px */
+  /* Large Desktop & Hi-Res Screen: 1281 - 1440px */
+  /* XL Screen: 1441px and Above */
 
-.mobile-button-container>button {
-  width: 60%;
-  height: 100%;
-  border-radius: .5em;
-}
+  /* 3. Button Style */
+  .small-button-container {
+    width: 100%;
+    position: absolute;
+    display: flex;
+  }
+  
+  .small-button-container>button {
+    height: 27.5%;
+    width: 85%;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+  }
+  
+  .small-button-container>button:hover {
+    background: linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+    background-color: #f2ab1e;
+  }
+  
+  .small-button-container>button:active {
+    position: relative;
+    top: 1px;
+  }
 
-.mobile-button-container>button>img {
-  height: 90%;
-  width: 90%;
-}
+  button:hover {
+    cursor: pointer;
+  }
 
-.mobile-menu-button {
-  border-radius: .5em;
-}
+  /* 4. Global Modal Style */
+  .modal-open {
+    overflow: hidden !important;
+    contain: content !important;
+  }
+  
+  .modal-container {
+    height: 92dvh;
+    width: 100dvw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .modal-top {
+    height: 6dvh;
+    width: 100%;
+    padding: 2% 1.25%;
+    font-weight: bolder;
+  }
+  
+  .modal-top>h1 {
+    padding-left: 1.5%;
+    font-size: 1.4em;
+  }
+  
+  .modal-top>button {
+    padding: 0 1.5% 0 1.5%;
+  }
+  
+  .modal-top>button>h1 {
+    font-size: 1.4em;
+  }
 
-/* Small Desktop & Laptop: 1025 - 1280px */
-
-/* Large Desktop & Hi-Res Screen: 1281 - 1440px */
-
-/* XL Screen: 1441px and Above */
-
-/* 3. Button Style */
-
-.small-button-container {
-  width: 100%;
-  position: absolute;
-  display: flex;
-}
-
-.small-button-container>button {
-  height: 27.5%;
-  width: 85%;
-  border-radius: 6px;
-  display: inline-block;
-  cursor: pointer;
-  font-family: Arial;
-  font-size: 1.1em;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-}
-
-.small-button-container>button:hover {
-  background: linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
-  background-color: #f2ab1e;
-}
-
-.small-button-container>button:active {
-  position: relative;
-  top: 1px;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-/* 4. Global Modal Style */
-
-.modal-open {
-  overflow: hidden !important;
-  contain: content !important;
-}
-
-.modal-container {
-  height: 92dvh;
-  width: 100dvw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.modal-top {
-  height: 6dvh;
-  width: 100%;
-  padding: 2% 1.25%;
-  font-weight: bolder;
-}
-
-.modal-top>h1 {
-  padding-left: 1.5%;
-  font-size: 1.4em;
-}
-
-.modal-top>button {
-  padding: 0 1.5% 0 1.5%;
-}
-
-.modal-top>button>h1 {
-  font-size: 1.4em;
-}
-
-/* 5. Toggle Switch Style */
+  /* 5. Toggle Switch Style */
 
 .react-switch-checkbox {
   height: 0;
@@ -258,7 +248,6 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
-
 .react-switch-button > img{
   aspect-ratio: 1/1;
   height: 90%;
@@ -266,7 +255,6 @@ button:hover {
 }
 
 /* 6. Progress Bar Style */
-
 .green {
   --primary-color: #0575e6;
   --secondary-color: #00f260;
@@ -318,6 +306,7 @@ button:hover {
   height: 8px;
 }
 
+
 .caretUp {
   transition: all 1s ease-in-out;
   position: absolute;
@@ -368,8 +357,8 @@ button:hover {
   z-index: 1000;
 }
 
-.number {
-}
+
+.number {}
 
 .glowingEffect {
   filter: blur(3px);
@@ -404,6 +393,7 @@ button:hover {
 .particles2 {
   animation: animation6 5s ease-in-out infinite;
 }
+
 
 .smallParticles {
   height: 2px;
@@ -461,6 +451,7 @@ button:hover {
 .transitionDelay {
   transition-delay: 1s;
 }
+
 
 @keyframes animation1 {
   0% {
@@ -590,12 +581,9 @@ button:hover {
   50% {
     background-position: 100% 50%;
   }
-}
-
-/* PATH: src/Assets/style/contact.css */
+}/* PATH: src/Assets/style/contact.css */
 
 /* App.js/Page/Section/Contact */
-
 #contact {
   height: 92dvh;
 }
@@ -692,11 +680,9 @@ h2,
   aspect-ratio: 1/1;
   width: 30%;
 }
-
 /* PATH: src/Assets/style/home.css */
 
 /* App.js/Page/Section/Home */
-
 #home {
   height: 100%;
   padding: 10vh 2.5% 0 2.5%;
@@ -713,7 +699,6 @@ h2,
 }
 
 /* LiveTypeHero */
-
 .live-text-cont {
   align-self: flex-start;
   font-size: 2.5em;
@@ -728,639 +713,9 @@ h2,
     opacity: 0;
   }
 }
-
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
-
-/*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
-6. Use the user's configured `sans` font-variation-settings by default.
-7. Disable tap highlights on iOS
-*/
-
-html,
-:host {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  /* 3 */
-  tab-size: 4;
-  /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
-  font-variation-settings: normal;
-  /* 6 */
-  -webkit-tap-highlight-color: transparent;
-  /* 7 */
-}
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
-
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
-}
-
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-1. Use the user's configured `mono` font-family by default.
-2. Use the user's configured `mono` font-feature-settings by default.
-3. Use the user's configured `mono` font-variation-settings by default.
-4. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-feature-settings: normal;
-  /* 2 */
-  font-variation-settings: normal;
-  /* 3 */
-  font-size: 1em;
-  /* 4 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-feature-settings: inherit;
-  /* 1 */
-  font-variation-settings: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  letter-spacing: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Reset default styling for dialogs.
-*/
-
-dialog {
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-
-:disabled {
-  cursor: default;
-}
-
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
-}
-
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden]:where(:not([hidden="until-found"])) {
-  display: none;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.block {
-  display: block;
-}
-
-.flex {
-  display: flex;
-}
-
-.resize {
-  resize: both;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
-.bg-custom-button-bg-primary {
-  background-color: var(--button-bg-primary);
-}
-
-.bg-custom-contact-bg {
-  background-color: var(--contact-bg);
-}
-
-.bg-custom-primary-background {
-  background-color: var(--primary-background);
-}
-
-.bg-custom-secondary-background {
-  background-color: var(--secondary-background);
-}
-
-.text-custom-text {
-  color: var(--text);
-}
-
-.outline {
-  outline-style: solid;
-}
-
-.outline-1 {
-  outline-width: 1px;
-}
-
-.outline-2 {
-  outline-width: 2px;
-}
-
-.outline-custom-primary-outline {
-  outline-color: var(--outline);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* 
 PATH: src/Assets/index.css
@@ -1441,7 +796,6 @@ html.dark {
   --button-text: var(--dark-button-text);
   --contact-bg: var(--dark-contact-bg);
 }
-
 /* PATH: src/Assets/style/project.css */
 
 #projects {
@@ -1449,12 +803,13 @@ html.dark {
 }
 
 /* Project Card Style */
-
 .project-card-default {
   height: 25%;
   width: 50%;
   padding: 3%;
   position: relative;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
 }
 
@@ -1483,7 +838,6 @@ html.dark {
 .project-card-default > p {
   font-size: small;
 }
-
 ß
 /* project modal style */
 .project-modal-body {
@@ -1494,13 +848,13 @@ html.dark {
   /* padding: 1% 2.5%; */
   /* margin: 0 2.5% 0 2.5%; */
 }
-
 .project-modal-body > div{
   height: auto;
   width: 100%;
   /* background-color: #0575e6; */
   padding: 1% 2.5%;
 }
+
 
 .project-modal-body > div > span > label {
   font-size: large;
@@ -1530,11 +884,9 @@ html.dark {
 .project-modal-body > div > .small-button-container {
   left: 0;
 }
-
 /* PATH: src/Assets/style/resume.css */
 
 /* App.js/Page/Section/Experience */
-
 #experience {
   height: 92dvh;
 }
@@ -1544,7 +896,6 @@ html.dark {
 }
 
 /* MOBILE  */
-
 #mobile-resume-container {
   padding: 4% 2.5% 0 2.5%;
 }
@@ -1568,17 +919,14 @@ html.dark {
   font-size: 0.85em;
   margin: 1% 0;
 }
-
 /* PATH: src/Assets/style/skills.css */
 
 /* App.js/Page/Section/Skills */
-
 #skills {
   height: 92dvh;
 }
 
 /* Animated Row/Skill Row */
-
 .mobile-icon-container {
   height: 33.3%;
   width: 100%;
@@ -1625,6 +973,8 @@ html.dark {
   height: 70%;
   width: max-content;
   gap: 1.5rem;
+  -webkit-box-shadow: 0px 0px 23px -2px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 0px 0px 23px -2px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 0px 23px -2px rgba(0, 0, 0, 0.61);
 }
 
@@ -1638,7 +988,6 @@ html.dark {
 }
 
 /* skill modal section */
-
 .skill-modal-body {
   display: flex;
   flex-direction: row;
@@ -1669,106 +1018,86 @@ html.dark {
   width: 100%;
 }
 
-/* Mobile Portrait: 320 - 480 pixels */
 
-@media only screen and (max-width: 480px) {
-  .mobile-button-container{
-    max-width: 40dvw;
-  }
 
-  .mobile-button-container > button{
-    max-width: 35%;
-  }
-
-  .mobile-button-container>button>img {
-    height: 95%;
-    width: 90%;
-  }
-}
-
-/* Mobile Landscape: 481 - 600 pixels */
-
+  /* Mobile Portrait: 320 - 480 pixels */
+  @media only screen and (max-width: 480px) {
+    .mobile-button-container{
+      max-width: 40dvw;
+    }
+    .mobile-button-container > button{
+      max-width: 35%;
+    }
+    .mobile-button-container>button>img {
+      height: 95%;
+      width: 90%;
+    }
+  } 
+  /* Mobile Landscape: 481 - 600 pixels */
 @media only screen and (min-width: 481px) and (max-width: 700px) {
   /* HEADER */
-
   .icon-mobile{
     aspect-ratio: 2/1;
     margin-left: 1.25%;
   }
-
   .mobile-button-container{
     max-width: 30dvw;
   }
-
   .mobile-button-container > button{
     max-width: 37.5%;
   }
-
   .mobile-button-container>button>img {
     height: fit-content;
     aspect-ratio: 1/1;
     width: 70%;
     object-fit: cover;
   }
-
   .react-switch-label {
     max-width: 50%;
     width: 50%;
     height: 65%;
   }
-
   /* ABOUT */
-
   #about>img {
     width: 80%;
     border-radius: 15em;
   }
-
   #about > p{
     text-align: center;
     font-weight: bolder;
   }
-
   /* PROJECTS */
-
   .project-card-default > div {
     height: auto;
     width: 11.5%;
     bottom: 6%;
     right: 3%;
   }
-
   .project-card-default > h1 {
     font-size: 1.25em;
   }
-
   .project-card-default > p{
     font-weight: 200;
     font-size: .9em;
   }
-
   .project-modal-body > div {
     height: 100%;
     width: 100%;
   }
-
   .project-modal-body > div > img{
     height: auto;
     width: 100%;
     min-width: 100%;
     margin-bottom: 2%;
   }
-}
-
-/* Tablet Portrait: 320 - 480 pixels */
-
-/* @media only screen and (min-width: 601px) and (max-width: 768px) {
+ }
+  /* Tablet Portrait: 320 - 480 pixels */
+ /* @media only screen and (min-width: 601px) and (max-width: 768px) {
 
  } */
 
-/* Small Tablet: 601 - 768px */
-
-/* @media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* Small Tablet: 601 - 768px */
+  /* @media only screen and (min-width: 481px) and (max-width: 768px) {
     Header > Button Container
     .mobile-button-container {
       width: 35dvw;

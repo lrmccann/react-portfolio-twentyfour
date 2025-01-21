@@ -9,7 +9,7 @@ export const DropDownMenu = (props) => {
 
   useEffect(() => {
     setOpen(false);
-    setButtonLabel("Topic...");
+    setButtonLabel("Subject...");
   }, []);
 
   const handleToggle = () => {
@@ -56,7 +56,7 @@ export const DropDownMenu = (props) => {
         <div
           className={`${
             open
-              ? "contact-select-div bg-custom-contact-bg outline outline-custom-primary-outline outline-2"
+              ? "contact-select-div bg-custom-contact-bg "
               : ""
           }`}
         >

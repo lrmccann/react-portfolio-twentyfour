@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { DropDownMenu } from "./DropDownMenu";
-import { sendFormData, globalIcons } from "../Assets/utilities";
-import Button from "./Atoms/Button";
-import Input from "./Atoms/Input";
-import TextArea from "./Atoms/TextArea";
+import { useState } from "react";
+import { DropDownMenu } from "../DropDownMenu";
+import { sendFormData, globalIcons } from "../../Assets/utilities";
+import Button from "../Atoms/Button";
+import Input from "../Atoms/Input";
+import TextArea from "../Atoms/TextArea";
 
 const ContactForm = (props) => {
   const [name, setName] = useState();
@@ -29,7 +29,6 @@ const ContactForm = (props) => {
       Reason: reason,
       Message: message,
     };
-    console.log(formData, "form data??");
     formSubmitted ? setFormSubmitted(false) : setFormSubmitted(true);
     if (formSubmitted) {
       setName("");
@@ -42,22 +41,11 @@ const ContactForm = (props) => {
     }
   };
 
-  useEffect(() => {
-    console.log(
-      name,
-      "name in partnet comp, hopefully updates on blur of input component"
-    );
-  }, [name]);
-
-  // const handleFormInput = (e) => {
-
-  // }
-
   return (
     <>
       {!formSubmitted ? (
         <>
-          <form className="contact-form flex flex-col justify-evenly">
+          <form className="contact-form flex flex-col justify-around">
             <Input
               id={"name-input"}
               className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
@@ -66,6 +54,7 @@ const ContactForm = (props) => {
               value={name}
               type="text"
               stateUpdater={setName}
+              labelContent="Name"
             />
             <Input
               id={"email-input"}
@@ -75,6 +64,7 @@ const ContactForm = (props) => {
               value={email}
               type="email"
               stateUpdater={setEmail}
+              labelContent="Email"
             />
             <DropDownMenu
               items={selectOptions}
@@ -91,11 +81,15 @@ const ContactForm = (props) => {
               value={message}
               type="text"
               stateUpdater={setMessage}
+              labelContent="Message"
             />
           </form>
           <Button
-            height={27.5}
-            width={85}
+            height={100}
+            width={100}
+            bottom={5}
+            containerPadding={"0 2.5% 0 2.5%"}
+            containerSize={10}
             alignment={"flex-end"}
             type={"submit"}
             action={handleContactData}

@@ -132,7 +132,6 @@ const Header = (props) => {
               <ul className="text-custom-text">
                 {upperCaseSectionsArr.map((portfolioSection, index) => {
                   return (
-                    <>
                       <li
                         id={index}
                         onClick={(e) => {
@@ -143,7 +142,6 @@ const Header = (props) => {
                       >
                         {portfolioSection}
                       </li>
-                    </>
                   );
                 })}
               </ul>

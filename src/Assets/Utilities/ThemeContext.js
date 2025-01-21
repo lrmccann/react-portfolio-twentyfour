@@ -45,7 +45,6 @@ export const GlobalContextProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         screenWidth,
-        setScreenWidth,
         userDevice,
         currentUrl,
         upperCaseSectionsArr,

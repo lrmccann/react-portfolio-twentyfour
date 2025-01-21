@@ -1,15 +1,18 @@
-import {useContext} from 'react';
+import {useContext, useState, useEffect} from 'react';
 import { resumeText } from "../Assets/utilities";
-import { myResumePDF } from "../Assets/utilities";
 import { GlobalContext } from "../Assets/utilities";
 import Button from '../Components/Atoms/Button';
 
 
 
-const Resume = () => {
+const Resume = ({currentScreenWidth}) => {
 
 // const {userDevice} = props;    
     const {userDevice} = useContext(GlobalContext);  
+
+    const [mobileHomeActive, setMobileHomeActive] = useState();
+
+
 // pass to button comp to download resume without HTML attr
     function download(url) {
         const a = document.createElement('a')
@@ -19,11 +22,19 @@ const Resume = () => {
         a.click()
         document.body.removeChild(a)
       }
+
+      useEffect(() => {
+        if(currentScreenWidth <= 1025){
+          setMobileHomeActive("mobile-section");
+        }else{
+          setMobileHomeActive("");
+        }
+      }, [currentScreenWidth])
     
     return(
         <div
         id="experience"
-        className="section-block"
+        className={`section-block ${mobileHomeActive}`}
       >
         {resumeText.map((resumeSection, i) => {
           return (
@@ -51,7 +62,7 @@ const Resume = () => {
             </div>
           );
         })}
-            <Button height={27.5} width={85} alignment={"flex-end"} type="--download" action={download} id="resume-download" textContent="Download Full Resume" />
+            <Button height={100} width={100} containerPadding={"0 2.5% 0 2.5%"} bottom={5} containerSize={10} alignment={"flex-end"} type="--download" action={download} id="resume-download" textContent="Download Full Resume" />
       </div>
     )
 }

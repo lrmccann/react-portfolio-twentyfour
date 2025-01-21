@@ -1,0 +1,35 @@
+/* PATH: src/Assets/style/resume.css */
+
+/* App.js/Page/Section/Experience */
+#experience {
+  height: 92dvh;
+}
+
+#resume-container {
+  height: 100%;
+}
+
+/* MOBILE  */
+#mobile-resume-container {
+  padding: 4% 2.5% 0 2.5%;
+}
+
+#mobile-resume-container > h1 {
+  font-size: 1.45em;
+  text-decoration: underline;
+}
+
+#mobile-resume-container > h2 {
+  font-size: 1.25em;
+}
+
+#mobile-resume-container > ul {
+  height: auto;
+  padding-left: 4%;
+  list-style: square;
+}
+
+#mobile-resume-container > ul > li {
+  font-size: 0.85em;
+  margin: 1% 0;
+}

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+PATH: src/Assets/index.css
+DESCRIPTION: None-Specific Components Style
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+}
+
+.bold-font {
+  font-weight: bolder;
+}
+
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100dvh;
+  width: 100%;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+
+:root {
+  /* light vars */
+  --primary-light-background: white;
+  --secondary-light-background: #b3c8cf;
+  --light-text: black;
+  --light-outline: #b3c8cf;
+  --light-button-primary: #e5ddc5;
+  --light-button-secondary: ;
+  --light-button-text: green;
+  --light-contact-bg: white;
+  /* dark vars */
+  --primary-dark-background: black;
+  --secondary-dark-background: #05263c;
+  --dark-text: oldlace;
+  --dark-outline: #7768ce;
+  --dark-button-primary: #7768ce;
+  --dark-button-secondary: ;
+  --dark-button-text: oldlace;
+  --dark-contact-bg: gray;
+}
+
+html {
+  --primary-background: var(--primary-light-background);
+  --secondary-background: var(--secondary-light-background);
+  --text: var(--light-text);
+  --outline: var(--light-outline);
+  --button-bg-primary: var(--light-button-primary);
+  --button-bg-secondary: var(--light-button-secondary);
+  --button-text: var(--light-button-text);
+  --contact-bg: var(--light-contact-bg);
+}
+
+html.dark {
+  --primary-background: var(--primary-dark-background);
+  --secondary-background: var(--secondary-dark-background);
+  --text: var(--dark-text);
+  --outline: var(--dark-outline);
+  --button-bg-primary: var(--dark-button-primary);
+  --button-bg-secondary: var(--dark-button-secondary);
+  --button-text: var(--dark-button-text);
+  --contact-bg: var(--dark-contact-bg);
+}

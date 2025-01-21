@@ -1,6 +1,6 @@
 import * as React from "react";
-import ProgressBar from "./index";
-import './bar.css';
+import ProgressBar from "./ProgressBar";
+import "../../output.css";
 
 
 

@@ -1,12 +1,23 @@
-import { globalIcons } from "../Assets/utilities"
+import { globalIcons } from "../Assets/utilities";
+import { useState, useEffect } from "react";
 
-const About = (props) => {
+const About = ({currentScreenWidth}) => {
+
+  const [mobileHomeActive, setMobileHomeActive] = useState();
+
+  useEffect(() => {
+    if(currentScreenWidth <= 1025){
+      setMobileHomeActive("mobile-section");
+    }else{
+      setMobileHomeActive("");
+    }
+  }, [currentScreenWidth])
+
     return(
         <div
         id="about"
-        className="section-block flex flex-col items-center justify-evenly"
+        className={`section-block ${mobileHomeActive} flex flex-col items-center justify-evenly`}
       >
-        {/* <img src={globalIcons.loganIcon} alt="" /> */}
         <img src={globalIcons.loganIcon} alt="" />
         <p className="text-custom-text">
           Highly adaptable and detail-oriented web developer with extensive

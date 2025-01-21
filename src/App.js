@@ -11,39 +11,41 @@ import Project from "./Pages/Project";
 import Skill from "./Pages/Skill";
 import Resume from "./Pages/Resume";
 import Contact from "./Pages/Contact";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const {
-    screenWidth,
-    setScreenWidth,
-    themeMode,
-    lowerCaseSectionsArr,
-    currentTab,
-  } = useContext(GlobalContext);
+  const { screenWidth, themeMode, lowerCaseSectionsArr, currentTab } =
+    useContext(GlobalContext);
   const [activeTab, setActiveTab] = useState(currentTab);
+  const [currentScreenWidth, setCurrentScreenWidth] = useState(screenWidth);
 
   // set localstorage object's theme attribute to user preference after detecting browser pref in context
   useEffect(() => {
-    console.log(themeMode, "theme mode")
-    themeMode === "light"
-      ? document.documentElement.classList.remove("light")
-      : document.documentElement.classList.add("dark");
+    if (themeMode === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
   }, [themeMode]);
 
   // Watch Screen Width & Current Tab Location
   useEffect(() => {
+    // console.log(currentScreenWidth, "current screen width")
     window.addEventListener("resize", watchScreenSize);
     emitter.on("screen-width-data", (data) => {
-      if (screenWidth !== data.width) {
-        setScreenWidth(data.width);
+      if (currentScreenWidth !== data.width) {
+        setCurrentScreenWidth(data.width);
       }
     });
     return () => {
       window.removeEventListener("resize", watchScreenSize);
     };
-  }, [screenWidth, setScreenWidth]);
+  }, [currentScreenWidth]);
 
   function updateURL(newURL) {
+    // activeTab === 0 ? window.history.pushState({}, "", "/");
     if (window.history && window.history.pushState) {
       if (newURL === "/home") {
         window.history.pushState({}, "", "/");
@@ -54,6 +56,7 @@ export default function App() {
   }
 
   useEffect(() => {
+    if (currentScreenWidth <= 1025) {
     const elsToWatch = document.querySelectorAll(".section-block");
     if (elsToWatch) {
       elsToWatch.forEach((block) => {
@@ -63,8 +66,9 @@ export default function App() {
         updateURL(`/${lowerCaseSectionsArr[data]}`);
         setActiveTab(data);
       });
+      }
     }
-  }, [lowerCaseSectionsArr, setActiveTab]);
+  }, [lowerCaseSectionsArr, setActiveTab, currentScreenWidth]);
 
   return (
     <div className="App">
@@ -74,24 +78,72 @@ export default function App() {
         }}
         activeTab={activeTab}
       />
-      <MainContainer
-        currentThemeMode={themeMode}
-        handleContactNav={(activeTab) => {
-          setActiveTab(activeTab);
-        }}
-      >
-        <Home
-          key={0}
-          handleContactNav={(activeTab) => { 
-            setActiveTab(activeTab);
-          }}
-        />
-        <About key={1} />
-        <Skill key={3} />
-        <Project key={2} />
-        <Resume key={4} />
-        <Contact key={5} />
-      </MainContainer>
+
+      {currentScreenWidth <= 1025 ? (
+        <MainContainer currentScreenWidth={currentScreenWidth}>
+          <Home
+            key={0}
+            handleContactNav={(activeTab) => {
+              setActiveTab(activeTab);
+            }}
+            currentScreenWidth={currentScreenWidth}
+          />
+          <About key={1} currentScreenWidth={currentScreenWidth} />
+          <Skill key={2} currentScreenWidth={currentScreenWidth} />
+          <Project key={3} currentScreenWidth={currentScreenWidth} />
+          <Resume key={4} currentScreenWidth={currentScreenWidth} />
+          <Contact key={5} currentScreenWidth={currentScreenWidth} />
+        </MainContainer>
+      ) : (
+        <MainContainer>
+          <Routes>
+            <Route
+              path="/"
+              index
+              element={
+                <Home
+                  key={0}
+                  currentThemeMode={themeMode}
+                  handleContactNav={(activeTab) => {
+                    setActiveTab(activeTab);
+                  }}
+                  currentScreenWidth={currentScreenWidth}
+                />
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <About key={1} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+            <Route
+              path="/skills"
+              element={
+                <Skill key={2} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <Project key={3} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+            <Route
+              path="/resume"
+              element={
+                <Resume key={4} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Contact key={5} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+          </Routes>
+        </MainContainer>
+      )}
     </div>
   );
 }
