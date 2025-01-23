@@ -18,5 +18,14 @@
     "linkedinIconDark": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/linkedin-darker-gray.png",
     "checkMarkIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/check-mark-confirmation-icon.png",
     "lightModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sun-theme-icon.png",
-    "darkModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-theme-icon.png"
+    "darkModeMoonIcon" : "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-theme-icon.png",
+    "moonOne": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-try-one.png",
+    "moonTwo": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-try-two.png",
+    "sunOne": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sun-try-one.png",
+
+    "darkSmallNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/dark-theme-small-new-york-backdrop.png",
+    "lightSmallNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/light-theme-small-new-york-backdrop.png",
+
+
+    "moonIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png"
 }

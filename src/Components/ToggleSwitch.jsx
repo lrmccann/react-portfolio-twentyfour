@@ -12,12 +12,13 @@ const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
           type="checkbox"
         />
         <label
-          style={{ background: isOn && onColor }}
+          // style={{ background: isOn && onColor }}
+          style={{backgroundColor: onColor}}
           className="react-switch-label"
           htmlFor={`react-switch-new`}
         >
           <span className={`react-switch-button`} >
-            <img src={`${themeMode === "light" ? globalIcons.lightModeMoonIcon : globalIcons.darkModeMoonIcon }`} alt="" />
+            <img src={`${themeMode === "light" ? globalIcons.moonIcon : globalIcons.lightModeMoonIcon }`} alt="" />
           </span> 
         </label>
       </>

@@ -15,7 +15,7 @@ const Modal = (props) => {
 
   const [finalProjContArr, setFinalProjContArr] = useState([]);
   const [activeProjectImage, setActiveProjectImage] = useState();
-
+  
   useEffect(() => {
     const tempProjContArr = [];
     if (modalType === "project") {
@@ -29,6 +29,7 @@ const Modal = (props) => {
       setFinalProjContArr(tempProjContArr);
     }
   }, [modalType, projObj]);
+  
 
   const mainContainerEl = document.getElementById("main-page");
   useEffect(() => {

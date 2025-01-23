@@ -5,7 +5,7 @@ import { projectArr } from "../Assets/utilities";
 import ProjectCard from "../Components/ProjectCard";
 import { useNavigate } from "react-router-dom";
 
-const Project = ({ currentScreenWidth, setProject }) => {
+const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   const { userDevice } = useContext(GlobalContext);
   const [projectModalOpen, setProjectModalOpen] = useState(false);
   const [activeProject, setActiveProject] = useState({});
@@ -21,10 +21,15 @@ const Project = ({ currentScreenWidth, setProject }) => {
       mainContainerEl.classList.remove("modal-open");
     } else {
       if (Object.keys(projectObj)) {
-        setProject(projectObj)
-        // setActiveProject(projectObj);
-        // setProjectModalOpen(true);
-        // mainContainerEl.classList.add("modal-open");
+        if(currentScreenWidth >= 1025){
+          setProject(projectObj);
+          navigate(`/projects/${projectObj.siteName.replace(/\s+/g, '-').toLowerCase()}`)
+        }else{
+          setActiveProject(projectObj);
+          mobileProjectSelected(`/projects/${projectObj.siteName.replace(/\s+/g, '-').toLowerCase()}`)
+          setProjectModalOpen(true);
+          mainContainerEl.classList.add("modal-open");
+        }
       }
     }
   };
@@ -56,7 +61,7 @@ const Project = ({ currentScreenWidth, setProject }) => {
           </div>
         );
       })}
-      {projectModalOpen && userDevice === "mobile" && (
+      {projectModalOpen && currentScreenWidth <= 1025 && (
         <Modal
           projObj={activeProject}
           currentScreenWidth={currentScreenWidth}

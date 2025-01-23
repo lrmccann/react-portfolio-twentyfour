@@ -55,25 +55,26 @@ TOC (Search terms)
     padding: 1.25% 2%;
   }
   
-  .mobile-full-nav>ul>li {
-    font-size: x-large;
-  }
-  
-  
   .mobile-button-container {
     height: 100%;
-    width: 45dvw;
+    width: 30dvw;
   }
   
   .mobile-button-container>button {
-    width: 60%;
-    height: 100%;
-    border-radius: .5em;
+    aspect-ratio: 1/1;
+  }
+
+  #theme-button {
+    padding: 1%;
+  }
+  #theme-button > img{
+    max-height: 70%;
   }
 
   .mobile-button-container>button>img {
     height: 90%;
     width: 90%;
+    aspect-ratio: 1/1;
   }
 
   .mobile-menu-button {

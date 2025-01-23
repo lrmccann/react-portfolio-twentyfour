@@ -29,6 +29,7 @@ const Header = (props) => {
   const prevTab = usePrevious(activeTab);
   const [navOpen, setNavOpen] = useState(false);
   const [value, setValue] = useState();
+  const [sliderColor, setSliderColor] = useState();
 
   const headerOptions = {
     logoClass: userDevice === "mobile" ? "icon-mobile" : "icon-full",
@@ -48,8 +49,10 @@ const Header = (props) => {
 
   useEffect(() => {
     if(themeMode === "dark"){
+      setSliderColor("white");
       setValue(true);
     }else{
+      setSliderColor("red");
       setValue(false);
     }
   }, [themeMode])
@@ -89,8 +92,8 @@ const Header = (props) => {
   const socialNav = (socialUrl) => {};
 
   return (
-    <main className="header flex flex-row justify-between bg-custom-secondary-background">
-      <img
+    <main className="header ">
+      {/* <img
         className={`${headerOptions.logoClass}`}
         src={
           themeMode === "dark"
@@ -98,13 +101,37 @@ const Header = (props) => {
             : `${headerOptions.headerLogo}`
         }
         alt="Custom Icon With Logan R McCann Curved At The Top, The Initials LRM In The Center, And Developer Centered At The Bottom"
-      />
+      /> */}
       {userDevice !== "desktop" ? (
-        <div className={`mobile-nav-container flex flex-row`}>
-          <div className="mobile-button-container flex flex-row justify-between">
+        <div className={`mobile-nav-container `}>
+          <div className="mobile-button-container flex flex-row items-center justify-between">
+          <button
+            id="menu-button"
+              onClick={(e) => {
+                openNav(e);
+              }}
+              className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
+            >
+              <img src={navIcon} alt="Hamburger Icon To Open Page Navigation" />
+            </button>
+            {/* <button
+            id="theme-button"
+            onClick={() => {
+              setThemeMode(themeMode === "light" ? "dark" : "light");
+                if (!navOpen) {
+                  if (themeMode === "dark") {
+                    setNavIcon(globalIcons.darkHamburgerIconBlack);
+                  } else if (themeMode === "light") {
+                    setNavIcon(globalIcons.hamburgerIconBlack);
+                  }
+                }
+                setValue(!value);
+            }}
+            >
+              <img src={themeMode === "dark" ? `${globalIcons.moonOne}` : `${globalIcons.sunOne}`} alt="theme-switcher" />
+            </button> */}
             <ToggleSwitch
               isOn={value}
-              onColor="black"
               themeMode={themeMode}
               handleToggle={() => {
                 setThemeMode(themeMode === "light" ? "dark" : "light");
@@ -117,15 +144,8 @@ const Header = (props) => {
                 }
                 setValue(!value);
               }}
+              onColor={`${sliderColor}`}
             />
-            <button
-              onClick={(e) => {
-                openNav(e);
-              }}
-              className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
-            >
-              <img src={navIcon} alt="Hamburger Icon To Open Page Navigation" />
-            </button>
           </div>
           {navOpen && (
             <div className="mobile-full-nav flex flex-col justify-between bg-custom-primary-background">

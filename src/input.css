@@ -6,15 +6,21 @@
   padding: 0 2.5%;
 }
 
-#about>img {
+.about-cont{
+  height: 85%;
+  /* margin-top: 1%; */
+  /* background-color: #00f260; */
+}
+
+#about>.about-cont>img {
   object-fit: cover;
-  width: 95%;
+  /* width: 80%; */
   aspect-ratio: 1/1;
   margin: 0 auto;
   border-radius: 12em;
 }
 
-#about>p {
+#about>.about-cont>p {
   font-size: 1.1em;
   width: 95%;
 }
@@ -44,95 +50,7 @@
   border: solid gray 2px;
   padding: 10%;
   border-radius: 1.5em;
-}
-  /* Mobile Portrait: 320 - 480 pixels */
-  @media only screen and (max-width: 480px) {
-    .mobile-button-container{
-      max-width: 40dvw;
-    }
-    .mobile-button-container > button{
-      max-width: 35%;
-    }
-    .mobile-button-container>button>img {
-      height: 95%;
-      width: 90%;
-    }
-  } 
-  /* Mobile Landscape: 481 - 600 pixels */
-@media only screen and (min-width: 481px) and (max-width: 700px) {
-  /* HEADER */
-  .icon-mobile{
-    aspect-ratio: 2/1;
-    margin-left: 1.25%;
-  }
-  .mobile-button-container{
-    max-width: 30dvw;
-  }
-  .mobile-button-container > button{
-    max-width: 37.5%;
-  }
-  .mobile-button-container>button>img {
-    height: fit-content;
-    aspect-ratio: 1/1;
-    width: 70%;
-    object-fit: cover;
-  }
-  .react-switch-label {
-    max-width: 50%;
-    width: 50%;
-    height: 65%;
-  }
-  /* ABOUT */
-  #about>img {
-    width: 80%;
-    border-radius: 15em;
-  }
-  #about > p{
-    text-align: center;
-    font-weight: bolder;
-  }
-  /* PROJECTS */
-  .project-card-default > div {
-    height: auto;
-    width: 11.5%;
-    bottom: 6%;
-    right: 3%;
-  }
-  .project-card-default > h1 {
-    font-size: 1.25em;
-  }
-  .project-card-default > p{
-    font-weight: 200;
-    font-size: .9em;
-  }
-  .project-modal-body > div {
-    height: 100%;
-    width: 100%;
-  }
-  .project-modal-body > div > img{
-    height: auto;
-    width: 100%;
-    min-width: 100%;
-    margin-bottom: 2%;
-  }
- }
-  /* Tablet Portrait: 320 - 480 pixels */
- /* @media only screen and (min-width: 601px) and (max-width: 768px) {
-
- } */
-
-  /* Small Tablet: 601 - 768px */
-  /* @media only screen and (min-width: 481px) and (max-width: 768px) {
-    Header > Button Container
-    .mobile-button-container {
-      width: 35dvw;
-    }
-    Header > React Switch
-    .react-switch-label{
-      height: 100%;
-      width: 14dvw;
-    }
-  } *//* 
+}/* 
 PATH: src/Assets/style/components.css
 DESCRIPTION: None-Specific Components Style
 TOC (Search terms)
@@ -175,6 +93,10 @@ TOC (Search terms)
     z-index: 100;
     margin: 0 auto;
   }
+  .mobile-nav-container{
+    width: 100%;
+    height: 100%;
+  }
 
   .active {
     text-decoration: underline;
@@ -196,22 +118,25 @@ TOC (Search terms)
   
   .mobile-button-container {
     height: 100%;
-    width: 45dvw;
+    width: 30dvw;
   }
   
   .mobile-button-container>button {
-    width: 60%;
-    height: 100%;
+    aspect-ratio: 1/1;
     border-radius: .5em;
+  }
+
+  /* #theme-button {
+    padding: 1%;
+  } */
+  #theme-button > img{
+    max-height: 70%;
   }
 
   .mobile-button-container>button>img {
     height: 90%;
     width: 90%;
-  }
-
-  .mobile-menu-button {
-    border-radius: .5em;
+    aspect-ratio: 1/1;
   }
 
   /* Small Desktop & Laptop: 1025 - 1280px */
@@ -296,14 +221,16 @@ TOC (Search terms)
 }
 
 .react-switch-label {
+  /* background-color: #00f260; */
+  margin-right: 1.25%;
   display: flex;
-  align-items: center;
-  align-self: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* align-self: center; */
+  /* justify-content: space-between; */
   cursor: pointer;
-  width: 45%;
-  height: 80%;
-  background: #e6e7e9;
+  width: 20%;
+  height: 65%;
+  /* background: #7768ce; */
   border-radius: 100px;
   position: relative;
   transition: background-color .2s;
@@ -317,7 +244,7 @@ TOC (Search terms)
   aspect-ratio: 1/1;
   border-radius: 45px;
   transition: 0.2s;
-  background: #fff;
+  background: #7768ce;
   box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
 }
 
@@ -338,7 +265,7 @@ TOC (Search terms)
 }
 .react-switch-button > img{
   aspect-ratio: 1/1;
-  height: 90%;
+  height: 80%;
   object-fit: cover;
 }
 
@@ -774,6 +701,7 @@ h2,
 #home {
   height: 100%;
   padding: 10vh 2.5% 0 2.5%;
+  /* position: relative; */
 }
 
 #home > h3 {
@@ -790,6 +718,18 @@ h2,
 .live-text-cont {
   align-self: flex-start;
   font-size: 2.5em;
+}
+#home > img{
+  /* height: 100%; */
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  /* width: 100%; */
+  /* aspect-ratio: 2/1; */
+  /* background-position: 25%; */
+  /* zoom: 0; */
+  object-fit: cover;
+  position: absolute;
 }
 
 .cursor {
@@ -853,7 +793,8 @@ body {
   --light-button-text: green;
   --light-contact-bg: white;
   /* dark vars */
-  --primary-dark-background: black;
+  /* --primary-dark-background: black; */
+  --primary-dark-background: #303030;
   --secondary-dark-background: #05263c;
   --dark-text: oldlace;
   --dark-outline: #7768ce;
@@ -926,24 +867,23 @@ html.dark {
 .project-card-default > p {
   font-size: small;
 }
-
+ß
 /* project modal style */
 .project-modal-body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 80%;
+  /* padding: 1% 2.5%; */
+  /* margin: 0 2.5% 0 2.5%; */
 }
 .project-modal-body > div{
   height: auto;
   width: 100%;
+  /* background-color: #0575e6; */
   padding: 1% 2.5%;
 }
 
-.project-modal-image {
-  outline: solid black 1px;
-  border-radius: 2em;
-}
 
 .project-modal-body > div > span > label {
   font-size: large;
@@ -972,7 +912,8 @@ html.dark {
 
 .project-modal-body > div > .small-button-container {
   left: 0;
-}/* PATH: src/Assets/style/resume.css */
+}
+/* PATH: src/Assets/style/resume.css */
 
 /* App.js/Page/Section/Experience */
 #experience {
@@ -1006,7 +947,8 @@ html.dark {
 #mobile-resume-container > ul > li {
   font-size: 0.85em;
   margin: 1% 0;
-}/* PATH: src/Assets/style/skills.css */
+}
+/* PATH: src/Assets/style/skills.css */
 
 /* App.js/Page/Section/Skills */
 #skills {
@@ -1104,3 +1046,139 @@ html.dark {
   height: 100%;
   width: 100%;
 }
+
+
+
+  /* Mobile Portrait: 320 - 480 pixels */
+  @media only screen and (max-width: 480px) {
+    /* .mobile-button-container{
+      max-width: 40dvw;
+    } */
+    /* .mobile-button-container > button{
+      max-width: 35%;
+    } */
+    .icon-mobile{
+      aspect-ratio: 2/1;
+      /* margin-left: 1.25%; */
+    }
+    .mobile-nav-container{
+      /* height: 100%; */
+      /* width: 100%; */
+    }
+    .mobile-button-container{
+      /* width: 1%; */
+      width: 100%;
+      /* max-width: 30%; */
+      /* aspect-ratio: 2/1; */
+      /* background-color: red; */
+      /* margin-right: 1.25%; */
+    }
+    #theme-button{
+      width: 50%;
+    }
+    #menu-button{
+      width: 20%;
+      max-height: 95%;
+    }
+    .mobile-button-container > button{
+      /* max-width: 42.5%; */
+      /* background-color: #0ED2F7; */
+      aspect-ratio: 1/1;
+    }
+
+    .mobile-button-container>button>img {
+      height: 95%;
+      width: 90%;
+      object-fit: contain;
+    }
+    #about>.about-cont>p{
+      text-align: center;
+      /* text-wrap: pretty; */
+    }
+    #about>.about-cont>img {
+      width: 80%;
+    }
+  } 
+  /* Mobile Landscape: 481 - 600 pixels */
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+  /* HEADER */
+  .icon-mobile{
+    aspect-ratio: 2/1;
+    margin-left: 1.25%;
+  }
+  .mobile-button-container{
+    max-width: 20dvw;
+    margin-right: 1.25%;
+    /* background-color: #00f260; */
+  }
+  .mobile-button-container > button{
+    max-width: 42.5%;
+  }
+  .mobile-button-container>button>img {
+    height: fit-content;
+    aspect-ratio: 1/1;
+    /* width: 70%; */
+    object-fit: contain;
+  }
+  .react-switch-label {
+    max-width: 50%;
+    width: 50%;
+    height: 65%;
+  }
+  /* ABOUT */
+  #about{
+    padding: 4% 0 1% 0;
+  }
+  #about>.about-cont>img {
+    width: 80%;
+    border-radius: 15em;
+  }
+  #about >.about-cont > p{
+    width: 95%;
+    text-wrap: wrap;
+    margin-top: 4%;
+    text-align: center;
+    font-weight: bolder;
+  }
+  /* PROJECTS */
+  .project-card-default > div {
+    height: auto;
+    width: 11.5%;
+    bottom: 6%;
+    right: 3%;
+  }
+  .project-card-default > h1 {
+    font-size: 1.25em;
+  }
+  .project-card-default > p{
+    font-weight: 200;
+    font-size: .9em;
+  }
+  .project-modal-body > div {
+    height: 100%;
+    width: 100%;
+  }
+  .project-modal-body > div > img{
+    height: auto;
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 2%;
+  }
+ }
+  /* Tablet Portrait: 320 - 480 pixels */
+ /* @media only screen and (min-width: 601px) and (max-width: 768px) {
+
+ } */
+
+  /* Small Tablet: 601 - 768px */
+  /* @media only screen and (min-width: 481px) and (max-width: 768px) {
+    Header > Button Container
+    .mobile-button-container {
+      width: 35dvw;
+    }
+    Header > React Switch
+    .react-switch-label{
+      height: 100%;
+      width: 14dvw;
+    }
+  } */
