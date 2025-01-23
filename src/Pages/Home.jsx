@@ -38,9 +38,7 @@ const Home = ({ handleContactNav, currentScreenWidth }) => {
       className={`section-block ${mobileHomeActive} flex flex-col items-center`}
     >
       {/* SEO/Meta Data */}
-      <title>Home</title>
-      <meta name="description" content="" />
-      <meta name="keywords" content={roleOptions} />
+
 
       <h3 className="text-custom-text">Hi, I'm</h3>
       <h1 className="text-custom-text">Logan McCann</h1>

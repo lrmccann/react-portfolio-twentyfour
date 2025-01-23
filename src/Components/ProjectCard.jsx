@@ -29,6 +29,7 @@ const ProjectCard = (props) => {
     >
       <button
         onClick={() => {
+          // hoistProject(currentProject.siteName);
           cb(currentProject);
         }}
         id={`button-${currentProject.id}`}

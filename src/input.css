@@ -44,7 +44,95 @@
   border: solid gray 2px;
   padding: 10%;
   border-radius: 1.5em;
-}/* 
+}
+  /* Mobile Portrait: 320 - 480 pixels */
+  @media only screen and (max-width: 480px) {
+    .mobile-button-container{
+      max-width: 40dvw;
+    }
+    .mobile-button-container > button{
+      max-width: 35%;
+    }
+    .mobile-button-container>button>img {
+      height: 95%;
+      width: 90%;
+    }
+  } 
+  /* Mobile Landscape: 481 - 600 pixels */
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+  /* HEADER */
+  .icon-mobile{
+    aspect-ratio: 2/1;
+    margin-left: 1.25%;
+  }
+  .mobile-button-container{
+    max-width: 30dvw;
+  }
+  .mobile-button-container > button{
+    max-width: 37.5%;
+  }
+  .mobile-button-container>button>img {
+    height: fit-content;
+    aspect-ratio: 1/1;
+    width: 70%;
+    object-fit: cover;
+  }
+  .react-switch-label {
+    max-width: 50%;
+    width: 50%;
+    height: 65%;
+  }
+  /* ABOUT */
+  #about>img {
+    width: 80%;
+    border-radius: 15em;
+  }
+  #about > p{
+    text-align: center;
+    font-weight: bolder;
+  }
+  /* PROJECTS */
+  .project-card-default > div {
+    height: auto;
+    width: 11.5%;
+    bottom: 6%;
+    right: 3%;
+  }
+  .project-card-default > h1 {
+    font-size: 1.25em;
+  }
+  .project-card-default > p{
+    font-weight: 200;
+    font-size: .9em;
+  }
+  .project-modal-body > div {
+    height: 100%;
+    width: 100%;
+  }
+  .project-modal-body > div > img{
+    height: auto;
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 2%;
+  }
+ }
+  /* Tablet Portrait: 320 - 480 pixels */
+ /* @media only screen and (min-width: 601px) and (max-width: 768px) {
+
+ } */
+
+  /* Small Tablet: 601 - 768px */
+  /* @media only screen and (min-width: 481px) and (max-width: 768px) {
+    Header > Button Container
+    .mobile-button-container {
+      width: 35dvw;
+    }
+    Header > React Switch
+    .react-switch-label{
+      height: 100%;
+      width: 14dvw;
+    }
+  } *//* 
 PATH: src/Assets/style/components.css
 DESCRIPTION: None-Specific Components Style
 TOC (Search terms)
@@ -838,23 +926,24 @@ html.dark {
 .project-card-default > p {
   font-size: small;
 }
-ß
+
 /* project modal style */
 .project-modal-body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 80%;
-  /* padding: 1% 2.5%; */
-  /* margin: 0 2.5% 0 2.5%; */
 }
 .project-modal-body > div{
   height: auto;
   width: 100%;
-  /* background-color: #0575e6; */
   padding: 1% 2.5%;
 }
 
+.project-modal-image {
+  outline: solid black 1px;
+  border-radius: 2em;
+}
 
 .project-modal-body > div > span > label {
   font-size: large;
@@ -883,8 +972,7 @@ html.dark {
 
 .project-modal-body > div > .small-button-container {
   left: 0;
-}
-/* PATH: src/Assets/style/resume.css */
+}/* PATH: src/Assets/style/resume.css */
 
 /* App.js/Page/Section/Experience */
 #experience {
@@ -918,8 +1006,7 @@ html.dark {
 #mobile-resume-container > ul > li {
   font-size: 0.85em;
   margin: 1% 0;
-}
-/* PATH: src/Assets/style/skills.css */
+}/* PATH: src/Assets/style/skills.css */
 
 /* App.js/Page/Section/Skills */
 #skills {
@@ -1017,94 +1104,3 @@ html.dark {
   height: 100%;
   width: 100%;
 }
-
-
-
-  /* Mobile Portrait: 320 - 480 pixels */
-  @media only screen and (max-width: 480px) {
-    .mobile-button-container{
-      max-width: 40dvw;
-    }
-    .mobile-button-container > button{
-      max-width: 35%;
-    }
-    .mobile-button-container>button>img {
-      height: 95%;
-      width: 90%;
-    }
-  } 
-  /* Mobile Landscape: 481 - 600 pixels */
-@media only screen and (min-width: 481px) and (max-width: 700px) {
-  /* HEADER */
-  .icon-mobile{
-    aspect-ratio: 2/1;
-    margin-left: 1.25%;
-  }
-  .mobile-button-container{
-    max-width: 30dvw;
-  }
-  .mobile-button-container > button{
-    max-width: 37.5%;
-  }
-  .mobile-button-container>button>img {
-    height: fit-content;
-    aspect-ratio: 1/1;
-    width: 70%;
-    object-fit: cover;
-  }
-  .react-switch-label {
-    max-width: 50%;
-    width: 50%;
-    height: 65%;
-  }
-  /* ABOUT */
-  #about>img {
-    width: 80%;
-    border-radius: 15em;
-  }
-  #about > p{
-    text-align: center;
-    font-weight: bolder;
-  }
-  /* PROJECTS */
-  .project-card-default > div {
-    height: auto;
-    width: 11.5%;
-    bottom: 6%;
-    right: 3%;
-  }
-  .project-card-default > h1 {
-    font-size: 1.25em;
-  }
-  .project-card-default > p{
-    font-weight: 200;
-    font-size: .9em;
-  }
-  .project-modal-body > div {
-    height: 100%;
-    width: 100%;
-  }
-  .project-modal-body > div > img{
-    height: auto;
-    width: 100%;
-    min-width: 100%;
-    margin-bottom: 2%;
-  }
- }
-  /* Tablet Portrait: 320 - 480 pixels */
- /* @media only screen and (min-width: 601px) and (max-width: 768px) {
-
- } */
-
-  /* Small Tablet: 601 - 768px */
-  /* @media only screen and (min-width: 481px) and (max-width: 768px) {
-    Header > Button Container
-    .mobile-button-container {
-      width: 35dvw;
-    }
-    Header > React Switch
-    .react-switch-label{
-      height: 100%;
-      width: 14dvw;
-    }
-  } */

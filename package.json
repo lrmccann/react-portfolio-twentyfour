@@ -26,13 +26,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start & npm run concat-css & npm run tailwind:watch && kill $!",
+    "start": "react-scripts start & npm run concat-css & npm run tailwind:watch && kill $!",
     "concat-css": "cat src/Assets/style/* > src/input.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "npm run build&&node --env-file='.env' server/server.js",
-    "tailwind:watch": "tailwindcss -i src/input.css -o src/output.css --watch"
+    "tailwind:watch": "tailwindcss -i src/input.css -o src/output.css --watch",
+    "tailwind": "tailwindcss -i src/input.css -o src/output.css --watch"
   },
   "eslintConfig": {
     "extends": [

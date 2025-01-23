@@ -30,13 +30,22 @@ const Modal = (props) => {
     }
   }, [modalType, projObj]);
 
+  const mainContainerEl = document.getElementById("main-page");
   useEffect(() => {
     if(currentScreenWidth <= 1025 && modalType === "project"){
       setActiveProjectImage(projObj.siteThumbnail);
     }else if(currentScreenWidth >= 1025 && modalType === "project") {
       setActiveProjectImage(projObj.siteLarge);
     }
-  }, [currentScreenWidth, projObj, modalType])
+  }, [currentScreenWidth, projObj, modalType]);
+
+  useEffect(() => {
+    if(modalStatus){
+      mainContainerEl.classList.add("modal-open");
+    }else{
+      mainContainerEl.classList.remove("modal-open");
+    }
+  })
 
   return (
     <div className="modal-container bg-custom-primary-background">

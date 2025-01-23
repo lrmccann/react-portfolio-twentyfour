@@ -11,13 +11,18 @@ import Project from "./Pages/Project";
 import Skill from "./Pages/Skill";
 import Resume from "./Pages/Resume";
 import Contact from "./Pages/Contact";
-import { Routes, Route } from "react-router-dom";
+import Modal from "./Components/Modal";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 export default function App() {
   const { screenWidth, themeMode, lowerCaseSectionsArr, currentTab } =
     useContext(GlobalContext);
   const [activeTab, setActiveTab] = useState(currentTab);
   const [currentScreenWidth, setCurrentScreenWidth] = useState(screenWidth);
+  const [activeProject, setActiveProject] = useState({});
+
+  const location = useLocation();
+  const navigation = useNavigate();
 
   // set localstorage object's theme attribute to user preference after detecting browser pref in context
   useEffect(() => {
@@ -32,7 +37,6 @@ export default function App() {
 
   // Watch Screen Width & Current Tab Location
   useEffect(() => {
-    // console.log(currentScreenWidth, "current screen width")
     window.addEventListener("resize", watchScreenSize);
     emitter.on("screen-width-data", (data) => {
       if (currentScreenWidth !== data.width) {
@@ -45,8 +49,7 @@ export default function App() {
   }, [currentScreenWidth]);
 
   function updateURL(newURL) {
-    // activeTab === 0 ? window.history.pushState({}, "", "/");
-    if (window.history && window.history.pushState) {
+    if (window.history && window.history.pushState && currentScreenWidth <= 1025) {
       if (newURL === "/home") {
         window.history.pushState({}, "", "/");
       } else {
@@ -69,6 +72,10 @@ export default function App() {
       }
     }
   }, [lowerCaseSectionsArr, setActiveTab, currentScreenWidth]);
+
+  const openModal = (path) => {
+    navigation(path, {state: {background: location}});
+  }
 
   return (
     <div className="App">
@@ -96,7 +103,7 @@ export default function App() {
         </MainContainer>
       ) : (
         <MainContainer>
-          <Routes>
+          <Routes location={location.state?.background || location}>
             <Route
               path="/"
               index
@@ -126,9 +133,15 @@ export default function App() {
             <Route
               path="/projects"
               element={
-                <Project key={3} currentScreenWidth={currentScreenWidth} />
+                <Project key={3} currentScreenWidth={currentScreenWidth}
+                setProject={((project) => {
+                  setActiveProject(project);
+                })}
+                />
               }
             />
+              {/* <Route  element={<Modal />} /> */}
+            {/* </Route> */}
             <Route
               path="/resume"
               element={
@@ -142,6 +155,13 @@ export default function App() {
               }
             />
           </Routes>
+
+              {location.state?.background && (
+                <Routes>
+                  <Route path={`/projects/:${activeProject.siteName}`} element={<Modal projObj={activeProject} modalType="project" modalStatus={true} />} />
+                </Routes>
+              )}
+
         </MainContainer>
       )}
     </div>
