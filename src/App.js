@@ -12,6 +12,7 @@ import Skill from "./Pages/Skill";
 import Resume from "./Pages/Resume";
 import Contact from "./Pages/Contact";
 import Modal from "./Components/Modal";
+import Footer from "./Components/Footer";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 export default function App() {
@@ -77,6 +78,12 @@ export default function App() {
         emitter.on("current-scroll-index", (data) => {
           updateURL(`/${lowerCaseSectionsArr[data]}`);
           setActiveTab(data);
+          if(data !== 0){
+            document.getElementById("header").style.display = "none";
+          }else{
+            document.getElementById("header").style.display = "block";
+          }
+          // console.log(activeTab, "active tab in app")
         });
       }
     }
@@ -133,6 +140,7 @@ export default function App() {
           />
           <Resume key={4} currentScreenWidth={currentScreenWidth} />
           <Contact key={5} currentScreenWidth={currentScreenWidth} />
+          {activeTab !== 0 && (<Footer />)}
         </MainContainer>
       ) : (
         <MainContainer>

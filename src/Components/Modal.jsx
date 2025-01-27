@@ -21,10 +21,11 @@ const Modal = (props) => {
     if (modalType === "project") {
       projObj.techStack.map((tech, i) => {
         if (i < projObj.techStack.length) {
-          return tempProjContArr.push(tech + " •");
+          tempProjContArr.push(tech + " •");
         } else if(i === projObj.techStack.length) {
-          return tempProjContArr.push(tech);
+          tempProjContArr.push(tech);
         }
+        return tempProjContArr;
       });
       setFinalProjContArr(tempProjContArr);
     }
@@ -43,10 +44,17 @@ const Modal = (props) => {
   useEffect(() => {
     if(modalStatus){
       mainContainerEl.classList.add("modal-open");
+      document.addEventListener("keydown", function(event){
+        event.preventDefault();
+        if(event.key === 'Escape'){
+          modalStatus(null);
+        }
+        console.log("escape key pressed");
+      })
     }else{
       mainContainerEl.classList.remove("modal-open");
     }
-  })
+  }, [mainContainerEl.classList, modalStatus])
 
   return (
     <div className="modal-container bg-custom-primary-background">
@@ -65,6 +73,7 @@ const Modal = (props) => {
           onClick={() => {
             modalStatus(null);
           }}
+          
         >
           <h1 className="text-custom-text">X</h1>
         </button>

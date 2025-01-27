@@ -68,7 +68,6 @@ const Skill = ({ currentScreenWidth }) => {
         uniqueKey={2}
         callback={openSkillModal}
       />
-      ;
       {skillModalOpen && userDevice === "mobile" && (
         <Modal
           arr={activeArr}

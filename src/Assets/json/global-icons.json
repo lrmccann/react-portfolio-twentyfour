@@ -27,5 +27,8 @@
     "lightSmallNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/light-theme-small-new-york-backdrop.png",
 
 
-    "moonIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png"
+    "moonIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png",
+
+
+    "webexIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-icon.png"
 }

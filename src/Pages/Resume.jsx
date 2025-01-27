@@ -61,7 +61,7 @@ const Resume = ({ currentScreenWidth }) => {
         height={100}
         width={100}
         containerPadding={"0 2.5% 0 2.5%"}
-        bottom={5}
+        bottom={10}
         containerSize={10}
         alignment={"flex-end"}
         type="--download"

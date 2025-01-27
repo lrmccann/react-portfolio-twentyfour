@@ -92,7 +92,7 @@ const Header = (props) => {
   const socialNav = (socialUrl) => {};
 
   return (
-    <main className="header ">
+    <main className="header bg-custom-primary-background" id="header">
       {/* <img
         className={`${headerOptions.logoClass}`}
         src={

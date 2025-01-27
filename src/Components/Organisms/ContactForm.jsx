@@ -45,7 +45,7 @@ const ContactForm = (props) => {
     <>
       {!formSubmitted ? (
         <>
-          <form className="contact-form flex flex-col justify-around">
+          <form autoComplete="off" className="contact-form flex flex-col justify-around">
             <Input
               id={"name-input"}
               className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
@@ -87,7 +87,7 @@ const ContactForm = (props) => {
           <Button
             height={100}
             width={100}
-            bottom={5}
+            bottom={10}
             containerPadding={"0 2.5% 0 2.5%"}
             containerSize={10}
             alignment={"flex-end"}
