@@ -7,6 +7,7 @@ const Home = ({ handleContactNav, currentScreenWidth, currentThemeMode }) => {
   const { userDevice } = useContext(GlobalContext);
   const [mobileHomeActive, setMobileHomeActive] = useState();
   const [homeBackground, setHomeBackground] = useState("");
+  const [pause, setPause] = useState();
 
   // const navToContact = () => {
   //   const target = document.getElementById("contact");
@@ -34,7 +35,7 @@ const Home = ({ handleContactNav, currentScreenWidth, currentThemeMode }) => {
   }, [currentScreenWidth]);
 
   useEffect(() => {
-    if ( currentThemeMode === "dark") {
+    if (currentThemeMode === "dark") {
       setHomeBackground(globalIcons.darkSmallNyBackdrop);
     } else {
       setHomeBackground(globalIcons.lightSmallNyBackdrop);
@@ -49,12 +50,12 @@ const Home = ({ handleContactNav, currentScreenWidth, currentThemeMode }) => {
       <img src={`${homeBackground}`} alt="asd" />
       {/* SEO/Meta Data */}
 
-
       <h3 className="text-custom-text">Hi, I'm</h3>
       <h1 className="text-custom-text">Logan McCann</h1>
-      <LiveTypeHero text={roleOptions} speed={200} />
+      <LiveTypeHero text={roleOptions} speed={250} pauseDuration={500} />
       {userDevice === "mobile" ? (
         <></>
+      ) : (
         // <Button
         //   height={100}
         //   containerPadding={"0 2.5% 0 2.5%"}
@@ -66,7 +67,6 @@ const Home = ({ handleContactNav, currentScreenWidth, currentThemeMode }) => {
         //   id="idk"
         //   textContent="Contact Now"
         // />
-      ) : (
         <div>
           <h1 className="text-custom-text">
             This is home screen els for full screen view

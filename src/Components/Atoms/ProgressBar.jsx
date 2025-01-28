@@ -103,8 +103,8 @@ const ProgressBar = (props) => {
     >
       {!hideText && (
         <div className={`labelScoreContainer ${darkTheme && `labelDarkTheme`}`}>
-          <div className={`label`}>{label}</div>
-          <div className={`number`}>{score}%</div>
+          <div className={`label text-custom-text`}>{label}</div>
+          <div className={`number text-custom-text`}>{score}%</div>
         </div>
       )}
       <div className={`barGaugeContainer`} style={{ flexWrap: "wrap" }}>

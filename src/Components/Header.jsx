@@ -52,7 +52,7 @@ const Header = (props) => {
       setSliderColor("white");
       setValue(true);
     }else{
-      setSliderColor("red");
+      setSliderColor("#303030");
       setValue(false);
     }
   }, [themeMode])
@@ -93,15 +93,6 @@ const Header = (props) => {
 
   return (
     <main className="header bg-custom-primary-background" id="header">
-      {/* <img
-        className={`${headerOptions.logoClass}`}
-        src={
-          themeMode === "dark"
-            ? `${globalIcons.lrmLogoMobileDark}`
-            : `${headerOptions.headerLogo}`
-        }
-        alt="Custom Icon With Logan R McCann Curved At The Top, The Initials LRM In The Center, And Developer Centered At The Bottom"
-      /> */}
       {userDevice !== "desktop" ? (
         <div className={`mobile-nav-container `}>
           <div className="mobile-button-container flex flex-row items-center justify-between">
@@ -114,22 +105,6 @@ const Header = (props) => {
             >
               <img src={navIcon} alt="Hamburger Icon To Open Page Navigation" />
             </button>
-            {/* <button
-            id="theme-button"
-            onClick={() => {
-              setThemeMode(themeMode === "light" ? "dark" : "light");
-                if (!navOpen) {
-                  if (themeMode === "dark") {
-                    setNavIcon(globalIcons.darkHamburgerIconBlack);
-                  } else if (themeMode === "light") {
-                    setNavIcon(globalIcons.hamburgerIconBlack);
-                  }
-                }
-                setValue(!value);
-            }}
-            >
-              <img src={themeMode === "dark" ? `${globalIcons.moonOne}` : `${globalIcons.sunOne}`} alt="theme-switcher" />
-            </button> */}
             <ToggleSwitch
               isOn={value}
               themeMode={themeMode}
@@ -158,7 +133,7 @@ const Header = (props) => {
                           navAction(e);
                         }}
                         className={`${activeTab === index ? "active" : ""} `}
-                        key={index}
+                        key={`header-nav-${index}`}
                       >
                         {portfolioSection}
                       </li>
@@ -222,7 +197,7 @@ const Header = (props) => {
                   onClick={(e) => {
                     navAction(e);
                   }}
-                  key={index}
+                  key={`header-key-${index}`}
                   id={index}
                   className={activeTab === index ? "active" : ""}
                 >

@@ -9,7 +9,7 @@ const AnimatedRow = ({ iconArr, heading, uniqueKey, callback }) => {
   return (
     <div
       className="mobile-icon-container flex flex-col justify-evenly"
-      key={uniqueKey}
+      key={`icon-container-${uniqueKey}`}
     >
       <h1
         id={`skill-header-${uniqueKey}`}
@@ -49,13 +49,12 @@ const AnimatedRow = ({ iconArr, heading, uniqueKey, callback }) => {
           {iconArr.map((icon, index) => (
             <Icon
               id="icon"
-              key={index}
+              key={`icon-${index}`}
               source={icon.img}
               className="icon"
               altText={icon.Name}
             />
           ))}
-          ;
         </div>
       </div>
     </div>

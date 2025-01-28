@@ -30,5 +30,11 @@
     "moonIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png",
 
 
-    "webexIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-icon.png"
+    "webexIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-icon.png",
+
+    "DarkModeProfilePicture": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-bio-with-dark-vector.png",
+
+
+    "loganTransparent": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon-transparent-background.png",
+    "vectorBg":"https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/transparent-vector-background.png"
 }

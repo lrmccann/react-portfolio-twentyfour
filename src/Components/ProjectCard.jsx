@@ -1,42 +1,50 @@
-import { useEffect, useState } from "react";
-import Icon from '../Components/Atoms/Icon';
+import Image from "./Atoms/Image";
 
 const ProjectCard = (props) => {
-  const [mainTechIcon, setMainTechIcon] = useState("");
-  const [activeColor, setActiveColor] = useState();
-
-  const { currentProject, cb } = props;
-
-  useEffect(() => {
-    const colorArr = [
-      "black",
-      "blue",
-      "green",
-      "yellow",
-      "red",
-      "orange",
-      "gray",
-      "purple",
-    ];
-    setActiveColor(colorArr[currentProject.id]);
-    setMainTechIcon(currentProject.techIcon);
-  }, [currentProject]);
+  const { projClass, uniqueKey, currentProject, cb } = props;
 
   return (
     <div
-      className={`project-card-default outline outline-custom-primary-outline outline-1 flex flex-col justify-start ${activeColor}`}
+      key={`proj-card-${uniqueKey}`}
       id={`proj-${currentProject.id}`}
+      className={`project-card ${projClass}`}
     >
-      <button
-        onClick={() => {
+      <Image
+        className="proj-image"
+        aspectRatio={1 / 1.25}
+        width="100%"
+        height="50%"
+        imageSrc={currentProject.siteThumbnail}
+        altText="idk"
+      />
+      <h1 className="text-custom-text">{currentProject.siteName}</h1>
+      <p className="text-custom-text">{currentProject.description}</p>
+      {/* <button
+        onClick={(e) => {
+          e.preventDefault();
           cb(currentProject);
         }}
         id={`button-${currentProject.id}`}
-      ></button>
-      <h1 className="text-custom-text">{currentProject.siteName}</h1>
-      <p className="text-custom-text">{currentProject.description}</p>
-      <div>
-        <Icon id="project-card-icon" source={mainTechIcon} alt="idk" />
+      ></button> */}
+      <div className="card-button-container">
+        <button 
+        // id="proj-learn-more" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  cb(currentProject);
+                }}
+                id={`button-${currentProject.id}`}
+                style={{borderTop: "solid oldlace 0.5px"}}
+        className="text-custom-text"
+        >
+          Learn More
+        </button>
+        <button
+          id="proj-visit-site"
+          className="bg-custom-primary-background text-custom-text"
+        >
+          Visit Site
+        </button>
       </div>
     </div>
   );

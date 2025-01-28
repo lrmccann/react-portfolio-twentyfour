@@ -25,34 +25,14 @@
     "progress": 100
   },
   {
-    "Name": "Adobe Analytics",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/adobe-analytics-logo.png",
-    "progress": 70
-  },
-  {
     "Name": "Jira",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/jira-icon.png",
-    "progress": 100
-  },
-  {
-    "Name": "Klayvio",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/klayvio-logo.png",
     "progress": 100
   },
   {
     "Name": "Mail Chimp",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/mailchimp-icon.png",
     "progress": 80
-  },
-  {
-    "Name": "Octane",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/octane-icon.png",
-    "progress": 70
-  },
-  {
-    "Name": "Asana",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/asana-icon.png",
-    "progress": 100
   },
   {
     "Name": "Adobe Creative Suite",

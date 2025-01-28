@@ -1,4 +1,4 @@
-import { globalIcons } from "../Assets/utilities";
+import { globalIcons, industryIcons } from "../Assets/utilities";
 import { useState, useEffect } from "react";
 import Button from "../Components/Atoms/Button";
 import Icon from "../Components/Atoms/Icon";
@@ -25,9 +25,63 @@ const About = ({currentScreenWidth, handleContactNav}) => {
     return(
         <div
         id="about"
-        className={`section-block ${mobileHomeActive} flex flex-col items-center justify-center`}
+        className={`section-block ${mobileHomeActive} flex flex-col items-center`}
       >
-        {/* <div className={`about-cont flex flex-col items-center justify-evenly`}> */}
+        <div id="about-top" className="about-half flex flex-col justify-end items-center">
+          {/* bio pic image */}
+          <img id="about-bio-pic" src={globalIcons.loganTransparent} alt="something" />
+          <img id="vector-bg" src={globalIcons.vectorBg} alt="something" />
+          {/* bottom overlay to show email and other stats in modal type box */}
+          <div className="about-overlay flex flex-row justify-between items-end">
+            {/* MAYBE ADD EMAIL ICON */}
+            <p>loganrmccann@gmail.com</p>
+            <ul>
+              <li>Years of Experience</li>
+              <li>FrontEnd: 5+ Years</li>
+              <li>CMS: 5+ Years</li>
+              <li>SEO: 5+ Years</li>
+            </ul>
+          </div>
+        </div>
+        <div id="about-bottom" className="about-half text-custom-text">
+          <h1>Logan McCann</h1>
+          <h2>Sr. Front-End Developer</h2>
+          {/* Button Container for Github and LinkedIn OR Contact Now and View Socials? */}
+            <p>
+            Highly adaptable and detail-oriented web developer with extensive
+          background in various coding languages, building responsive websites
+          from front to back, and developing mobile applications. Specializes in
+          JSX and CSS.
+            </p>
+          {/* will need to change these buttons to our react component buttons - LATER */}
+          <label>Industry Experience</label>
+          <ul>
+            <li>
+              <img src={`${industryIcons.telecomIndustryIconDarkTheme}`} alt="Telecommunication Tower" />
+            </li>
+            <li>
+              <img src={`${industryIcons.photographyIndustryIconDarkTheme}`} alt="Camera Equipment" />
+            </li>
+            <li>
+              <img src={`${industryIcons.outdoorWearIndustryIconDarkTheme}`} alt="Outdoor Sporting" />
+            </li>
+            <li>
+              <img src={`${industryIcons.scubaIndustryIconDarkTheme}`} alt="Scuba Gear" />
+            </li>
+            <li>
+              <img src={`${industryIcons.sustainabilityIndustryIconDarkTheme}`} alt="Sustainability Bulb" />
+            </li>
+          </ul>
+          <div className="about-social-container">
+            <button id="about-linkedin">
+              LinkedIn
+            </button>
+            <button id="about-github">
+              Github
+            </button>
+          </div>
+        </div>
+        {/* ////////// <div className={`about-cont flex flex-col items-center justify-evenly`}>
         <div className="half-bg" style={{backgroundImage: `url(${globalIcons.darkSmallNyBackdrop})`, backgroundSize: "cover"}}></div>
         <div className="about-card flex flex-row">
         <img className="profile-pic" src={globalIcons.loganIcon} alt="" />
@@ -55,22 +109,10 @@ const About = ({currentScreenWidth, handleContactNav}) => {
           background in various coding languages, building responsive websites
           from front to back, and developing mobile applications. Specializes in
           JSX and CSS. Poised to contribute creative problem solving.
-          {/* Poised to contribute creative problem solving techniques,
-          excellent interpersonal skills, and time management. */}
-        </p>
-        <h1>Profeciencies</h1>
-        {/* </div> */}
-        {/* <Button
-          height={100}
-          containerPadding={"0 2.5% 0 2.5%"}
-          width={100}
-          containerSize={10}
-          alignment={"flex-end"}
-          bottom={5}
-          action={navToContact}
-          id="idk"
-          textContent="Contact Now"
-        /> */}
+    
+          Poised to contribute creative problem solving techniques,
+          excellent interpersonal skills, and time management.
+        </p> */}
         </div>
     )
 }

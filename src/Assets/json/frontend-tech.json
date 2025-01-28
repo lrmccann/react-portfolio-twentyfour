@@ -20,24 +20,19 @@
     "progress": 80
   },
   {
-    "Name": "PHP",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/php.png",
-    "progress": 90
-  },
-  {
     "Name": "React",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/react-icon.png",
     "progress": 100
   },
   {
+    "Name": "Next.js",
+    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nextjs-icon.png",
+    "progress": 70
+  },
+  {
     "Name": "Vue",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/vue-icon.png",
     "progress": 80
-  },
-  {
-    "Name": "Svelte",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/svelte-icon.png",
-    "progress": 50
   },
   {
     "Name": "Tailwind CSS",
@@ -50,16 +45,6 @@
     "progress": 100
   },
   {
-    "Name": " Nuxt.js",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nuxtjs-icon.png",
-    "progress": 40
-  },
-  {
-    "Name": "Next.js",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/nextjs-icon.png",
-    "progress": 70
-  },
-  {
     "Name": "Shopify",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/shopify-logo.png",
     "progress": 100
@@ -68,15 +53,5 @@
     "Name": "WordPress",
     "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/wordpress-logo.png",
     "progress": 100
-  },
-  {
-    "Name": "Webpack",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/webpack-icon.png",
-    "progress": 100
-  },
-  {
-    "Name": "Selenium",
-    "img": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/tech-icons/selenium-icon.png",
-    "progress": 60
   }
 ]

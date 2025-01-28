@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Image = (props) => {
-    const {height, width, aspectRatio, borderRadius, themeMode, imageSrc, altText} = props;
+    const {height, width, className, aspectRatio, borderRadius, themeMode, imageSrc, altText} = props;
     const [currentTheme, setCurrentTheme] = useState(themeMode);
 
     useEffect(() => {
@@ -10,7 +10,10 @@ const Image = (props) => {
 
 
     return(
-        <img className="outline outline-custom-primary-outline outline-2" src={`${imageSrc}`} alt={`${altText}`} style={{height: `${height}`, width: `${width}` , aspectRatio: `${aspectRatio}`, borderRadius: `${borderRadius}`}} />
+        <img 
+        className={`${className}`}
+        // className="outline outline-custom-primary-outline outline-2" 
+        src={`${imageSrc}`} alt={`${altText}`} style={{height: `${height}`, width: `${width}` , aspectRatio: `${aspectRatio}`, borderRadius: `${borderRadius}`}} />
     )
 }
 

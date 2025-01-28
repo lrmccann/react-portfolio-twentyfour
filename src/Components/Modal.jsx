@@ -47,14 +47,13 @@ const Modal = (props) => {
       document.addEventListener("keydown", function(event){
         event.preventDefault();
         if(event.key === 'Escape'){
-          modalStatus(null);
+          modalStatus(null)
         }
-        console.log("escape key pressed");
       })
     }else{
       mainContainerEl.classList.remove("modal-open");
     }
-  }, [mainContainerEl.classList, modalStatus])
+  }, [modalStatus, mainContainerEl])
 
   return (
     <div className="modal-container bg-custom-primary-background">

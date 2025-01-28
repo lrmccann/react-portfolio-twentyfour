@@ -78,9 +78,9 @@ export default function App() {
         emitter.on("current-scroll-index", (data) => {
           updateURL(`/${lowerCaseSectionsArr[data]}`);
           setActiveTab(data);
-          if(data !== 0){
+          if (data !== 0) {
             document.getElementById("header").style.display = "none";
-          }else{
+          } else {
             document.getElementById("header").style.display = "block";
           }
           // console.log(activeTab, "active tab in app")
@@ -128,19 +128,28 @@ export default function App() {
             currentThemeMode={themeMode}
           />
           <About
-                      handleContactNav={(activeTab) => {
-                        setActiveTab(activeTab);
-                      }}
-          key={1} currentScreenWidth={currentScreenWidth} />
+            handleContactNav={(activeTab) => {
+              setActiveTab(activeTab);
+            }}
+            key={1}
+            currentScreenWidth={currentScreenWidth}
+          />
           <Skill key={2} currentScreenWidth={currentScreenWidth} />
+          <Resume key={3} currentScreenWidth={currentScreenWidth} />
           <Project
-            key={3}
+            key={4}
             mobileProjectSelected={updateURL}
             currentScreenWidth={currentScreenWidth}
           />
-          <Resume key={4} currentScreenWidth={currentScreenWidth} />
           <Contact key={5} currentScreenWidth={currentScreenWidth} />
-          {activeTab !== 0 && (<Footer />)}
+          {activeTab !== 0 && (
+            <Footer
+              handleMenuNavigation={(activeTab) => {
+                setActiveTab(activeTab);
+              }}
+              activeTab={activeTab}
+            />
+          )}
         </MainContainer>
       ) : (
         <MainContainer>
@@ -172,6 +181,12 @@ export default function App() {
               }
             />
             <Route
+              path="/resume"
+              element={
+                <Resume key={4} currentScreenWidth={currentScreenWidth} />
+              }
+            />
+            <Route
               path="/projects"
               element={
                 <Project
@@ -181,12 +196,6 @@ export default function App() {
                     setActiveProject(project);
                   }}
                 />
-              }
-            />
-            <Route
-              path="/resume"
-              element={
-                <Resume key={4} currentScreenWidth={currentScreenWidth} />
               }
             />
             <Route
