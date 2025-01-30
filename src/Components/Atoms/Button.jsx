@@ -17,14 +17,7 @@ const Button = (props) => {
         console.log(clicked, "clicked button");
     }, [hovered, clicked])
 
-    // use effect to conditionally import my resume pdf to href attribute if id is "resume-download"
-    useEffect(() => {
-        if (id === "resume-download") {
-          import('../../Assets/PDFs/Logan-McCann-2024-Resume.pdf')
-            .then(module => setModule(module.default))
-            .catch(error => console.error('Error importing module:', error));
-        }
-      }, [id]);
+    // use effect to conditionally import my resume pdf to href attribute if id is "resume-download
 
     return(
         <div 
@@ -33,7 +26,7 @@ const Button = (props) => {
         style={{justifyContent: `${alignment}`, bottom: `${bottom}%`, height: `${containerSize}%`, padding: containerPadding}}
         >
             <button 
-            className="bg-custom-button-bg-primary"
+            className="bg-custom-button-bg-primary outline outline-1 outline-custom-primary-outline"
             type={type}
             onMouseDown={() => {setClicked(true);}}
             onMouseUp={() => {setClicked(false);}}

@@ -1,13 +1,18 @@
 import Image from "./Atoms/Image";
+import { useContext, useEffect, useState } from "react";
+import { GlobalContext } from "../Assets/utilities.js";
+import Buttonn from "../Components/Atoms/Buttonn";
 
 const ProjectCard = (props) => {
   const { projClass, uniqueKey, currentProject, cb } = props;
+  const {themeMode} = useContext(GlobalContext);
 
   return (
     <div
       key={`proj-card-${uniqueKey}`}
       id={`proj-${currentProject.id}`}
-      className={`project-card ${projClass}`}
+      style={{border: themeMode === "light" ? "solid black 1px" : "solid oldlace 1px"}}
+      className={`project-card ${projClass} ${themeMode === "bg-custom-secondary-background" ? "" : ""}`}
     >
       <Image
         className="proj-image"
@@ -26,25 +31,31 @@ const ProjectCard = (props) => {
         }}
         id={`button-${currentProject.id}`}
       ></button> */}
-      <div className="card-button-container">
-        <button 
-        // id="proj-learn-more" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  cb(currentProject);
-                }}
-                id={`button-${currentProject.id}`}
-                style={{borderTop: "solid oldlace 0.5px"}}
-        className="text-custom-text"
-        >
-          Learn More
-        </button>
-        <button
-          id="proj-visit-site"
-          className="bg-custom-primary-background text-custom-text"
-        >
-          Visit Site
-        </button>
+      <div className="card-button-container"
+      style={{borderTop: themeMode === "light" ? "solid black 1px" : "solid oldlace 1px"}}
+      >
+      <Buttonn 
+              id={`open-project-btn-${currentProject.id}`}
+              className='text-custom-text'
+              height={100}
+              width={50}
+              textContent={"Learn More"}
+              action={() => {cb(currentProject)}}
+              type={"button"}
+              borderRadius={'0 0 0 1em'}
+              ariaLabel={"Select Additional Tool Tab"}
+            />
+            <Buttonn 
+              id={`visit-site-btn-${currentProject.id}`}
+              className='bg-custom-button-bg-primary text-custom-text'
+              height={100}
+              width={50}
+              textContent={"Visit Site"}
+              action={() => {window.open(currentProject.siteUrl, '_blank')}}
+              type={"button"}
+              borderRadius={'0 0 1em 0'}
+              ariaLabel={"Select Additional Tool Tab"}
+            />
       </div>
     </div>
   );

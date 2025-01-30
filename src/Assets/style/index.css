@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-PATH: src/Assets/index.css
-DESCRIPTION: None-Specific Components Style
-*/
-
+/* Global App Style - Index */
 * {
   box-sizing: border-box;
 }
@@ -50,7 +46,8 @@ body {
   --light-button-text: green;
   --light-contact-bg: white;
   /* dark vars */
-  --primary-dark-background: black;
+  /* --primary-dark-background: black; */
+  --primary-dark-background: #303030;
   --secondary-dark-background: #05263c;
   --dark-text: oldlace;
   --dark-outline: #7768ce;

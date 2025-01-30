@@ -80,8 +80,10 @@ export default function App() {
           setActiveTab(data);
           if (data !== 0) {
             document.getElementById("header").style.display = "none";
+            document.getElementById("footer-main").style.display = "block";
           } else {
             document.getElementById("header").style.display = "block";
+            document.getElementById("footer-main").style.display = "none";
           }
           // console.log(activeTab, "active tab in app")
         });
@@ -142,14 +144,14 @@ export default function App() {
             currentScreenWidth={currentScreenWidth}
           />
           <Contact key={5} currentScreenWidth={currentScreenWidth} />
-          {activeTab !== 0 && (
-            <Footer
-              handleMenuNavigation={(activeTab) => {
-                setActiveTab(activeTab);
-              }}
-              activeTab={activeTab}
-            />
-          )}
+          {/* {activeTab !== 0 && ( */}
+          <Footer
+            handleMenuNavigation={(activeTab) => {
+              setActiveTab(activeTab);
+            }}
+            activeTab={activeTab}
+          />
+          {/* )} */}
         </MainContainer>
       ) : (
         <MainContainer>

@@ -16,12 +16,12 @@ const handleBlur = () => {
 
     return(
         <label
-        className='flex flex-col text-custom-text '
+        className='flex flex-col text-custom-text'
         >
 
             <input
             id={id}
-            className={`${className}`}
+            className={`${className} text-custom-text`}
             name={name}
             placeholder={placeholder}
             value={value}

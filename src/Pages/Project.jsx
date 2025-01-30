@@ -22,8 +22,8 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   const openProjectModal = (projectObj) => {
     if (projectObj === null) {
       setProjectModalOpen(false);
-      document.getElementById("-1").style.display = "block";
-      document.getElementById("+1").style.display = "block";
+      // document.getElementById("-1").style.display = "block";
+      // document.getElementById("+1").style.display = "block";
       navigate("/projects");
       mainContainerEl.classList.remove("modal-open");
     } else {
@@ -36,8 +36,8 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
               .toLowerCase()}`
           );
         } else {
-          document.getElementById("-1").style.display = "none";
-          document.getElementById("+1").style.display = "none";
+          // document.getElementById("-1").style.display = "none";
+          // document.getElementById("+1").style.display = "none";
           setActiveProject(projectObj);
           mobileProjectSelected(
             `/projects/${projectObj.siteName
@@ -151,7 +151,7 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
             );
           })}
         </div>
-        <button
+        {/* <button
           id="-1"
           onClick={(e) => changeSlide(e.target.id)}
           className="prev"
@@ -164,7 +164,7 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
           className="next"
           style={{backgroundImage: `url(${navigationIcons.projectNavigationRightDarkTheme})`}}
         >
-        </button>
+        </button> */}
         <div class="dots-container">
           <span class="dot" id="dot-0" data-index="0"></span>
           <span class="dot" id="dot-1" data-index="1"></span>

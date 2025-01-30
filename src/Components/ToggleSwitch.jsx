@@ -7,7 +7,7 @@ const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
         <input
           checked={isOn}
           onChange={handleToggle}
-          className="react-switch-checkbox"
+          className="react-switch-checkbox bg-custom-button-bg-primary"
           id={`react-switch-new`}
           type="checkbox"
         />
@@ -17,7 +17,7 @@ const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
           className="react-switch-label"
           htmlFor={`react-switch-new`}
         >
-          <span className={`react-switch-button`} >
+          <span className={`react-switch-button bg-custom-button-bg-primary`}>
             <img src={`${themeMode === "light" ? globalIcons.moonIcon : globalIcons.lightModeMoonIcon }`} alt="" />
           </span> 
         </label>

@@ -1,10 +1,4 @@
-/* PATH: src/Assets/style/contact.css */
-
-/* App.js/Page/Section/Contact */
-#contact {
-  height: 92dvh;
-}
-
+/* Contact Page */
 #contact > h1 {
   padding-top: 2.5%;
   padding-left: 3%;
@@ -12,8 +6,6 @@
 }
 
 .contact-form {
-  /* height: 85%; */
-  /* height: 75%; */
   height: 70%;
   width: 100%;
   padding: 0% 4% 0% 4%;
@@ -32,7 +24,6 @@ h2,
 }
 
 .contact-form > label > input {
-  /* height: 70%; */
   padding: 2% 2.25% 2% 2.25%;
   border-radius: 1.1rem;
 }

@@ -36,5 +36,6 @@
 
 
     "loganTransparent": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon-transparent-background.png",
-    "vectorBg":"https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/transparent-vector-background.png"
+    "vectorBg":"https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/transparent-vector-background.png",
+    "vectorBgLight": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/vector-background-light.png"
 }

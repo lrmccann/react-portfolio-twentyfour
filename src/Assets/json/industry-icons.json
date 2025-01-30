@@ -1,12 +1,12 @@
 {
-    "telecomIndustryIconLightTheme": "",
+    "telecomIndustryIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/telecom-industry-icon-light-mode.png",
     "telecomIndustryIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/telecom-industry-icon-dark-mode.png",
-    "photographyIndustryIconLightTheme": "",
+    "photographyIndustryIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/photography-industry-icon-light-mode.png",
     "photographyIndustryIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/photography-industry-icon-dark-mode.png",
-    "outdoorWearIndustryIconLightTheme": "",
+    "outdoorWearIndustryIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/hiking-industry-icon-light-mode.png",
     "outdoorWearIndustryIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/outdoor-wear-industry-icon-dark-mode.png",
-    "scubaIndustryIconLightTheme": "",
+    "scubaIndustryIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/scuba-industry-icon-light-mode.png",
     "scubaIndustryIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/scuba-industry-icon-dark-mode.png",
-    "sustainabilityIndustryIconLightTheme": "",
+    "sustainabilityIndustryIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sustainability-industry-icon-light-mode.png",
     "sustainabilityIndustryIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sustainability-industry-icon-dark-mode.png"
 }

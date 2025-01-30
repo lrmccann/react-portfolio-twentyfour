@@ -1,20 +1,29 @@
 {
-    "homeIconLightTheme": "",
+    "homeIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/home-navigation-icon-light-mode.png",
     "homeIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/home-navigation-icon-dark-mode.png",
-    "aboutIconLightTheme": "",
+    "aboutIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/user-navigation-icon-light-mode.png",
     "aboutIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/user-navigation-icon-dark-mode.png",
-    "skillIconLightTheme": "",
+    "skillIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/skill-navigation-icon-light-mode.png",
     "skillIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/skill-navigation-icon-dark-mode.png",
-    "experienceIconLightTheme": "",
+    "experienceIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/resume-navigation-icon-light-mode.png",
     "experienceIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/resume-navigation-icon-dark-mode.png",
-    "projectIconLightTheme": "",
+    "projectIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/folder-navigation-icon-light-mode.png",
     "projectIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/folder-navigation-icon-dark-mode.png",
-    "contactIconLightTheme": "",
+    "contactIconLightTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/contact-navigation-icon-light-mode.png",
     "contactIconDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/contact-navigation-icon-dark-mode.png",
 
 
     "projectNavigationRightDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/project-navigation-graphic-right.png",
     "projectNavigationRightLightTheme": "",
     "projectNavigationLeftDarkTheme": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/project-navigation-graphic-left.png",
-    "projectNavigationLeftLightTheme": ""
+    "projectNavigationLeftLightTheme": "",
+
+
+
+    "footerNavHome": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/home-icon.svg",
+    "footerNavAbout": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/user-icon.svg",
+    "footerNavSkill": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/skill-icon.svg",
+    "footerNavResume": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/resume-icon.svg",
+    "footerNavProject": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/folder-icon.svg",
+    "footerNavContact": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/contact-icon.svg"
 }

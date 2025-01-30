@@ -4,6 +4,7 @@ import { sendFormData, globalIcons } from "../../Assets/utilities";
 import Button from "../Atoms/Button";
 import Input from "../Atoms/Input";
 import TextArea from "../Atoms/TextArea";
+import Buttonn from "../Atoms/Buttonn";
 
 const ContactForm = (props) => {
   const [name, setName] = useState();
@@ -45,7 +46,10 @@ const ContactForm = (props) => {
     <>
       {!formSubmitted ? (
         <>
-          <form autoComplete="off" className="contact-form flex flex-col justify-around">
+          <form
+            autoComplete="off"
+            className="contact-form flex flex-col justify-around"
+          >
             <Input
               id={"name-input"}
               className={`outline outline-custom-primary-outline outline-2 bg-custom-contact-bg input-${currentThemeMode}`}
@@ -82,20 +86,24 @@ const ContactForm = (props) => {
               type="text"
               stateUpdater={setMessage}
               labelContent="Message"
+              borderRadius={"1.1em"}
             />
+            <div className="contact-btn-cont">
+              <Buttonn
+                id={`contact-chat-btn`}
+                className="bg-custom-button-bg-primary text-custom-text outline outline-1 outline-custom-primary-outline"
+                height={100}
+                width={100}
+                textContent={"Send Message"}
+                action={() => {
+                  handleContactData();
+                }}
+                type={"submit"}
+                borderRadius={"0.5em"}
+                ariaLabel={"Send Form Information To Database"}
+              />
+            </div>
           </form>
-          <Button
-            height={100}
-            width={100}
-            bottom={10}
-            containerPadding={"0 2.5% 0 2.5%"}
-            containerSize={10}
-            alignment={"flex-end"}
-            type={"submit"}
-            action={handleContactData}
-            id="contact-chat-button"
-            textContent="Send Message"
-          />
         </>
       ) : (
         <div className="contact-confirmation-container flex flex-col items-center justify-center">

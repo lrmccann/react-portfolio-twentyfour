@@ -1,89 +1,153 @@
-/* PATH: src/Assets/style/project.css */
-
+/* Project Page */
 #projects {
-  height: 92dvh;
+  padding-top: 2.5%;
 }
 
-/* Project Card Style */
-.project-card-default {
-  height: 25%;
-  width: 50%;
-  padding: 3%;
-  position: relative;
-  -webkit-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+/* Project Style */
+.slider-title {
+  font-size: 2em; 
+  font-weight: 600;
+  height: 5%;
+  padding-left: 4%;
 }
 
-.project-card-default > button {
+.slider-container {
+  position: relative; 
+  height: 90%;
+  width: 100%; 
+  overflow: hidden; 
+}
+
+
+.slider {
+  height: 65dvh;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: auto;
+  display: flex; 
+  scroll-behavior: smooth; 
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  scroll-snap-align: center;
+  min-width: 80%;
+  margin: 0 0 0 4%;
+  transition: transform 0.5s ease-in-out; 
+}
+
+
+.prev, .next {
+  position: absolute; 
+  bottom: 5%; 
+  transform: translateY(-50%); 
+  color: white; 
+  border: none; 
+  width: 40px; 
+  height: 40px; 
+  cursor: pointer; 
+  z-index: 10; 
+  border-radius: 50%; 
+  transition: background-color 0.3s ease;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  padding: 0;
+  background-size: cover;
+}
+.prev {
+  left: 10%;
+}
+
+.next {
+  right: 10%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.dots-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.dot {
+  height: 15px;
+  width: 15px; 
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot-active{
+  background-color: white;
+}
+
+/* Project Card */
+.project-card{
   height: 100%;
   width: 100%;
+  border: solid white 1px;
+  background-color: #222222;
+  position: relative;
   border-radius: 1em;
+
+}
+.project-card >h1{
+  font-size: 1.8em;
+  padding: 0 2%;
+}
+
+.project-card >p{
+  padding: 0 2%;
+}
+
+.card-button-container{
+  height: 12.5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.card-button-container > button{
+  height: 100%;
+  width: 50%;
+}
+
+#proj-learn-more{
+  border-right: solid oldlace 0.5px;
+  border-top: solid oldlace 0.5px;
+}
+
+#proj-visit-site{
+  border-top: solid oldlace 0.5px;
+  border-bottom-right-radius: 1em;
+}
+
+
+.project-card > button {
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   position: absolute;
 }
 
-.project-card-default > div {
-  height: 15%;
-  width: 15%;
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
+.slide img {
+  object-fit: cover; 
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.card-button-container{
+
 }
 
-.project-card-default > h1 {
-  font-weight: 700;
-  margin-bottom: 2.5%;
-}
-
-.project-card-default > p {
-  font-size: small;
-}
-
-/* project modal style */
-.project-modal-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 80%;
-}
-.project-modal-body > div{
-  height: auto;
-  width: 100%;
-  padding: 1% 2.5%;
-}
-
-.project-modal-image {
-  outline: solid black 1px;
-  border-radius: 2em;
-}
-
-.project-modal-body > div > span > label {
-  font-size: large;
-  margin-bottom: -1%;
-  text-decoration: underline;
-}
-
-.contribution-list {
-  margin-left: 5%;
-  font-size: 0.85em;
-  list-style: circle;
-}
-
-.contribution-list > li {
-  width: 99%;
-  margin: 1% auto 2% auto;
-}
-
-.proj-tech-section {
-  font-size: 0.85em;
-}
-
-.proj-tech-section > li {
-  margin: 0 0.5% 0 0;
-}
-
-.project-modal-body > div > .small-button-container {
-  left: 0;
-}
+/* Project Modal */

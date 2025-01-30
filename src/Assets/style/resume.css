@@ -1,15 +1,8 @@
-/* PATH: src/Assets/style/resume.css */
-
-/* App.js/Page/Section/Experience */
-#experience {
-  height: 92dvh;
-}
-
+/* REsume Container */
 #resume-container {
   height: 100%;
 }
 
-/* MOBILE  */
 #mobile-resume-container {
   padding: 4% 2.5% 0 2.5%;
 }
@@ -32,4 +25,47 @@
 #mobile-resume-container > ul > li {
   font-size: 0.85em;
   margin: 1% 0;
+}
+
+/* Project Modal */
+.project-modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+}
+.project-modal-body > div{
+  height: auto;
+  width: 100%;
+  padding: 1% 2.5%;
+}
+
+
+.project-modal-body > div > span > label {
+  font-size: large;
+  margin-bottom: -1%;
+  text-decoration: underline;
+}
+
+.contribution-list {
+  margin-left: 5%;
+  font-size: 0.85em;
+  list-style: circle;
+}
+
+.contribution-list > li {
+  width: 99%;
+  margin: 1% auto 2% auto;
+}
+
+.proj-tech-section {
+  font-size: 0.85em;
+}
+
+.proj-tech-section > li {
+  margin: 0 0.5% 0 0;
+}
+
+.project-modal-body > div > .small-button-container {
+  left: 0;
 }

@@ -1,9 +1,8 @@
-/* PATH: src/Assets/style/home.css */
-
-/* App.js/Page/Section/Home */
+/* Home Page */
 #home {
-  height: 100%;
   padding: 10vh 2.5% 0 2.5%;
+  scroll-snap-align: center;
+  scroll-margin-top: 8dvh;
 }
 
 #home > h3 {
@@ -20,6 +19,13 @@
 .live-text-cont {
   align-self: flex-start;
   font-size: 2.5em;
+}
+#home > img{
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
 }
 
 .cursor {

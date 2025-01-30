@@ -2,42 +2,37 @@ import { useContext, useState, useEffect } from "react";
 import { resumeText } from "../Assets/utilities";
 import { GlobalContext } from "../Assets/utilities";
 import Button from "../Components/Atoms/Button";
+import Buttonn from "../Components/Atoms/Buttonn";
 
 const Resume = ({ currentScreenWidth }) => {
   // const {userDevice} = props;
   const { userDevice } = useContext(GlobalContext);
 
-  const [mobileHomeActive, setMobileHomeActive] = useState();
-
   // pass to button comp to download resume without HTML attr
-  function download(url) {
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = url.split("/").pop();
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  function download() {
+    import("../Assets/PDFs/Logan-McCann-2024-Resume.pdf")
+      .then((module) => {
+        const a = document.createElement("a");
+        a.href = module.default;
+        a.download = module.default.split("/").pop();
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      })
+      .catch((error) => console.error("Error importing module:", error));
   }
-
-  useEffect(() => {
-    if (currentScreenWidth <= 1025) {
-      setMobileHomeActive("mobile-section");
-    } else {
-      setMobileHomeActive("");
-    }
-  }, [currentScreenWidth]);
-
   return (
-    <div id="experience" className={`section-block ${mobileHomeActive}`}>
+    <div
+      id="experience"
+      className="section-block"
+    >
+      <div className="resume-container flex flex-col justify-between">
+        <h1 className="resume-title text-custom-text">Resume</h1>
       {resumeText.map((resumeSection, i) => {
         return (
           <div
-            id={
-              userDevice !== "mobile"
-                ? "resume-container"
-                : "mobile-resume-container"
-            }
-            className="flex flex-col justify-middle"
+            id="resume-section"
+            className="flex flex-col"
             key={i}
           >
             <h1 className="text-custom-text">{resumeSection.title}</h1>
@@ -57,18 +52,20 @@ const Resume = ({ currentScreenWidth }) => {
           </div>
         );
       })}
-      <Button
-        height={100}
-        width={100}
-        containerPadding={"0 2.5% 0 2.5%"}
-        bottom={10}
-        containerSize={10}
-        alignment={"flex-end"}
-        type="--download"
-        action={download}
-        id="resume-download"
-        textContent="Download Full Resume"
-      />
+      <div id="resume-btn-container" className="flex flex-col justify-center">
+        <Buttonn
+          id={"resume-download"}
+          className="bg-custom-button-bg-primary text-custom-text outline outline-1 outline-custom-primary-outline"
+          height={75}
+          width={100}
+          textContent={"Download Full Resume"}
+          action={download}
+          type={"tab"}
+          borderRadius={"0.5em"}
+          ariaLabel={"Select Additional Tool Tab"}
+        />
+      </div>
+      </div>
     </div>
   );
 };
