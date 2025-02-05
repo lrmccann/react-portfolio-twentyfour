@@ -35,7 +35,10 @@
     "DarkModeProfilePicture": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-bio-with-dark-vector.png",
 
 
-    "loganTransparent": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon-transparent-background.png",
-    "vectorBg":"https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/transparent-vector-background.png",
-    "vectorBgLight": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/vector-background-light.png"
+    "loganTransparentSmall": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-icon-transparent-background.png",
+    "loganTransparentMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/logan-tablet-icon-transparent-background.png",
+    "vectorBgSmall":"https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/transparent-vector-background.png",
+    "vectorBgMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/vector-bg-md.png",
+    "vectorBgLightSmall": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/vector-background-light.png",
+    "vectorBgLightMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/vector-bg-md-light.png"
 }

@@ -1,21 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../Assets/utilities";
+import { Outlet } from "react-router-dom";
 
-const MainContainer = (props) => {
+const MainContainer = ({currentScreenWidth, children}) => {
 
 
     const [mobileClassActive, setMobileClassActive] = useState();
-
+    const {userDevice} = useContext(GlobalContext);
     useEffect(() => {
-        if(props.currentScreenWidth <= 1025){
+        if(currentScreenWidth <= 1024 && (userDevice === 'tablet' || userDevice === 'mobile')){
             setMobileClassActive("mobile-page");
         }else{
-            setMobileClassActive("");
+            setMobileClassActive("full-page");
         }   
-    }, [props.currentScreenWidth])
+    }, [currentScreenWidth, userDevice])
 
     return(
                <div className={`${mobileClassActive} bg-custom-primary-background`} id="main-page">
-                {props.children}
+                {currentScreenWidth <= 1024 && (userDevice === 'tablet' || userDevice === 'mobile') ? 
+                (
+                    children
+                ) : (
+                    <Outlet  />
+                )
+            }
         </div>
     );
 }

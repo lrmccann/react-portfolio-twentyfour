@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { globalIcons, navigationIcons } from "../Assets/utilities";
 import { GlobalContext } from "../Assets/Utilities/ThemeContext";
 import ToggleSwitch from "./ToggleSwitch";
+import Buttonn from "./Atoms/Buttonn";
 
 function usePrevious(value) {
   const ref = useRef();
@@ -28,6 +29,7 @@ const Header = (props) => {
   const [navIcon, setNavIcon] = useState();
   const prevTab = usePrevious(activeTab);
   const [navOpen, setNavOpen] = useState(false);
+  const [themeIcon, setThemeIcon] = useState();
   const [value, setValue] = useState();
   const [sliderColor, setSliderColor] = useState();
 
@@ -42,20 +44,22 @@ const Header = (props) => {
   useEffect(() => {
     if (themeMode === "dark" && !navOpen) {
       setNavIcon(globalIcons.darkHamburgerIconBlack);
+      setThemeIcon(globalIcons.darkModeMoonIcon)
     } else if (themeMode === "light" && !navOpen) {
       setNavIcon(globalIcons.hamburgerIconBlack);
+      setThemeIcon(globalIcons.lightModeMoonIcon)
     }
   }, [themeMode, navOpen]);
 
-  useEffect(() => {
-    if(themeMode === "dark"){
-      setSliderColor("white");
-      setValue(true);
-    }else{
-      setSliderColor("#303030");
-      setValue(false);
-    }
-  }, [themeMode])
+  // useEffect(() => {
+  //   if(themeMode === "dark"){
+  //     setSliderColor("white");
+  //     setValue(true);
+  //   }else{
+  //     setSliderColor("#303030");
+  //     setValue(false);
+  //   }
+  // }, [themeMode])
 
   const openNav = (e) => {
     e.preventDefault();
@@ -93,10 +97,26 @@ const Header = (props) => {
 
   return (
     <main className="header bg-custom-primary-background" id="header">
-      {userDevice !== "desktop" ? (
-        <div className={`mobile-nav-container `}>
-          <div className="mobile-button-container flex flex-row items-center justify-between">
-          <button
+      {/* {userDevice !== "desktop" ? ( */}
+        <div className={`mobile-nav-container flex flex-row items-center justify-between`}>
+          {/* <div className="mobile-button-container"> */}
+          <div>
+          <Buttonn
+                id={`menu-button`}
+                // className='bg-custom-button-bg-primary text-custom-text'
+                className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
+                height={90}
+                width={90}
+                // textContent={"Visit Site"}
+                action={(e) => {openNav(e)}}
+                type={"button"}
+                borderRadius={'0 0 0 0'}
+                ariaLabel={"Select Additional Tool Tab"}
+                imageSrc={navIcon}
+                imageAlt={"Hamburger Menu Icon"}
+          /> 
+          </div>
+          {/* <button
             id="menu-button"
               onClick={(e) => {
                 openNav(e);
@@ -104,8 +124,24 @@ const Header = (props) => {
               className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
             >
               <img src={navIcon} alt="Hamburger Icon To Open Page Navigation" />
-            </button>
-            <ToggleSwitch
+            </button> */}
+            <div>
+            <Buttonn 
+                id={`theme-button`}
+                // className='bg-custom-button-bg-primary text-custom-text'
+                className={`mobile-menu-button menu-btn-${themeMode} flex flex-row items-center justify-center`}
+                height={90}
+                width={90}
+                // textContent={"Visit Site"}
+                action={() => {setThemeMode(themeMode === "light" ? "dark" : "light");}}
+                type={"button"}
+                borderRadius={'0 0 0 0'}
+                ariaLabel={"Select Additional Tool Tab"}
+                imageSrc={themeIcon}
+                imageAlt={"Hamburger Menu Icon"}
+            />
+            </div>
+            {/* <ToggleSwitch
               isOn={value}
               themeMode={themeMode}
               handleToggle={() => {
@@ -120,7 +156,7 @@ const Header = (props) => {
                 setValue(!value);
               }}
               onColor={`${sliderColor}`}
-            />
+            /> */}
           </div>
           {navOpen && (
             <div className="mobile-full-nav flex flex-col justify-between bg-custom-primary-background">
@@ -187,8 +223,8 @@ const Header = (props) => {
               </div>
             </div>
           )}
-        </div>
-      ) : (
+        {/* </div> */}
+       {/* ) : (
         <div className="full-nav-container">
           <ul>
             {upperCaseSectionsArr.map((portfolioSection, index) => {
@@ -206,8 +242,8 @@ const Header = (props) => {
               );
             })}
           </ul>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
     </main>
   );
 };

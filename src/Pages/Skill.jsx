@@ -32,12 +32,12 @@ const Skill = ({ currentScreenWidth }) => {
   };
 
   useEffect(() => {
-    if (currentScreenWidth <= 1025) {
+    if (currentScreenWidth <= 1024 || (userDevice === 'tablet' || userDevice === 'mobile')) {
       setMobileHomeActive("mobile-section");
     } else {
-      setMobileHomeActive("");
+      setMobileHomeActive("full-section");
     }
-  }, [currentScreenWidth]);
+  }, [currentScreenWidth, userDevice]);
 
   return (
     <div

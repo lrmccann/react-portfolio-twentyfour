@@ -3,7 +3,7 @@ import { globalIcons } from "../Assets/utilities";
 
 const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
     return (
-      <>
+      <div className="toggle-switch-container">
         <input
           checked={isOn}
           onChange={handleToggle}
@@ -21,7 +21,7 @@ const ToggleSwitch = ({ isOn, handleToggle, onColor, themeMode }) => {
             <img src={`${themeMode === "light" ? globalIcons.moonIcon : globalIcons.lightModeMoonIcon }`} alt="" />
           </span> 
         </label>
-      </>
+      </div>
     );
   };
 

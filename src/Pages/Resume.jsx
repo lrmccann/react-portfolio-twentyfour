@@ -7,6 +7,14 @@ import Buttonn from "../Components/Atoms/Buttonn";
 const Resume = ({ currentScreenWidth }) => {
   // const {userDevice} = props;
   const { userDevice } = useContext(GlobalContext);
+  const [mobileHomeActive, setMobileHomeActive] = useState();
+  useEffect(() => {
+    if (currentScreenWidth <= 1024 || (userDevice === 'tablet' || userDevice === 'mobile')) {
+      setMobileHomeActive("mobile-section");
+    } else {
+      setMobileHomeActive("");
+    }
+  }, [currentScreenWidth, userDevice]);
 
   // pass to button comp to download resume without HTML attr
   function download() {
@@ -24,32 +32,27 @@ const Resume = ({ currentScreenWidth }) => {
   return (
     <div
       id="experience"
-      className="section-block"
+      className={`section-block ${mobileHomeActive} `}
     >
       <div className="resume-container flex flex-col justify-between">
-        <h1 className="resume-title text-custom-text">Resume</h1>
       {resumeText.map((resumeSection, i) => {
         return (
-          <div
-            id="resume-section"
-            className="flex flex-col"
-            key={i}
-          >
-            <h1 className="text-custom-text">{resumeSection.title}</h1>
-            <h2 className="text-custom-text">
+          <>
+            <h3 className="text-custom-text">{resumeSection.title}</h3>
+            <h4 className="text-custom-text">
               <i>{resumeSection.organization}</i>
-            </h2>
+            </h4>
             <ul className="text-custom-text">
               <li>{resumeSection.responsibilities[0]}</li>
               <li>{resumeSection.responsibilities[1]}</li>
-              {userDevice !== "mobile" && (
+              {currentScreenWidth >= 820 && (
                 <li>{resumeSection.responsibilities[2]}</li>
               )}
-              {userDevice !== "mobile" && (
+              {currentScreenWidth >= 820 && (
                 <li>{resumeSection.responsibilities[3]}</li>
               )}
             </ul>
-          </div>
+            </>
         );
       })}
       <div id="resume-btn-container" className="flex flex-col justify-center">

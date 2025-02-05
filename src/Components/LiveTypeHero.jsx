@@ -33,7 +33,7 @@ function LiveTypeHero({ text, speed, pauseDuration }) {
 
   return (
     <div className="live-text-cont text-custom-text">
-      {currentText}
+      <h2>{currentText}</h2>
       <span className="cursor">|</span>
     </div>
   );

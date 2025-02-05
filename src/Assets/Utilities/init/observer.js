@@ -3,13 +3,17 @@ import emitter from "../event-bus";
 const observerOptions = {
     root: null, // Use the viewport as the root
     rootMargin: '0px',
-    threshold: .95 // Trigger when 50% of the section is visible
+    threshold: .92 // Trigger when 50% of the section is visible
   };
   
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             if(entry.target.id === "home"){
+               const isScrollingUp = entry.boundingClientRect.top < entry.rootBounds.top; // Key check!
+               if (isScrollingUp) {
+                   document.getElementById("home").scrollIntoView({ behavior: "smooth", block: "start" })
+                }
                  emitter.emit("current-scroll-index", 0);
             }else if(entry.target.id === "about"){
                  emitter.emit("current-scroll-index", 1);

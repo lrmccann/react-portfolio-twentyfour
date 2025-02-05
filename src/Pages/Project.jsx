@@ -52,12 +52,12 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   };
 
   useEffect(() => {
-    if (currentScreenWidth <= 1025) {
+    if (currentScreenWidth <= 1024 || (userDevice === 'tablet' || userDevice === 'mobile')) {
       setMobileHomeActive("mobile-section");
     } else {
       setMobileHomeActive("");
     }
-  }, [currentScreenWidth]);
+  }, [currentScreenWidth, userDevice]);
 
   // Update selectedProjectIndex based on scroll position
   const handleScroll = () => {
@@ -121,10 +121,11 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   return (
     <div
       id="projects"
-      className={`section-block  ${mobileHomeActive} flex flex-col justify-top`}
+      className={`section-block  ${mobileHomeActive} flex flex-col sm:justify-top`}
     >
+      {/* <h1 className="slider-title text-custom-text">Previous Work</h1> */}
+      <div className="project-card-container slider-container flex flex-col justify-around ">
       <h1 className="slider-title text-custom-text">Previous Work</h1>
-      <div className="project-card-container slider-container flex flex-col items-center justify-evenly">
         <div
           id="slider"
           className="slider"
@@ -142,6 +143,7 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
                   projClass="slide"
                   dataIndex={i}
                   currentProject={project}
+                  currentScreenWidth={currentScreenWidth}
                 />
               </>
             ) : (

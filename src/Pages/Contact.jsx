@@ -3,17 +3,17 @@ import ContactForm from "../Components/Organisms/ContactForm";
 import { GlobalContext } from "../Assets/utilities";
 
 const Contact = ({ currentScreenWidth }) => {
-  const { themeMode } = useContext(GlobalContext);
+  const { themeMode, userDevice } = useContext(GlobalContext);
 
   const [mobileHomeActive, setMobileHomeActive] = useState();
 
   useEffect(() => {
-    if (currentScreenWidth <= 1025) {
+    if (currentScreenWidth <= 1024 || (userDevice === 'tablet' || userDevice === 'mobile')) {
       setMobileHomeActive("mobile-section");
     } else {
       setMobileHomeActive("");
     }
-  }, [currentScreenWidth]);
+  }, [currentScreenWidth, userDevice]);
 
   return (
     <div id="contact" className={`section-block ${mobileHomeActive}`}>

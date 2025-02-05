@@ -4,6 +4,7 @@ import Icon from "./Atoms/Icon";
 import { GlobalContext } from "../Assets/utilities";
 import NavIcon from "./Atoms/NavIcon";
 import { HomeIcon, UserIcon, SkillIcon, ResumeIcon, ProjectIcon, ContactIcon } from "../Assets/navigation-icons";
+import Buttonn from "./Atoms/Buttonn";
 // import {lowerCaseSectionsArr} from '../Assets/utilities';
 
 
@@ -69,8 +70,6 @@ const Footer = ({handleMenuNavigation, activeTab}) => {
   // ];
 
   const navAction = (e) => {
-    console.log("action");
-    e.preventDefault();
     const target = document.getElementById(lowerCaseSectionsArr[e.target.id]);
     if (target) {
       handleMenuNavigation(target);
@@ -86,32 +85,27 @@ const Footer = ({handleMenuNavigation, activeTab}) => {
 
   return (
     <div id="footer-main" className={`footer-main flex flex-row items-center justify-center  bg-custom-primary-background`}>
-      <div className={`footer-bar flex flex-row items-center justify-evenly ${themeMode === "light" ? "bg-custom-secondary-background outline outline-1 outline-custom-primary-outline" : ""}`}>
+      <div className={`footer-bar flex flex-row items-center justify-between ${themeMode === "light" ? "bg-custom-secondary-background outline outline-1 outline-custom-primary-outline" : ""}`}>
         {navLabels.map((label, i) => (
-        <div className="footer-button flex flex-col items-center justify-end">
-          {/* <NavIcon 
-            navAction={navAction}
-            key={`footer-key-${i}`}
-            id={i}
-            containerClass={activeTab === i ? "nav-item-active" : ""}
-            iconClass={"nav-item"}
-            IconSource={Object.values(label)[0]}
-            height={100}
-            width={100}
-          /> */}
-            <button
-            onClick={(e) => {
-              navAction(e);
-            }}
-            key={`footer-key-${i}`}
-            id={i}
-            className={`${activeTab === i ? "nav-item-active" : ""}`}
-            style={activeTab === i ? {borderTop: `solid ${themeMode === "light" ? "#1f2629" : "#7768ce"} 3px`} : {}}
-            ></button>
-            {/* <div> */}
-              <Icon id={`icon-${i}`} className="nav-item" source={Object.values(label)[0]}  key={i} />
-              {/* <p>{Object.keys(label)[0]}</p> */}
-              {/* </div> */}
+        <div className="footer-button">
+          <Buttonn
+              id={i}
+              key={`footer-key-${i}`}
+              // className='bg-custom-button-bg-primary text-custom-text'
+              className={`${activeTab === i ? "nav-item-active" : ""}`}   
+              height={100}
+              width={100}
+              // textContent={"Visit Site"}
+              action={(e) => {navAction(e)}}
+              // action={() => {setThemeMode(themeMode === "light" ? "dark" : "light");}}
+              type={"button"}
+              borderRadius={'0 0 0 0'}
+              ariaLabel={"Select Additional Tool Tab"}
+              imageSrc={Object.values(label)[0]}
+              imageAlt={"Hamburger Menu Icon"}
+          />
+
+
               </div>
          ))} 
       </div>

@@ -13,17 +13,56 @@ import Resume from "./Pages/Resume";
 import Contact from "./Pages/Contact";
 import Modal from "./Components/Modal";
 import Footer from "./Components/Footer";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 export default function App() {
-  const { screenWidth, themeMode, lowerCaseSectionsArr, currentTab } =
-    useContext(GlobalContext);
+  const {
+    screenWidth,
+    themeMode,
+    lowerCaseSectionsArr,
+    currentTab,
+    userDevice,
+  } = useContext(GlobalContext);
   const [activeTab, setActiveTab] = useState(currentTab);
   const [currentScreenWidth, setCurrentScreenWidth] = useState(screenWidth);
   const [activeProject, setActiveProject] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const router = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/skills",
+      element: <Skill />,
+    },
+    {
+      path: "/experience",
+      element: <Resume />,
+    },
+    {
+      path: "/project",
+      element: <Project />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+  ];
 
   // set localstorage object's theme attribute to user preference after detecting browser pref in context
   useEffect(() => {
@@ -53,7 +92,8 @@ export default function App() {
     if (
       window.history &&
       window.history.pushState &&
-      currentScreenWidth <= 1025
+      currentScreenWidth <= 1024 &&
+      (userDevice === "tablet" || userDevice === "mobile")
     ) {
       if (newURL === "/home") {
         window.history.pushState({}, "", "/");
@@ -69,7 +109,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (currentScreenWidth <= 1025) {
+    if (
+      currentScreenWidth <= 1024 &&
+      (userDevice === "tablet" || userDevice === "mobile")
+    ) {
       const elsToWatch = document.querySelectorAll(".section-block");
       if (elsToWatch) {
         elsToWatch.forEach((block) => {
@@ -78,14 +121,6 @@ export default function App() {
         emitter.on("current-scroll-index", (data) => {
           updateURL(`/${lowerCaseSectionsArr[data]}`);
           setActiveTab(data);
-          if (data !== 0) {
-            document.getElementById("header").style.display = "none";
-            document.getElementById("footer-main").style.display = "block";
-          } else {
-            document.getElementById("header").style.display = "block";
-            document.getElementById("footer-main").style.display = "none";
-          }
-          // console.log(activeTab, "active tab in app")
         });
       }
     }
@@ -115,14 +150,17 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header
-        handleMenuNavigation={(activeTab) => {
-          setActiveTab(activeTab);
-        }}
-        activeTab={activeTab}
-      />
-
-      {currentScreenWidth <= 1025 ? (
+      {activeTab === 0 && (
+        <Header
+          handleMenuNavigation={(activeTab) => {
+            setActiveTab(activeTab);
+          }}
+          activeTab={activeTab}
+        />
+      )}
+      {/* {currentScreenWidth >= 820 && (userDevice === 'tablet' || userDevice === 'mobile') ? ( */}
+      {currentScreenWidth <= 1024 &&
+      (userDevice === "tablet" || userDevice === "mobile") ? (
         <MainContainer currentScreenWidth={currentScreenWidth}>
           <Home
             key={0}
@@ -144,20 +182,20 @@ export default function App() {
             currentScreenWidth={currentScreenWidth}
           />
           <Contact key={5} currentScreenWidth={currentScreenWidth} />
-          {/* {activeTab !== 0 && ( */}
-          <Footer
-            handleMenuNavigation={(activeTab) => {
-              setActiveTab(activeTab);
-            }}
-            activeTab={activeTab}
-          />
-          {/* )} */}
+          {activeTab !== 0 && (
+            <Footer
+              handleMenuNavigation={(activeTab) => {
+                setActiveTab(activeTab);
+              }}
+              activeTab={activeTab}
+            />
+          )}
         </MainContainer>
       ) : (
         <MainContainer>
           <Routes>
             <Route
-              path="/"
+               path="/"
               index
               element={
                 <Home
@@ -171,25 +209,25 @@ export default function App() {
               }
             />
             <Route
-              path="/about"
+              path="about"
               element={
                 <About key={1} currentScreenWidth={currentScreenWidth} />
               }
             />
             <Route
-              path="/skills"
+              path="skills"
               element={
                 <Skill key={2} currentScreenWidth={currentScreenWidth} />
               }
             />
             <Route
-              path="/resume"
+              path="resume"
               element={
                 <Resume key={4} currentScreenWidth={currentScreenWidth} />
               }
             />
             <Route
-              path="/projects"
+              path="projects"
               element={
                 <Project
                   key={3}
@@ -201,7 +239,7 @@ export default function App() {
               }
             />
             <Route
-              path="/contact"
+              path="contact"
               element={
                 <Contact key={5} currentScreenWidth={currentScreenWidth} />
               }

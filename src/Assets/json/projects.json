@@ -4,14 +4,14 @@
         "siteName": "Webex",
         "siteUrl": "https://webex.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-by-cisco-project-card-thumnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/webex-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex.com-medium.png",
+        "siteLarge": "",
         "alt": "Webex by Cisco Homepage With Various User Interface Elements",
         "company": "Webex by Cisco",
         "contributions": [
-            "Worked directly with stakeholders to establish project scope, design principles, realistic milestones, and completion date",
-            "Designed and integrated internal and 3rd party promotional material, resulting in an 18% increase in conversions, for brands like Apple, Google, and NASA",
-            "Leveraged site engagement metrics, customer insights, and sales data to identify trends and elevate content based on KPIs and campaign ROI"
+            "Worked directly with stakeholders to establish project scope, design principles and realistic milestones",
+            "Designed and integrated internal and 3rd party promotional material, boosting conversions by 18%",
+            "Leveraged site engagement metrics, customer insights, and sales data to identify trends and curate content"
         ],
         "techStack": [
             "Akamai",
@@ -34,8 +34,8 @@
         "siteName": "Webex Blog",
         "siteUrl": "https://blog.webex.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-ahead-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/webex-blog-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-blog-medium.png",
+        "siteLarge": "",
         "alt": "Webex by Cisco Blog Homepage With Various User Interface Elements And SEO Metadata",
         "company": "Webex by Cisco",
         "contributions": [
@@ -64,8 +64,8 @@
         "siteName": "Socio Events",
         "siteUrl": "https://socio.events/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/socio-webex-events-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/socio-events-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/socio-events-medium.png",
+        "siteLarge": "",
         "alt": "Socio Events Platform Homepage Displaying Features of the Socio Application",
         "company": "Webex by Cisco",
         "contributions": [
@@ -94,8 +94,8 @@
         "siteName": "Adorama",
         "siteUrl": "https://www.adorama.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/adorama-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/adorama-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/adorama-medium.png",
+        "siteLarge": "",
         "alt": "Adorama Homepage With Camera Equipment, AR/VR Headsets, and Other High-End Technology",
         "company": "Adorama",
         "contributions": [
@@ -122,8 +122,8 @@
         "siteName": "Scuba.com",
         "siteUrl": "https://www.scuba.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/scuba-dot-com-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/scuba-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/scuba.com-medium.png",
+        "siteLarge": "",
         "alt": "Scuba Homepage With Scuba Equipment For Sale And Various E-Commerce UX Elements",
         "company": "Adorama",
         "contributions": [
@@ -150,8 +150,8 @@
         "siteName": "Sunny Sports",
         "siteUrl": "https://www.sunnysports.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sunny-sports-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/sunnysports-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/sunny-sports-medium.png",
+        "siteLarge": "",
         "alt": "Sunny Sports Homepage Displaying High-End Camping Equipment, Featuring WordPress Commerce",
         "company": "Adorama",
         "contributions": [
@@ -178,8 +178,8 @@
         "siteName": "Almond Cow",
         "siteUrl": "https://almondcow.co/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/almond-cow-project-card-thumbnail.png",
-        "siteMedium": "",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/almond-cow-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/almond-cow-medium.png",
+        "siteLarge": "",
         "alt": "Almond Cow Homepage Displaying The Plant-Based Milk Maker On Shopify Plus",
         "company": "Almond Cow",
         "contributions": [
@@ -208,8 +208,9 @@
         "siteName": "CPaaS Solutions",
         "siteUrl": "https://cpaas.webex.com/",
         "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-cpaas-project-card-thumbnail.png",
-        "siteMedium": "Webex CPaaS Homepage, Displaying A Centralized Cloud Communications Platform For Smarter Interactions With Customer",
-        "siteLarge": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/cpaas-solutions-lg.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-cpass-medium.png",
+        "siteLarge": "",
+        "alt": "Webex CPaaS Homepage, Displaying A Centralized Cloud Communications Platform For Smarter Interactions With Customer",
         "company": "Webex",
         "contributions": [
             "Supported APJC & EMEAR team members with maintaining localized versions of each site, ensuring uniformity across global sites.",

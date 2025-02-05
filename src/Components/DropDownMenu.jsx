@@ -34,9 +34,7 @@ export const DropDownMenu = (props) => {
 
   return (
     <div
-      className={`contact-select outline outline-custom-primary-outline outline-2 bg-custom-contact-bg ${
-        open ? "contact-select-open" : "contact-select-closed"
-      }`}
+      className={`contact-select outline outline-custom-primary-outline outline-2 bg-custom-contact-bg `}
     >
       <button
         type="button"
@@ -46,9 +44,9 @@ export const DropDownMenu = (props) => {
         <p className="text-custom-text">{buttonLabel}</p>
         <span>
           {open ? (
-            <h1 className="text-custom-text">&#9650;</h1>
+            <h6 className="text-custom-text">&#9650;</h6>
           ) : (
-            <h1 className="text-custom-text">&#9660;</h1>
+            <p className="text-custom-text">&#9660;</p>
           )}
         </span>
       </button>

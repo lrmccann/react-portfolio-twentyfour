@@ -4,7 +4,7 @@ import { GlobalContext } from "../Assets/utilities.js";
 import Buttonn from "../Components/Atoms/Buttonn";
 
 const ProjectCard = (props) => {
-  const { projClass, uniqueKey, currentProject, cb } = props;
+  const { projClass, uniqueKey, currentProject, cb, currentScreenWidth } = props;
   const {themeMode} = useContext(GlobalContext);
 
   return (
@@ -12,25 +12,21 @@ const ProjectCard = (props) => {
       key={`proj-card-${uniqueKey}`}
       id={`proj-${currentProject.id}`}
       style={{border: themeMode === "light" ? "solid black 1px" : "solid oldlace 1px"}}
-      className={`project-card ${projClass} ${themeMode === "bg-custom-secondary-background" ? "" : ""}`}
+      className={`project-card flex flex-col justify-start ${projClass} ${themeMode === "bg-custom-secondary-background" ? "" : ""}`}
     >
       <Image
         className="proj-image"
         aspectRatio={1 / 1.25}
         width="100%"
         height="50%"
-        imageSrc={currentProject.siteThumbnail}
+        // imageSrc={currentProject.siteThumbnail}
+        imageSrc={currentScreenWidth >= 820 ? currentProject.siteMedium : currentProject.siteThumbnail}
         altText="idk"
       />
-      <h1 className="text-custom-text">{currentProject.siteName}</h1>
+      <span>
+      <h2 className="text-custom-text">{currentProject.siteName}</h2>
       <p className="text-custom-text">{currentProject.description}</p>
-      {/* <button
-        onClick={(e) => {
-          e.preventDefault();
-          cb(currentProject);
-        }}
-        id={`button-${currentProject.id}`}
-      ></button> */}
+      </span>
       <div className="card-button-container"
       style={{borderTop: themeMode === "light" ? "solid black 1px" : "solid oldlace 1px"}}
       >
