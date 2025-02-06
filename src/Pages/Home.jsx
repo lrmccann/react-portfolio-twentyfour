@@ -31,11 +31,19 @@ const Home = ({ currentScreenWidth, currentThemeMode }) => {
 
   useEffect(() => {
     if (currentThemeMode === "dark") {
-      setHomeBackground(globalIcons.darkSmallNyBackdrop);
+      if(currentScreenWidth <= 1024 && (userDevice === 'mobile' || userDevice === 'tablet')){
+        setHomeBackground(globalIcons.darkSmallNyBackdrop);
+      }else{
+      setHomeBackground(globalIcons.darkMediumNyBackdrop);
+      }
     } else {
+    if (currentScreenWidth <= 1024 && (userDevice === 'mobile' || userDevice === 'tablet')){
       setHomeBackground(globalIcons.lightSmallNyBackdrop);
+    }else{
+      setHomeBackground(globalIcons.lightMediumBackdrop);
     }
-  }, [currentThemeMode]);
+  }
+  }, [currentScreenWidth, currentThemeMode, userDevice]);
 
   return (
     <div
@@ -43,9 +51,11 @@ const Home = ({ currentScreenWidth, currentThemeMode }) => {
       className={`section-block ${mobileHomeActive} flex flex-col`}
     >
       <div>
+        {/* <span> */}
         <h2 className="text-custom-text">Hi, I'm</h2>
         <h1 className="text-custom-text">Logan McCann</h1>
-        <LiveTypeHero text={roleOptions} speed={250} pauseDuration={500} />
+        <LiveTypeHero text={roleOptions} speed={250} pauseDuration={100} />
+        {/* </span> */}
       </div>
       <img src={`${homeBackground}`} alt="asd" />
     </div>

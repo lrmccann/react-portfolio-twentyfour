@@ -8,6 +8,7 @@ const observerOptions = {
   
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
+     console.log(entry, "entryssss")
         if (entry.isIntersecting) {
             if(entry.target.id === "home"){
                const isScrollingUp = entry.boundingClientRect.top < entry.rootBounds.top; // Key check!

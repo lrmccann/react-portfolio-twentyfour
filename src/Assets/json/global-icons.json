@@ -25,6 +25,8 @@
 
     "darkSmallNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/dark-theme-small-new-york-backdrop.png",
     "lightSmallNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/light-theme-small-new-york-backdrop.png",
+    "darkMediumNyBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/dark-theme-medium-new-york-backdrop.png",
+    "lightMediumBackdrop": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/light-theme-medium-new-york-backdrop.png",
 
 
     "moonIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/moon-light-icon.png",

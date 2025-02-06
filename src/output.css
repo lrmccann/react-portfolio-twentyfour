@@ -105,16 +105,51 @@
   .slider-container{
     max-height: 90dvh;
   }
+
+  #home > div > h3 {
+    align-self: flex-start;
+  }
+
+  #home > div > h1 {
+    align-self: flex-start;
+  }
+
+  .live-text-cont{
+    align-self: flex-start;
+  }
 }
 
 /* Mobile Landscape */
 
 @media only screen and (min-width: 481px) and (max-width: 700px) {
+  #home > div > h3 {
+    align-self: flex-start;
+  }
+
+  #home > div > h1 {
+    align-self: flex-start;
+  }
+
+  .live-text-cont{
+    align-self: flex-start;
+  }
 }
 
 /* Small Tablet */
 
 @media only screen and (min-width: 768px) and (max-width: 1025px) {
+  #home > div > h3 {
+    align-self: flex-start;
+  }
+
+  #home > div > h1 {
+    align-self: flex-start;
+  }
+
+  .live-text-cont{
+    align-self: flex-start;
+  }
+
   #about-top {
     height: 45%;
   }
@@ -215,11 +250,57 @@
 /* Medium Laptop & Regular Desktop */
 
 @media screen and (min-width: 1281px) and (max-width: 1536px) {
+  #home > img{
+    transform: scale(-1.1, 1);
+  }
 }
 
 /* Large Laptop & Medium Desktop */
 
 @media screen and (min-width: 1537px) and (max-width: 1920px) {
+  #home{
+    height: 92.1% !important;
+  }
+
+  #about, #experience, #skills, #contact, #project{
+    height: 92%;
+  }
+
+  #home > img{
+    transform: scale(-1.1, 1);
+  }
+
+  .about-desktop-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .about-desktop-left{
+    height: 100%;
+    width: 55%;
+    padding: 0 2.5%;
+  }
+
+  .about-desktop-right{
+    height: 100%;
+    width: 45%;
+    position: relative;
+  }
+
+  .about-desktop-right > #about-bio-pic{
+    height: 85%;
+  }
+
+  .about-desktop-right > #about-desktop-vector{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -18%;
+    right: -10%;
+    transform: scale(1.20, 1.4);
+    object-fit: cover;
+  }
 }
 
 /* XL Laptop & Large Desktop */
@@ -254,6 +335,7 @@ TOC (Search terms)
 }
 
 .full-page{
+  /* background-color: #00f260; */
   overflow-y: scroll;
 }
 
@@ -266,14 +348,15 @@ TOC (Search terms)
 }
 
 #home {
-  height: 100%;
-  max-height: 92%;
+  height: 92%;
 }
 
 .full-section{
+  border-bottom: solid 2px pink;
   height: 100%;
   width: 100%;
-  background-color: #0575e6 !important;
+  contain: content;
+  /* background-color: #0575e6 !important; */
 }
 
 /* 2. Header Style */
@@ -775,19 +858,12 @@ TOC (Search terms)
   padding: 2.25% 0 0 2.25%;
 }
 
-#home > div > h3 {
-  align-self: flex-start;
-}
-
-#home > div > h1 {
-  align-self: flex-start;
-}
-
 /* LiveTypeHero */
 
 .live-text-cont {
-  align-self: flex-start;
+  /* align-self: flex-start; */
   z-index: 2;
+  /* background-color: #00f260; */
 }
 
 #home > img {
@@ -1399,6 +1475,10 @@ video {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1439,6 +1519,10 @@ video {
   padding-left: 0.5rem;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .text-custom-text {
   color: var(--text);
 }
@@ -1457,6 +1541,10 @@ video {
 
 .outline-custom-primary-outline {
   outline-color: var(--outline);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 /* Global App Style - Index */

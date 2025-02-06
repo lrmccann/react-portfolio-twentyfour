@@ -52,10 +52,10 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   };
 
   useEffect(() => {
-    if (currentScreenWidth <= 1024 || (userDevice === 'tablet' || userDevice === 'mobile')) {
+    if (currentScreenWidth <= 1024 && (userDevice === 'tablet' || userDevice === 'mobile')) {
       setMobileHomeActive("mobile-section");
     } else {
-      setMobileHomeActive("");
+      setMobileHomeActive("full-section");
     }
   }, [currentScreenWidth, userDevice]);
 

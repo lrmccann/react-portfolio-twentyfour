@@ -11,17 +11,7 @@ import Project from "./Pages/Project";
 import Skill from "./Pages/Skill";
 import Resume from "./Pages/Resume";
 import Contact from "./Pages/Contact";
-import Modal from "./Components/Modal";
 import Footer from "./Components/Footer";
-import {
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
 export default function App() {
   const {
     screenWidth,
@@ -30,39 +20,9 @@ export default function App() {
     currentTab,
     userDevice,
   } = useContext(GlobalContext);
-  const [activeTab, setActiveTab] = useState(currentTab);
+  const [activeTab, setActiveTab] = useState(0);
   const [currentScreenWidth, setCurrentScreenWidth] = useState(screenWidth);
   const [activeProject, setActiveProject] = useState({});
-
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const router = [
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/skills",
-      element: <Skill />,
-    },
-    {
-      path: "/experience",
-      element: <Resume />,
-    },
-    {
-      path: "/project",
-      element: <Project />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
-    },
-  ];
 
   // set localstorage object's theme attribute to user preference after detecting browser pref in context
   useEffect(() => {
@@ -89,12 +49,7 @@ export default function App() {
   }, [currentScreenWidth]);
 
   function updateURL(newURL) {
-    if (
-      window.history &&
-      window.history.pushState &&
-      currentScreenWidth <= 1024 &&
-      (userDevice === "tablet" || userDevice === "mobile")
-    ) {
+    if (window.history && window.history.pushState) {
       if (newURL === "/home") {
         window.history.pushState({}, "", "/");
       } else if (
@@ -109,22 +64,21 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (
-      currentScreenWidth <= 1024 &&
-      (userDevice === "tablet" || userDevice === "mobile")
-    ) {
-      const elsToWatch = document.querySelectorAll(".section-block");
-      if (elsToWatch) {
-        elsToWatch.forEach((block) => {
-          observer.observe(block);
-        });
-        emitter.on("current-scroll-index", (data) => {
-          updateURL(`/${lowerCaseSectionsArr[data]}`);
-          setActiveTab(data);
-        });
-      }
+    const elsToWatch = document.querySelectorAll(".section-block");
+    if (elsToWatch) {
+      elsToWatch.forEach((block) => {
+        observer.observe(block);
+      });
+      // const initialTab = lowerCaseSectionsArr.indexOf(currentTab);
+      // if(initialTab !== -1) setActiveTab(initialTab);
+      emitter.on("current-scroll-index", (data) => {
+        updateURL(`/${lowerCaseSectionsArr[data]}`);
+        setActiveTab(data);
+      });
+      const initialTab = lowerCaseSectionsArr.indexOf(currentTab);
+      if(initialTab !== -1) setActiveTab(initialTab);
     }
-  }, [lowerCaseSectionsArr, setActiveTab, currentScreenWidth]);
+  }, [lowerCaseSectionsArr, currentTab, currentScreenWidth]);
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -146,127 +100,66 @@ export default function App() {
     }
   }, []);
 
-  const isModalOpen = location.pathname.includes("/projects/");
-
+  // 
   return (
     <div className="App">
-      {activeTab === 0 && (
+      {/* {activeTab === 0 && (userDevice === 'tablet' || userDevice === 'mobile') &&  ( */}
+      {(userDevice === 'mobile' || userDevice === 'tablet') && activeTab === 0 ?
+      (
+        <Header
+        handleMenuNavigation={(activeTab) => {
+          setActiveTab(activeTab);
+        }}
+        activeTab={activeTab}
+      />
+      ) : userDevice === 'desktop' ? (
+        <Header
+        handleMenuNavigation={(activeTab) => {
+          setActiveTab(activeTab);
+        }}
+        activeTab={activeTab}
+      />
+      ) : null
+      }
+      {/* {(userDevice === 'desktop') || (userDevice !== 'desktop' && activeTab === 0)  && (
+        
         <Header
           handleMenuNavigation={(activeTab) => {
             setActiveTab(activeTab);
           }}
           activeTab={activeTab}
         />
-      )}
-      {/* {currentScreenWidth >= 820 && (userDevice === 'tablet' || userDevice === 'mobile') ? ( */}
-      {currentScreenWidth <= 1024 &&
-      (userDevice === "tablet" || userDevice === "mobile") ? (
-        <MainContainer currentScreenWidth={currentScreenWidth}>
-          <Home
-            key={0}
-            currentScreenWidth={currentScreenWidth}
-            currentThemeMode={themeMode}
-          />
-          <About
-            handleContactNav={(activeTab) => {
+       )} */}
+      <MainContainer currentScreenWidth={currentScreenWidth}>
+        <Home
+          key={0}
+          currentScreenWidth={currentScreenWidth}
+          currentThemeMode={themeMode}
+        />
+        <About
+          handleContactNav={(activeTab) => {
+            setActiveTab(activeTab);
+          }}
+          key={1}
+          currentScreenWidth={currentScreenWidth}
+        />
+        <Skill key={2} currentScreenWidth={currentScreenWidth} />
+        <Resume key={3} currentScreenWidth={currentScreenWidth} />
+        <Project
+          key={4}
+          mobileProjectSelected={updateURL}
+          currentScreenWidth={currentScreenWidth}
+        />
+        <Contact key={5} currentScreenWidth={currentScreenWidth} />
+        {activeTab !== 0 && userDevice !== 'desktop' && (
+          <Footer
+            handleMenuNavigation={(activeTab) => {
               setActiveTab(activeTab);
             }}
-            key={1}
-            currentScreenWidth={currentScreenWidth}
+            activeTab={activeTab}
           />
-          <Skill key={2} currentScreenWidth={currentScreenWidth} />
-          <Resume key={3} currentScreenWidth={currentScreenWidth} />
-          <Project
-            key={4}
-            mobileProjectSelected={updateURL}
-            currentScreenWidth={currentScreenWidth}
-          />
-          <Contact key={5} currentScreenWidth={currentScreenWidth} />
-          {activeTab !== 0 && (
-            <Footer
-              handleMenuNavigation={(activeTab) => {
-                setActiveTab(activeTab);
-              }}
-              activeTab={activeTab}
-            />
-          )}
-        </MainContainer>
-      ) : (
-        <MainContainer>
-          <Routes>
-            <Route
-               path="/"
-              index
-              element={
-                <Home
-                  key={0}
-                  currentThemeMode={themeMode}
-                  handleContactNav={(activeTab) => {
-                    setActiveTab(activeTab);
-                  }}
-                  currentScreenWidth={currentScreenWidth}
-                />
-              }
-            />
-            <Route
-              path="about"
-              element={
-                <About key={1} currentScreenWidth={currentScreenWidth} />
-              }
-            />
-            <Route
-              path="skills"
-              element={
-                <Skill key={2} currentScreenWidth={currentScreenWidth} />
-              }
-            />
-            <Route
-              path="resume"
-              element={
-                <Resume key={4} currentScreenWidth={currentScreenWidth} />
-              }
-            />
-            <Route
-              path="projects"
-              element={
-                <Project
-                  key={3}
-                  currentScreenWidth={currentScreenWidth}
-                  setProject={(project) => {
-                    setActiveProject(project);
-                  }}
-                />
-              }
-            />
-            <Route
-              path="contact"
-              element={
-                <Contact key={5} currentScreenWidth={currentScreenWidth} />
-              }
-            />
-          </Routes>
-          {isModalOpen &&
-            Object.keys(activeProject).length !== 0 &&
-            activeProject !== undefined && (
-              <Modal
-                projObj={activeProject}
-                modalType="project"
-                modalStatus={true}
-                currentScreenWidth={currentScreenWidth}
-                onClose={() => navigate(-1)}
-              >
-                <Routes>
-                  <Route
-                    path={`/projects/${activeProject.siteName
-                      .replace(/\s+/g, "-")
-                      .toLowerCase()}`}
-                    element={<Modal />}
-                  />
-                </Routes>
-              </Modal>
-            )}
-        </MainContainer>
-      )}
+        )}
+      </MainContainer>
     </div>
   );
 }

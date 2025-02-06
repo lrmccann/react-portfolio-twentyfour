@@ -6,6 +6,7 @@ export const GlobalContext = createContext();
 export const GlobalContextProvider = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [currentTab, setCurrentTab] = useState();
+  const [userDevice, setUserDevice] = useState('');
   const checkThemePreference = document.documentElement.classList.toggle(
     "dark",
     localStorage.theme === "dark" ||
@@ -22,7 +23,18 @@ export const GlobalContextProvider = ({ children }) => {
   }
   }, [checkThemePreference]);
 
-  let userDevice = useMemo(() => detectDevice(screenWidth), [screenWidth]);
+  // let userDevice = useMemo(() => detectDevice(screenWidth), [screenWidth]);
+  // let userDevice = '';
+  useEffect(() => {
+    async function getDeviceType (){
+      const deviceType = await detectDevice();
+      console.log(deviceType, "the type");
+      setUserDevice(deviceType);
+    }
+    getDeviceType();
+    // detectDevice().then(type => setUserDevice(type));
+  }, [])
+  // let userDevice = useMemo(() => detectDevice(), screenWidth);
   let currentUrl = window.location.href;
   const upperCaseSectionsArr = [
     "Home",
