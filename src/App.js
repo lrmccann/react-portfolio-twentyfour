@@ -149,6 +149,7 @@ export default function App() {
           key={4}
           mobileProjectSelected={updateURL}
           currentScreenWidth={currentScreenWidth}
+          activeTab={activeTab}
         />
         <Contact key={5} currentScreenWidth={currentScreenWidth} />
         {activeTab !== 0 && userDevice !== 'desktop' && (

@@ -3,12 +3,12 @@ import emitter from "../event-bus";
 const observerOptions = {
     root: null, // Use the viewport as the root
     rootMargin: '0px',
-    threshold: .92 // Trigger when 50% of the section is visible
+    threshold: .75 // Trigger when 50% of the section is visible
   };
   
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
-     console.log(entry, "entryssss")
+     // console.log(entry, "entryssss")
         if (entry.isIntersecting) {
             if(entry.target.id === "home"){
                const isScrollingUp = entry.boundingClientRect.top < entry.rootBounds.top; // Key check!

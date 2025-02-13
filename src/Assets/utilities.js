@@ -13,8 +13,9 @@ import projectArr from './json/projects.json';
 import darkIconArr from './json/dark-icons.json';
 import navigationIcons from './json/navigation-icons.json';
 import industryIcons from './json/industry-icons.json';
+import skillIcons from './json/skills-hero.json';
 // pdfs
-import myResumePDF from './PDFs/Logan-McCann-2024-Resume.pdf';
+import myResumePDF from './PDFs/Logan-McCann-React-Resume-2025-try-two.pdf';
 
 
 // import {updateDots, startAutoSlide, stopAutoSlide, showSlides, nextSlide, prevSlide} from "./Utilities/carousel";
@@ -35,6 +36,7 @@ export {
     myResumePDF,
     sendFormData,
     navigationIcons,
-    industryIcons
+    industryIcons,
+    skillIcons
     // sliderFunc
 }

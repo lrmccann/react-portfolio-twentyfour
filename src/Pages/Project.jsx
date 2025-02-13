@@ -4,16 +4,17 @@ import Modal from "../Components/Modal";
 import { projectArr, navigationIcons } from "../Assets/utilities";
 import ProjectCard from "../Components/ProjectCard";
 import { useNavigate } from "react-router-dom";
+import ProjectMobile from "./ProjectLayouts/ProjectMobile";
+import ProjectDesktop from "./ProjectLayouts/ProjectDesktop";
 
-const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
+const Project = ({ currentScreenWidth, setProject, mobileProjectSelected, activeTab }) => {
   const { userDevice } = useContext(GlobalContext);
   const [projectModalOpen, setProjectModalOpen] = useState(false);
   const [activeProject, setActiveProject] = useState({});
   const [mobileHomeActive, setMobileHomeActive] = useState();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const [buttonId, setButtonId] = useState("");
   const prevScrollX = useRef(0);
-  let scrollTimeout;
+  const [projectLayout, setProjectLayout] = useState();
 
   const mainContainerEl = document.getElementById("main-page");
 
@@ -22,8 +23,6 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   const openProjectModal = (projectObj) => {
     if (projectObj === null) {
       setProjectModalOpen(false);
-      // document.getElementById("-1").style.display = "block";
-      // document.getElementById("+1").style.display = "block";
       navigate("/projects");
       mainContainerEl.classList.remove("modal-open");
     } else {
@@ -36,8 +35,6 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
               .toLowerCase()}`
           );
         } else {
-          // document.getElementById("-1").style.display = "none";
-          // document.getElementById("+1").style.display = "none";
           setActiveProject(projectObj);
           mobileProjectSelected(
             `/projects/${projectObj.siteName
@@ -51,13 +48,6 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
     }
   };
 
-  useEffect(() => {
-    if (currentScreenWidth <= 1024 && (userDevice === 'tablet' || userDevice === 'mobile')) {
-      setMobileHomeActive("mobile-section");
-    } else {
-      setMobileHomeActive("full-section");
-    }
-  }, [currentScreenWidth, userDevice]);
 
   // Update selectedProjectIndex based on scroll position
   const handleScroll = () => {
@@ -75,8 +65,18 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
     prevScrollX.current = currentScrollX;
   };
 
+  useEffect(() => {
+    if (currentScreenWidth <= 1024 && (userDevice === 'tablet' || userDevice === 'mobile')) {
+      setMobileHomeActive("mobile-section");
+      setProjectLayout(<ProjectMobile handleScroll={handleScroll} currentScreenWidth={currentScreenWidth} openProjectModal={openProjectModal} />);
+    } else {
+      setMobileHomeActive("full-section");
+      setProjectLayout(<ProjectDesktop activeTab={activeTab} />);
+    }
+    console.log(activeTab, "the active tab")
+  }, [currentScreenWidth, userDevice, activeTab]);
+
   const changeSlide = (buttonId) => {
-    setButtonId(buttonId);
     const newSelectedProjectIndex = buttonId === "-1" ? selectedProjectIndex - 1 : selectedProjectIndex + 1;
   
     if (newSelectedProjectIndex >= 0 && newSelectedProjectIndex < projectArr.length) {
@@ -109,75 +109,32 @@ const Project = ({ currentScreenWidth, setProject, mobileProjectSelected }) => {
   };
 
   // Update active dot on initial render and when selectedProjectIndex changes
-  useEffect(() => {
-    document.getElementById(`dot-${selectedProjectIndex}`).classList.add("dot-active");
+  // useEffect(() => {
+  //   document.getElementById(`dot-${selectedProjectIndex}`).classList.add("dot-active");
+  //   return () => {
+  //     // Cleanup function to remove active class from previous dot on unmount
+  //     document.getElementById(`dot-${selectedProjectIndex}`).classList.remove("dot-active");
+  //   };
+  // }, [selectedProjectIndex]);
 
-    return () => {
-      // Cleanup function to remove active class from previous dot on unmount
-      document.getElementById(`dot-${selectedProjectIndex}`).classList.remove("dot-active");
-    };
-  }, [selectedProjectIndex]);
+
+
+// function isElementInViewport(element) {
+//   const rect = element.getBoundingClientRect();
+//   return (
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//   );
+// }
 
   return (
     <div
       id="projects"
       className={`section-block  ${mobileHomeActive} flex flex-col sm:justify-top`}
     >
-      {/* <h1 className="slider-title text-custom-text">Previous Work</h1> */}
-      <div className="project-card-container slider-container flex flex-col justify-around ">
-      <h1 className="slider-title text-custom-text">Previous Work</h1>
-        <div
-          id="slider"
-          className="slider"
-          onScroll={(e) => {
-            e.preventDefault();
-            handleScroll(e);
-          }}
-        >
-          {projectArr.map((project, i) => {
-            return userDevice === "mobile" ? (
-              <>
-                <ProjectCard
-                  key={i}
-                  cb={openProjectModal}
-                  projClass="slide"
-                  dataIndex={i}
-                  currentProject={project}
-                  currentScreenWidth={currentScreenWidth}
-                />
-              </>
-            ) : (
-              <div>
-                <h1 className="text-custom-text">not mobile</h1>
-              </div>
-            );
-          })}
-        </div>
-        {/* <button
-          id="-1"
-          onClick={(e) => changeSlide(e.target.id)}
-          className="prev"
-          style={{backgroundImage: `url(${navigationIcons.projectNavigationLeftDarkTheme})`}}
-        >
-        </button>
-        <button
-          id="+1"
-          onClick={(e) => changeSlide(e.target.id)}
-          className="next"
-          style={{backgroundImage: `url(${navigationIcons.projectNavigationRightDarkTheme})`}}
-        >
-        </button> */}
-        <div class="dots-container">
-          <span class="dot" id="dot-0" data-index="0"></span>
-          <span class="dot" id="dot-1" data-index="1"></span>
-          <span class="dot" id="dot-2" data-index="2"></span>
-          <span class="dot" id="dot-3" data-index="3"></span>
-          <span class="dot" id="dot-4" data-index="4"></span>
-          <span class="dot" id="dot-5" data-index="5"></span>
-          <span class="dot" id="dot-6" data-index="6"></span>
-          <span class="dot" id="dot-7" data-index="7"></span>
-        </div>
-      </div>
+        {projectLayout}
       {projectModalOpen && currentScreenWidth <= 1025 && (
         <Modal
           projObj={activeProject}

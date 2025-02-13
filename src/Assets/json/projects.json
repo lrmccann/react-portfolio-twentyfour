@@ -229,5 +229,35 @@
         ],
         "description": "Custom Web App Serving As Resource Hub For Webex CPaaS Customers.",
         "techIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/globe-proj-logo.webp"
+    },
+    {
+        "id": 8,
+        "siteName": "NA",
+        "siteUrl": "https://webex.com/",
+        "siteThumbnail": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex-by-cisco-project-card-thumnail.png",
+        "siteMedium": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/global-assets/webex.com-medium.png",
+        "siteLarge": "",
+        "alt": "NA",
+        "company": "NA",
+        "contributions": [
+            "Worked directly with stakeholders to establish project scope, design principles and realistic milestones",
+            "Designed and integrated internal and 3rd party promotional material, boosting conversions by 18%",
+            "Leveraged site engagement metrics, customer insights, and sales data to identify trends and curate content"
+        ],
+        "techStack": [
+            "Akamai",
+            "Apache",
+            "Adobe Suite",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Adobe Experience Manager (AEM)",
+            "AWS CloudFront",
+            "BrightCove",
+            "Eloqua",
+            "Hotjar"
+        ],
+        "description": "NA.",
+        "techIcon": "https://twenty-twenty-four-portfolio-images.s3.us-east-1.amazonaws.com/project-images/aem-try.webp"
     }
 ]

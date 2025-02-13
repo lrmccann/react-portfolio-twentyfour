@@ -39,7 +39,7 @@ const AboutDesktop = ({pageProps}) => {
             />
         </div>
          <div className="industry-icon-container">
-          <h2>Industry Experience</h2>
+          <h3>Industry Experience</h3>
           <ul className="flex flex-row">
             {pageProps.industryArr.map((industryObj, index) => (
               <li
@@ -53,7 +53,7 @@ const AboutDesktop = ({pageProps}) => {
           </ul>
         </div>
         <div className="proficiencies-container">
-          <h2>Proficiencies</h2>
+          <h3>Proficiencies</h3>
           <ul className="flex flex-row">
             {pageProps.topSkillsArr.map((skillItem, index) => (
               <li className="flex flex-col items-center justify-center">
